@@ -17,7 +17,7 @@ const poppins = Poppins({
 function Layout({ children }) {
 	return (
 		<div
-			className={`${poppins.variable} ${pinyon.variable} bg-white min-h-screen`}
+			className={`${poppins.variable} ${pinyon.variable} bg-white min-h-screen font-tanker`}
 		>
 			<main>{children}</main>
 		</div>
