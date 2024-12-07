@@ -25,13 +25,13 @@ function Header() {
 					<div className="flex flex-col md:flex-row gap-4">
 						<Link
 							href="coaching"
-							className="bg-darkorange text-center self-start rounded-md p-2 w-[14rem] "
+							className="bg-darkorange text-center self-start rounded-md p-4 w-[16rem] "
 						>
 							RESERVER UN COACHING
 						</Link>
 						<Link
 							href="/massage"
-							className="bg-black text-center text-white rounded-md self-start p-2 w-[14rem]"
+							className="bg-black text-center text-white rounded-md self-start p-4 w-[16rem]"
 						>
 							RESERVER UN MASSAGE
 						</Link>

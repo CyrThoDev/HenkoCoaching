@@ -91,7 +91,7 @@ function NavBar() {
 			{/* Mobile Header */}
 			<div
 				className={`${
-					isSticky ? "sticky top-0 bg-lightgreen shadow-md" : ""
+					isSticky ? "sticky top-0 bg-white shadow-md" : ""
 				} px-6 md:px-10 flex items-center justify-between py-2 md:py-8 xl:hidden z-20 transition-all duration-300`}
 			>
 				<button
@@ -119,7 +119,11 @@ function NavBar() {
 			</div>
 
 			{/* Desktop Header */}
-			<div className="hidden xl:flex justify-between items-center px-20 py-4">
+			<div
+				className={`hidden ${
+					isSticky ? "sticky top-0 bg-white shadow-md" : ""
+				} xl:flex justify-between items-center px-20 py-2`}
+			>
 				<Link href="/">
 					<Image
 						src={logoOrangeHenko}

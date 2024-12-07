@@ -38,7 +38,7 @@ const iconsTab = [
 ];
 function Icons() {
 	return (
-		<div className="grid md:grid-cols-4 px-20 py-10 gap-16 md:gap-8">
+		<div className="grid lg:grid-cols-4 px-20 py-10 gap-16 md:gap-8">
 			{iconsTab.map((icon) => (
 				<div className="flex flex-col gap-4" key={icon.name}>
 					<Image
