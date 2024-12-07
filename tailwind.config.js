@@ -14,7 +14,7 @@ module.exports = {
 				sand: "#BE8B52",
 			},
 			fontFamily: {
-				tanker: ["Tanker", "sans-serif"],
+				tanker: ["var(--font-tanker)"],
 				poppins: ["var(--font-poppins)"],
 				pinyon: ["var(--font-pinyon)"],
 			},
