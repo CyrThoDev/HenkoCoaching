@@ -1,4 +1,5 @@
 import { Pinyon_Script, Poppins } from "next/font/google";
+import localFont from "next/font/local";
 
 const pinyon = Pinyon_Script({
 	subsets: ["latin"],
@@ -14,10 +15,16 @@ const poppins = Poppins({
 	variable: "--font-poppins",
 });
 
+const tanker = localFont({
+	src: "../../public/fonts/Tanker-Regular.woff2",
+	variable: "--font-tanker",
+	weight: "400",
+});
+
 function Layout({ children }) {
 	return (
 		<div
-			className={`${poppins.variable} ${pinyon.variable} bg-white min-h-screen font-tanker`}
+			className={`${poppins.variable} ${pinyon.variable} ${tanker.variable} bg-white min-h-screen`}
 		>
 			<main>{children}</main>
 		</div>

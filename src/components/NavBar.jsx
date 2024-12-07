@@ -128,7 +128,7 @@ function NavBar() {
 					<Image
 						src={logoHenkoOrange}
 						alt="Logo Orange Henko"
-						width={100}
+						width={90}
 						height={100}
 					/>
 				</Link>
