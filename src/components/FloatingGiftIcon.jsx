@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FaGift } from "react-icons/fa6";
 
 const FloatingGiftIcon = () => {
 	const [isHovered, setIsHovered] = useState(false);
@@ -14,8 +15,10 @@ const FloatingGiftIcon = () => {
 			<Link href="/cadeau">
 				<div className="relative cursor-pointer">
 					{/* Icône cadeau */}
-					<div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center shadow-lg">
-						<span className="text-white text-xl">🎁</span>
+					<div className="w-12 h-12 bg-darkorange rounded-full flex items-center justify-center shadow-lg">
+						<span className="text-white text-xl">
+							<FaGift />
+						</span>
 					</div>
 
 					{/* Contenu affiché au survol */}

@@ -1,5 +1,11 @@
+import Image from "next/image";
+
 function Header() {
-	return <div>Header</div>;
+	return (
+		<div>
+			<Image src={logoOangeHenko} />
+		</div>
+	);
 }
 
 export default Header;
