@@ -20,7 +20,7 @@ const iconsTab = [
 		link: "/massages",
 	},
 	{
-		icon: "/images/libre.webp",
+		icon: "/images/libre.svg",
 		name: "ACCES LIBRE",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a massa id ipsum fermentum vulputate.",
@@ -28,7 +28,7 @@ const iconsTab = [
 		link: "/acceslibre",
 	},
 	{
-		icon: "/images/location.webp",
+		icon: "/images/location.svg",
 		name: "LOCATION ESPACE PRO",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a massa id ipsum fermentum vulputate.",
@@ -38,7 +38,7 @@ const iconsTab = [
 ];
 function Icons() {
 	return (
-		<div className="grid lg:grid-cols-4 px-20 py-10 gap-16 md:gap-8">
+		<div className="grid lg:grid-cols-4 px-20 py-20 gap-16 md:gap-8">
 			{iconsTab.map((icon) => (
 				<div className="flex flex-col gap-4" key={icon.name}>
 					<Image
