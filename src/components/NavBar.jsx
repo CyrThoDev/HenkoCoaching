@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBasketShopping } from "react-icons/fa6";
-import logoOrangeHenko from "/public/images/logoOrangeHenko.svg";
+import logoHenkoOrange from "/public/images/logoHenkoOrange.svg";
 
 // Composant de liens partagés
 const MenuLinks = ({ onClick }) => {
@@ -59,7 +59,7 @@ const MobileMenu = ({ isNavOpen, toggleNav }) => {
 				</svg>
 			</button>
 			<Link href="/" onClick={toggleNav}>
-				<Image src={logoOrangeHenko} alt="Logo" height={100} width={100} />
+				<Image src={logoHenkoOrange} alt="Logo" height={100} width={100} />
 			</Link>
 			<MenuLinks onClick={toggleNav} />
 			<Link href="/" className="bg-black p-4 text-white rounded-lg">
@@ -106,7 +106,7 @@ function NavBar() {
 				</button>
 				<Link href="/">
 					<Image
-						src={logoOrangeHenko}
+						src={logoHenkoOrange}
 						alt="Logo Orange Henko"
 						width={100}
 						height={100}
@@ -126,7 +126,7 @@ function NavBar() {
 			>
 				<Link href="/">
 					<Image
-						src={logoOrangeHenko}
+						src={logoHenkoOrange}
 						alt="Logo Orange Henko"
 						width={100}
 						height={100}
