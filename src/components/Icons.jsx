@@ -20,7 +20,7 @@ const iconsTab = [
 		link: "/massages",
 	},
 	{
-		icon: "/images/libre.svg",
+		icon: "/images/libre.webp",
 		name: "ACCES LIBRE",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a massa id ipsum fermentum vulputate.",
@@ -28,7 +28,7 @@ const iconsTab = [
 		link: "/acceslibre",
 	},
 	{
-		icon: "/images/location.svg",
+		icon: "/images/location.webp",
 		name: "LOCATION ESPACE PRO",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a massa id ipsum fermentum vulputate.",
@@ -43,8 +43,8 @@ function Icons() {
 				<div className="flex flex-col gap-4" key={icon.name}>
 					<Image
 						src={icon.icon}
-						width={100}
-						height={100}
+						width="100"
+						height="100"
 						className="self-center"
 					/>
 					<h2 className="text-xl font-tanker self-center">{icon.name}</h2>
