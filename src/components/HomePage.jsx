@@ -5,17 +5,21 @@ import Summary from "./Summary";
 import GoogleReviews from "./GoogleReviews";
 import Wave from "./Wave";
 import APropos from "./APropos";
+import Header from "./Header";
+import Formulaire from "./Formulaire";
 
-function Main() {
+function HomePage() {
 	return (
 		<div>
+			<Header />
 			<Icons />
 			<Summary />
 			<GoogleReviews />
 			<Wave />
 			<APropos />
+			<Formulaire />
 		</div>
 	);
 }
 
-export default Main;
+export default HomePage;

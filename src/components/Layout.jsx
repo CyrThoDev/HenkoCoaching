@@ -1,5 +1,6 @@
 import { Pinyon_Script, Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import Footer from "./Footer";
 
 const pinyon = Pinyon_Script({
 	subsets: ["latin"],
@@ -26,7 +27,8 @@ function Layout({ children }) {
 		<div
 			className={`${poppins.variable} ${pinyon.variable} ${tanker.variable} bg-white min-h-screen`}
 		>
-			<main>{children}</main>
+			<main className="font-poppins">{children}</main>
+			<Footer className="font-poppins" />
 		</div>
 	);
 }
