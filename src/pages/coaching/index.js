@@ -1,7 +1,7 @@
-import React from "react";
+import NavBar from "@/components/NavBar";
 
 function Coaching() {
-	return <div>Coaching</div>;
+	return <NavBar />;
 }
 
 export default Coaching;

@@ -46,7 +46,7 @@ const MobileMenu = ({ isNavOpen, toggleNav }) => {
 				<svg
 					title="cross"
 					alt="cross"
-					className="h-8 w-8 text-darkorange"
+					className="h-8 w-8 text-black"
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
@@ -100,9 +100,9 @@ function NavBar() {
 					onClick={toggleNav}
 					aria-label="Ouvrir le menu mobile"
 				>
-					<span className="block h-0.5 w-8 bg-darkorange" />
-					<span className="block h-0.5 w-8 bg-darkorange" />
-					<span className="block h-0.5 w-8 bg-darkorange" />
+					<span className="block h-0.5 w-8 bg-black" />
+					<span className="block h-0.5 w-8 bg-black" />
+					<span className="block h-0.5 w-8 bg-black" />
 				</button>
 				<Link href="/">
 					<Image
@@ -114,7 +114,7 @@ function NavBar() {
 				</Link>
 				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} />
 				<Link href="/" aria-label="cliquer pour accéder au panier">
-					<FaBasketShopping className="text-2xl text-darkorange" />
+					<FaBasketShopping className="text-2xl text-black" />
 				</Link>
 			</div>
 
@@ -138,7 +138,7 @@ function NavBar() {
 						OFFRIR UNE CARTE CADEAU
 					</Link>
 					<Link href="/" aria-label="cliquer pour accéder au panier">
-						<FaBasketShopping className="text-2xl text-darkorange" />
+						<FaBasketShopping className="text-2xl text-black" />
 					</Link>
 				</div>
 			</div>
