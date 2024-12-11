@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import ButtonOrange from "./ButtonOrange";
+import ButtonBlack from "./ButtonBlack";
 
 function Header() {
 	return (
@@ -23,18 +25,17 @@ function Header() {
 						Votre studio au coeur de Mimizan-Plage
 					</p>
 					<div className="flex flex-col md:flex-row gap-4 font-poppins">
-						<Link
-							href="coaching"
-							className="bg-darkorange text-white text-center self-start rounded-md p-4 w-[16rem]  "
-						>
-							RESERVER UN COACHING
-						</Link>
-						<Link
-							href="/massage"
-							className="bg-black text-center text-white rounded-md self-start p-4 w-[16rem]"
-						>
-							RESERVER UN MASSAGE
-						</Link>
+						<ButtonOrange
+							title="RESERVER UN COACHING"
+							link="/coaching"
+							width="w-[16rem]"
+						/>
+
+						<ButtonBlack
+							title="RESERVER UN MASSAGE"
+							link="/coaching"
+							width="w-[16rem]"
+						/>
 					</div>
 				</div>
 			</div>
