@@ -8,7 +8,7 @@ const iconsTab = [
 		name: "COACHING",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a massa id ipsum fermentum vulputate.",
-		forward: "/images/forwardorange.svg",
+		forward: "/images/orangeArrow.webp",
 		link: "/coaching",
 	},
 	{
@@ -16,7 +16,7 @@ const iconsTab = [
 		name: "MASSAGES ET RECUPERATION",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a massa id ipsum fermentum vulputate.",
-		forward: "/images/forwardorange.svg",
+		forward: "/images/orangeArrow.webp",
 		link: "/massages",
 	},
 	{
@@ -24,7 +24,7 @@ const iconsTab = [
 		name: "ACCES LIBRE",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a massa id ipsum fermentum vulputate.",
-		forward: "/images/forwardorange.svg",
+		forward: "/images/orangeArrow.webp",
 		link: "/acceslibre",
 	},
 	{
@@ -32,7 +32,7 @@ const iconsTab = [
 		name: "LOCATION ESPACE PRO",
 		description:
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a massa id ipsum fermentum vulputate.",
-		forward: "/images/forwardorange.svg",
+		forward: "/images/orangeArrow.webp",
 		link: "/locationespacepro",
 	},
 ];

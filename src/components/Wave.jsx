@@ -1,5 +1,5 @@
 import Image from "next/image";
-import wave from "../../public/images/wave.svg";
+import wave from "../../public/images/wave.webp";
 
 function Wave() {
 	return (
