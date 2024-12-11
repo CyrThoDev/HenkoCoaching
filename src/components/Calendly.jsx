@@ -43,7 +43,7 @@ export default function CalendlyPopup({ url, title }) {
 								</p>
 								<p className="italic">
 									Si vous ne souhaitez pas régler en ligne, merci de me
-									contacter pour convenir d'un autre mode de règlement avant
+									contacter pour convenir d&#39;un autre mode de règlement avant
 									votre séance.
 								</p>
 							</div>
