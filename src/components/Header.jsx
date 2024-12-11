@@ -25,7 +25,7 @@ function Header() {
 					<div className="flex flex-col md:flex-row gap-4 font-poppins">
 						<Link
 							href="coaching"
-							className="bg-darkorange text-center self-start rounded-md p-4 w-[16rem]  "
+							className="bg-darkorange text-white text-center self-start rounded-md p-4 w-[16rem]  "
 						>
 							RESERVER UN COACHING
 						</Link>
