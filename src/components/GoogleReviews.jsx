@@ -62,7 +62,7 @@ export default function Google() {
 										<p>Note : {review.rating}/5</p>
 										<div className="flex flex-row">
 											{[...Array(review.rating)].map((_, i) => (
-												<span key={i}>
+												<span key={review.text}>
 													<FaStar className="text-gold" />
 												</span>
 											))}
@@ -98,7 +98,7 @@ export default function Google() {
 							<p>Note : {review.rating}/5</p>{" "}
 							<div className="flex flex-row">
 								{[...Array(review.rating)].map((star, i) => (
-									<span key={i}>
+									<span key={review.text}>
 										<FaStar className="text-gold" />
 									</span>
 								))}

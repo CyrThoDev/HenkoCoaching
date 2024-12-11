@@ -6,6 +6,7 @@ import Seance from "@/components/Seance";
 import ButtonOrange from "@/components/ButtonOrange";
 import ButtonBlack from "@/components/ButtonBlack";
 import MainCoaching from "@/components/MainCoaching";
+import CalendlyModal from "@/components/Calendly";
 
 function Coaching() {
 	return (
@@ -28,6 +29,10 @@ function Coaching() {
 					title="RESERVEZ VOTRE SEANCE D'ESSAI"
 					link="https://calendly.com/henkocoaching/coaching-essai-1h"
 					width="w-[20rem]"
+				/>
+				<CalendlyModal
+					url="https://calendly.com/henkocoaching/coaching-essai-1h"
+					title="RESERVER MA SEANCE D'ESSAI"
 				/>
 			</div>
 		</>
