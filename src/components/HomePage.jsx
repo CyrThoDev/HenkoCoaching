@@ -10,7 +10,7 @@ import Formulaire from "./Formulaire";
 
 function HomePage() {
 	return (
-		<div>
+		<div className="flex flex-col gap-20">
 			<Header />
 			<Icons />
 			<Summary />

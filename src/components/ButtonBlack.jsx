@@ -4,7 +4,7 @@ function ButtonBlack({ title, link, width }) {
 	return (
 		<Link
 			href={link}
-			className={`bg-black text-white text-center self-start rounded-md p-4 ${width}  `}
+			className={`bg-black text-white text-center self-start rounded-md p-3 ${width}  `}
 		>
 			{title}
 		</Link>
