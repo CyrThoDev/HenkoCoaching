@@ -15,9 +15,9 @@ function Summary() {
 							Des services sur-mesure pour tous les âges!
 						</h2>
 						<p>
-							Mes services s'adaptent à tous les âges et répondent à une variété
-							de besoins en fonction de vos spécificités (pathologies, métiers,
-							quotidien).
+							Mes services s&#39;adaptent à tous les âges et répondent à une
+							variété de besoins en fonction de vos spécificités (pathologies,
+							métiers, quotidien).
 						</p>
 						<p>
 							Allant de la reprise d&#39;activité à la remise en forme
