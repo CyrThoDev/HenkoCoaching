@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Strength from "../../public/images/Strength.webp";
 import lift from "../../public/images/lift.webp";
-import workout from "../../public/images/workout.webp";
-import curls from "../../public/images/curls.webp";
+import workout from "../../public/images/Workout.webp";
+import curls from "../../public/images/Curls.webp";
 
 function Seance() {
 	return (
