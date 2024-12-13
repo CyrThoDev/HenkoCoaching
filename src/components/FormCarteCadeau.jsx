@@ -91,7 +91,7 @@ function FormulaireCarteCadeau() {
 
 			<div>
 				<label htmlFor="emailExpediteur" className="block text-sm font-medium">
-					Email de l'expéditeur :
+					Email de l&#39;expéditeur :
 				</label>
 				<input
 					type="email"
