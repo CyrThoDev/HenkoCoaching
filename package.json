@@ -12,6 +12,7 @@
 		"@react-google-maps/api": "^2.20.3",
 		"axios": "^1.7.7",
 		"gsap": "^3.12.5",
+		"jspdf": "^2.5.2",
 		"next": "15.0.3",
 		"react": "^18",
 		"react-calendly": "^4.3.1",

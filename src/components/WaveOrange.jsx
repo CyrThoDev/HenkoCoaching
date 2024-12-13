@@ -1,7 +1,7 @@
 import Image from "next/image";
 import wave from "../../public/images/wave.webp";
 
-function Wave() {
+function WaveOrange() {
 	return (
 		<div className="flex items-center justify-center w-full">
 			<Image
@@ -15,4 +15,4 @@ function Wave() {
 	);
 }
 
-export default Wave;
+export default WaveOrange;

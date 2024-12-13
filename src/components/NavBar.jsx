@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBasketShopping } from "react-icons/fa6";
-import logoHenkoOrange from "/public/images/logoHenkoOrange.svg";
 
 // Composant de liens partagés
 const MenuLinks = ({ onClick }) => {
@@ -28,7 +27,7 @@ const MenuLinks = ({ onClick }) => {
 };
 
 // Composant pour le menu mobile
-const MobileMenu = ({ isNavOpen, toggleNav }) => {
+const MobileMenu = ({ isNavOpen, toggleNav, logo }) => {
 	return (
 		<div
 			className={`${
@@ -60,7 +59,7 @@ const MobileMenu = ({ isNavOpen, toggleNav }) => {
 				</svg>
 			</button>
 			<Link href="/" onClick={toggleNav}>
-				<Image src={logoHenkoOrange} alt="Logo" height={100} width={100} />
+				<Image src={logo} alt="Logo" height={100} width={100} />
 			</Link>
 			<MenuLinks onClick={toggleNav} />
 			<Link href="/" className="bg-black p-4 text-white rounded-lg">
@@ -71,7 +70,7 @@ const MobileMenu = ({ isNavOpen, toggleNav }) => {
 };
 
 // Composant NavBar principal
-function NavBar() {
+function NavBar({ logo }) {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [isSticky, setIsSticky] = useState(false);
 
@@ -106,14 +105,9 @@ function NavBar() {
 					<span className="block h-0.5 w-8 bg-black" />
 				</button>
 				<Link href="/">
-					<Image
-						src={logoHenkoOrange}
-						alt="Logo Orange Henko"
-						width={100}
-						height={100}
-					/>
+					<Image src={logo} alt="logo Orange Henko" width={100} height={100} />
 				</Link>
-				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} />
+				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} logo={logo} />
 				<Link href="/" aria-label="cliquer pour accéder au panier">
 					<FaBasketShopping className="text-2xl text-black" />
 				</Link>
@@ -123,19 +117,14 @@ function NavBar() {
 			<div
 				className={`hidden ${
 					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				} xl:flex justify-between items-center px-20 py-2`}
+				} xl:flex justify-between items-center px-20 py-2 z-20`}
 			>
 				<Link href="/">
-					<Image
-						src={logoHenkoOrange}
-						alt="Logo Orange Henko"
-						width={90}
-						height={100}
-					/>
+					<Image src={logo} alt="logo Orange Henko" width={90} height={100} />
 				</Link>
 				<MenuLinks />
 				<div className="flex items-center gap-8">
-					<Link href="/" className="bg-black p-4 text-white rounded-lg">
+					<Link href="/cadeaux" className="bg-black p-4 text-white rounded-lg">
 						OFFRIR UNE CARTE CADEAU
 					</Link>
 					<Link href="/" aria-label="cliquer pour accéder au panier">

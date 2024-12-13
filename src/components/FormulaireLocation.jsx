@@ -84,27 +84,6 @@ function Formulaire() {
 							{...register("email", { required: true })}
 						/>
 					</label>
-
-					<label htmlFor="raison de la demande">
-						Motif de votre demande de contact
-						<select
-							name="reason"
-							id="reason-select"
-							className="flex flex-col gap-2 border border-white bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
-							{...register("reason")}
-						>
-							<option value="" className="text-gray-500">
-								--Merci de choisir un motif--
-							</option>
-							<option value="coaching">Coaching</option>
-							<option value="massage">Massage</option>
-							<option value="acceslibre">Accès libre</option>
-							<option value="location">
-								Location d&#39;espace professionnel
-							</option>
-						</select>
-					</label>
-
 					<label htmlFor="message">
 						Votre message *
 						<textarea

@@ -18,6 +18,9 @@ module.exports = {
 				poppins: ["var(--font-poppins)"],
 				pinyon: ["var(--font-pinyon)"],
 			},
+			boxShadow: {
+				perso: "8px 8px 0px 0px rgba(0, 0, 0, 0.3)",
+			},
 		},
 	},
 	plugins: [],
