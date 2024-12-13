@@ -99,7 +99,9 @@ function Formulaire() {
 							<option value="coaching">Coaching</option>
 							<option value="massage">Massage</option>
 							<option value="acceslibre">Accès libre</option>
-							<option value="location">Location d'espace professionnel</option>
+							<option value="location">
+								Location d&#39;espace professionnel
+							</option>
 						</select>
 					</label>
 
