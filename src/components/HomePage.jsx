@@ -3,7 +3,7 @@ import React from "react";
 import Icons from "./Icons";
 import Summary from "./Summary";
 import GoogleReviews from "./GoogleReviews";
-import Wave from "./Wave";
+import WaveOrange from "./WaveOrange";
 import APropos from "./APropos";
 import Header from "./Header";
 import Formulaire from "./Formulaire";
@@ -15,7 +15,7 @@ function HomePage() {
 			<Icons />
 			<Summary />
 			<GoogleReviews />
-			<Wave />
+			<WaveOrange />
 			<APropos />
 			<Formulaire />
 		</div>
