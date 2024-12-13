@@ -12,10 +12,13 @@ function Summary() {
 					<Image src={salle3} width={300} height={""} className="" />
 					<div className="flex flex-col gap-8 lg:basis-1/2 ">
 						<h2 className="text-2xl md:text-3xl ">
-							Mes services sur-mesure s&#39;adressent à tous les âges et
-							répondent à une variété de besoins en fonction de vos spécificités
-							(pathologies, métiers, quotidien)
+							Des services sur-mesure pour tous les âges!
 						</h2>
+						<p>
+							Mes services s&#39;adaptent à tous les âges et répondent à une
+							variété de besoins en fonction de vos spécificités (pathologies,
+							métiers, quotidien).
+						</p>
 						<p>
 							Allant de la reprise d&#39;activité à la remise en forme
 							(bien-être), au développement des qualités physiques ou à la
@@ -24,11 +27,13 @@ function Summary() {
 							personne (motricité, renforcement, amélioration de la santé par le
 							sport).
 						</p>
-						<ButtonBlack
-							title="JE SOUHAITE AVOIR PLUS D'INFOS"
-							link="/#contact"
-							width="w-[15rem] md:w-[20rem]"
-						/>
+						<div className="self-center lg:self-start pb-8">
+							<ButtonBlack
+								title="JE SOUHAITE AVOIR PLUS D'INFOS"
+								link="/#contact"
+								width="w-[15rem] md:w-[20rem]"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

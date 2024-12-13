@@ -20,18 +20,18 @@ export default function CalendlyPopup({ url, title }) {
 			</button>
 
 			{isOpen && (
-				<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-					<div className="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl">
+				<div className=" fixed top-48 lg:top-0 inset-0  bg-black bg-opacity-50 flex items-center justify-center z-50">
+					<div className="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl ">
 						<button
 							type="reset"
 							onClick={togglePopup}
-							className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+							className="absolute top-20 lg:top-0 right-4 text-gray-600 hover:text-gray-900 text-3xl  font-bold z-50"
 							aria-label="Fermer"
 						>
 							&times;
 						</button>
 
-						<div className="flex flex-col md:flex-row gap-4">
+						<div className="flex flex-col md:flex-row gap-4 ">
 							<div className="flex flex-col gap-8 basis-1/2 bg-white p-4 rounded-lg">
 								<h2 className="text-xl font-bold mb-4 font-tanker">
 									À propos de la réservation
