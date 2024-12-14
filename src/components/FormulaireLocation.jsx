@@ -21,13 +21,11 @@ function Formulaire() {
 					"Content-Type": "application/json",
 				},
 			});
-			// const result = await response.json();
 			setIsLoading(false);
 
 			if (response.status !== 200) {
 				console.log("error");
 			} else {
-				console.log("ok");
 				reset();
 				setIsSended(true);
 			}

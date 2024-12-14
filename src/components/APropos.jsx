@@ -12,7 +12,7 @@ const APropos = () => {
 					width={"auto"}
 					height={"auto"}
 					className="basis-1/2"
-					alt=""
+					alt="Photo d'un sportive à la montagne"
 				/>
 				<div className="flex flex-col gap-4 basis-1/2 ">
 					<p className="font-pinyon text-4xl">Jessica Perestrelo</p>

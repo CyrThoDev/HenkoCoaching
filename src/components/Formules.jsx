@@ -57,7 +57,7 @@ function Formules() {
 		<>
 			<h2 className=" relative flex flex-col text-lg md:text-2xl font-tanker">
 				<span className="text-3xl z-10">LES FORMULES</span>
-				<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
+				<div className="w-[8rem] h-3  bg-darkorange -mt-3 -z-1" />
 			</h2>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 				{plans.map((plan) => (
