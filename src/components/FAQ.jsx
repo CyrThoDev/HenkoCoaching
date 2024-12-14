@@ -51,8 +51,8 @@ function FAQ() {
 	return (
 		<div className="bg-darkorange px-10 lg:px-20 flex flex-col gap-20 mt-20 py-10 ">
 			<h2 className=" relative flex flex-col text-lg md:text-2xl font-tanker">
-				<span className="text-3xl z-10 text-black">FAQ</span>
-				<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
+				<span className="text-3xl z-10">FAQ</span>
+				<div className="w-[2rem] h-3  bg-white -mt-3 -z-1" />
 			</h2>
 			<div className="space-y-6">
 				{faqs.map((faq, index) => (
