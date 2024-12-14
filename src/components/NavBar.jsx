@@ -32,7 +32,7 @@ const MobileMenu = ({ isNavOpen, toggleNav, logo }) => {
 		<div
 			className={`${
 				isNavOpen
-					? "fixed inset-0 w-full h-screen z-10 flex flex-col justify-center gap-10 items-center bg-white"
+					? "fixed inset-0 w-full h-screen z-50 flex flex-col justify-center gap-10 items-center bg-white"
 					: "hidden"
 			}`}
 		>
@@ -97,7 +97,7 @@ function NavBar({ logo }) {
 			<div
 				className={`${
 					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				} px-6 md:px-10 flex items-center justify-between py-2 md:py-8 xl:hidden z-20 transition-all duration-300`}
+				} px-6 md:px-10 flex items-center justify-between py-2 md:py-8 xl:hidden z-20 transition-all duration-300 `}
 			>
 				<button
 					type="button"
