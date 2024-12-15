@@ -1,7 +1,7 @@
 import FormulaireCarteCadeau from "@/components/FormCarteCadeau";
 import HeadPages from "@/components/HeadPages";
 import NavBar from "@/components/NavBar";
-import logoOrange from "../../../public/images/logoHenkoOrange.svg";
+import logoOrange from "@images/logoHenkoOrange.svg";
 import WaveOrange from "@/components/WaveOrange";
 
 function Cadeaux() {

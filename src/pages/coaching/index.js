@@ -4,8 +4,7 @@ import Seance from "@/components/Seance";
 import ButtonOrange from "@/components/ButtonOrange";
 import ButtonBlack from "@/components/ButtonBlack";
 import MainCoaching from "@/components/MainCoaching";
-import CalendlyModal from "@/components/Calendly";
-import logoOrange from "../../../public/images/logoHenkoOrange.svg";
+import logoOrange from "@images/logoHenkoOrange.svg";
 import WaveOrange from "@/components/WaveOrange";
 import HeadPages from "@/components/HeadPages";
 import FAQ from "@/components/FAQ";
@@ -23,12 +22,7 @@ function Coaching() {
 				<CoachingHeader />
 				<MainCoaching />
 				<Seance />
-				<div className="flex justify-center">
-					<CalendlyModal
-						url="https://calendly.com/henkocoaching/coaching-essai-1h"
-						title="RESERVER MA SEANCE D'ESSAI"
-					/>
-				</div>
+
 				<WaveOrange />
 				<Formules />
 			</div>

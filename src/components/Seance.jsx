@@ -3,10 +3,11 @@ import Strength from "../../public/images/Strength.webp";
 import lift from "../../public/images/lift.webp";
 import workout from "../../public/images/Workout.webp";
 import curls from "../../public/images/Curls.webp";
+import CalendlyModal from "@/components/Calendly";
 
 function Seance() {
 	return (
-		<>
+		<div className="flex flex-col gap-10">
 			<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">
 				<span className="text-3xl z-0">DEROULE D’UNE SEANCE DE COACHING</span>
 				<div className="w-[12rem] h-3 bg-darkorange -mt-3 -z-1" />
@@ -75,7 +76,15 @@ function Seance() {
 					<p className="col-span-5">4- Retour au calme et échange</p>
 				</div>
 			</div>
-		</>
+			<div className="flex justify-center">
+				<CalendlyModal
+					url="https://calendly.com/henkocoaching/coaching-essai-1h"
+					title="RESERVER MA SEANCE D'ESSAI"
+					color="bg-darkorange"
+					width="w-[18rem] lg:w-[20rem]"
+				/>
+			</div>
+		</div>
 	);
 }
 

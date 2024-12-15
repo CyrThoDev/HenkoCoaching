@@ -76,7 +76,7 @@ function FAQ() {
 					</div>
 				))}
 			</div>
-			<div className="flex flex-col gap-8 self-center">
+			<div className="flex flex-col gap-8 items-center justify-center">
 				<p>Tu n’as pas trouvé réponse à ta question ?</p>
 				<ButtonBlack
 					title="JE SOUHAITE AVOIR PLUS D'INFOS"

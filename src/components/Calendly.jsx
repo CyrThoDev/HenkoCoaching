@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InlineWidget } from "react-calendly";
 
-export default function CalendlyPopup({ url, title }) {
+export default function CalendlyPopup({ url, title, color, width }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const togglePopup = () => {
@@ -14,7 +14,7 @@ export default function CalendlyPopup({ url, title }) {
 			<button
 				type="button"
 				onClick={togglePopup}
-				className="bg-darkorange text-white text-center rounded-md p-3 hover:bg-opacity-80 w-[20rem]"
+				className={`${color} text-white text-center rounded-md p-3 hover:bg-opacity-80 ${width}`}
 			>
 				{title}
 			</button>
