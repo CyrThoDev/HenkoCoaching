@@ -1,23 +1,29 @@
-import { Form, FormProvider, useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 import { useState } from "react";
-import MapsGoogle from "./MapsGoogle";
 import axios from "axios";
-function Formulaire() {
+import MapsGoogle from "./MapsGoogle";
+
+function Formulaire({ bgColor }) {
 	const {
 		register,
 		handleSubmit,
 		reset,
 		formState: { errors },
 	} = useForm();
-
 	const [isSended, setIsSended] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 
+	const router = useRouter();
+
+	// Détermine si le formulaire est pour la location en fonction de la route
+	const isLocationForm = router.pathname === "/locationespacepro";
+
 	const onSubmitHandler = async (data) => {
 		if (!isLoading) {
 			setIsLoading(true);
-			setErrorMessage(""); // Réinitialise les erreurs précédentes
+			setErrorMessage("");
 
 			try {
 				const response = await axios.post("/api/contact", data, {
@@ -42,12 +48,13 @@ function Formulaire() {
 			}
 		}
 	};
+
 	return (
 		<div
-			className="px-10 lg:px-20 py-10 flex flex-col lg:flex-row bg-darkorange items-center gap-10"
+			className={`px-10 lg:px-20 py-10 flex flex-col lg:flex-row ${bgColor} items-center gap-10`}
 			id="contact"
 		>
-			<div className="w-full basis-1/2  h-auto">
+			<div className="w-full basis-1/2 h-auto">
 				<MapsGoogle />
 			</div>
 
@@ -60,7 +67,7 @@ function Formulaire() {
 						<label htmlFor="firstname" className="text-white">
 							Prénom *
 							<input
-								className="border border-white bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
+								className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
 								placeholder="Votre prénom"
 								{...register("firstname", { required: "Ce champ est requis." })}
 							/>
@@ -72,7 +79,7 @@ function Formulaire() {
 						<label htmlFor="name" className="text-white">
 							Nom *
 							<input
-								className="border border-white bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
+								className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
 								placeholder="Votre nom"
 								{...register("name", { required: "Ce champ est requis." })}
 							/>
@@ -82,10 +89,10 @@ function Formulaire() {
 						</label>
 					</div>
 
-					<label htmlFor="téléphone" className="text-white">
+					<label htmlFor="phone" className="text-white">
 						Téléphone
 						<input
-							className="border border-white bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
+							className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
 							placeholder="06 / 07 ..."
 							{...register("phone")}
 						/>
@@ -94,7 +101,7 @@ function Formulaire() {
 					<label htmlFor="email" className="text-white">
 						Email *
 						<input
-							className="border border-white bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
+							className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
 							placeholder="Votre email"
 							{...register("email", {
 								required: "Ce champ est requis.",
@@ -109,28 +116,39 @@ function Formulaire() {
 						)}
 					</label>
 
-					<label htmlFor="raison de la demande" className="text-white">
-						Motif de votre demande de contact
-						<select
-							className="border border-white bg-white rounded-md p-2 w-full outline-none"
+					{isLocationForm ? (
+						<input
+							type="hidden"
+							value="Location d'espace professionnel"
 							{...register("reason")}
-						>
-							<option value="" className="text-gray-500">
-								--Merci de choisir un motif--
-							</option>
-							<option value="coaching">Coaching</option>
-							<option value="massage">Massage</option>
-							<option value="acceslibre">Accès libre</option>
-							<option value="location">
-								Location d&#39;espace professionnel
-							</option>
-						</select>
-					</label>
+						/>
+					) : (
+						<label htmlFor="reason" className="text-white">
+							Motif de votre demande de contact
+							<select
+								className="border text-black border-white bg-white rounded-md p-2 w-full outline-none"
+								{...register("reason", { required: "Ce champ est requis." })}
+							>
+								<option value="" className="text-gray-500">
+									--Merci de choisir un motif--
+								</option>
+								<option value="coaching">Coaching</option>
+								<option value="massage">Massage</option>
+								<option value="acceslibre">Accès libre</option>
+								<option value="location">
+									Location d'espace professionnel
+								</option>
+							</select>
+							{errors.reason && (
+								<span className="text-red-500">{errors.reason.message}</span>
+							)}
+						</label>
+					)}
 
 					<label htmlFor="message" className="text-white">
 						Votre message *
 						<textarea
-							className="border border-white bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
+							className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
 							rows="5"
 							placeholder="Bonjour..."
 							{...register("message", { required: "Ce champ est requis." })}

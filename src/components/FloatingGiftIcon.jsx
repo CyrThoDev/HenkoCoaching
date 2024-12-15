@@ -15,8 +15,8 @@ const FloatingGiftIcon = () => {
 			<Link href="/cadeaux">
 				<div className="relative cursor-pointer">
 					{/* Icône cadeau */}
-					<div className="w-12 h-12 bg-darkorange rounded-full flex items-center justify-center shadow-lg">
-						<span className="text-white text-xl">
+					<div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+						<span className="text-black text-xl">
 							<FaGift />
 						</span>
 					</div>

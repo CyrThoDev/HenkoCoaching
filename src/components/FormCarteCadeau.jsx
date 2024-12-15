@@ -145,7 +145,7 @@ function FormulaireCarteCadeau() {
 						value={formData.message}
 						onChange={handleInputChange}
 						className="w-full mt-1 p-2 border border-gray-300 rounded"
-					></textarea>
+					/>
 				</div>
 			)}
 			<button

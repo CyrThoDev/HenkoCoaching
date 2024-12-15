@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 			from: `"Henko Coaching" <${process.env.EMAIL_USER}>`, // Utilisez une adresse de domaine propre
 			replyTo: `${email}`, // Adresse de l'utilisateur
 			to: process.env.EMAIL_TO,
-			subject: `${firstname} ${name} demande des informations`,
+			subject: `${reason} - ${firstname} ${name} demande des informations`,
 			text: `
         Nouvelle demande de contact :
         Nom : ${firstname} ${name}

@@ -134,7 +134,7 @@ function NavBar({ logo }) {
 						src={logo}
 						alt="logo Orange Henko"
 						width={"auto"}
-						height={100}
+						height={75}
 					/>
 				</Link>
 				<MenuLinks />

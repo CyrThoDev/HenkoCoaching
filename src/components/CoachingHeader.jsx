@@ -5,18 +5,18 @@ import ButtonOrange from "./ButtonOrange";
 
 function CoachingHeader() {
 	return (
-		<div className="flex flex-col gap-10">
-			<div className="flex flex-col-reverse lg:flex-row gap-10">
-				<div className="basis-1/2 flex justify-center">
+		<div className="flex flex-col  gap-10">
+			<div className="flex flex-col-reverse items-center md:flex-row gap-10">
+				<div className="md:basis-1/2 flex justify-center">
 					<Image
 						src={salle}
-						width={300}
-						height={200}
-						className=""
+						width={"auto"}
+						height={"auto"}
+						className="max-h-[30rem] w-auto"
 						alt="icone de poids à soulever"
 					/>
 				</div>
-				<div className="lg:basis-1/2 flex flex-col gap-8 items-left">
+				<div className="md:basis-1/2 flex flex-col gap-8 items-left">
 					<h2 className=" relative flex flex-col text-lg md:text-2xl font-tanker">
 						<span className="text-3xl z-10">
 							Boostez votre forme en solo ou en duo

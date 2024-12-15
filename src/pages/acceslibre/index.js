@@ -1,5 +1,5 @@
 import HeadPages from "@/components/HeadPages";
-import logoOrange from "../../../public/images/logoHenkoOrange.svg";
+import logoOrange from "@images/logoHenkoOrange.svg";
 import NavBar from "@/components/NavBar";
 import WaveSable from "@/components/WaveSable";
 import WaveOrange from "@/components/WaveOrange";
