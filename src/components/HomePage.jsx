@@ -17,7 +17,7 @@ function HomePage() {
 			<GoogleReviews />
 			<WaveOrange />
 			<APropos />
-			<Formulaire bgColor="bg-darkorange" />
+			<Formulaire bgColor="bg-darkorange" labelColor="text-white" />
 		</div>
 	);
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import MapsGoogle from "./MapsGoogle";
 
-function Formulaire({ bgColor }) {
+function Formulaire({ bgColor, labelColor }) {
 	const {
 		register,
 		handleSubmit,
@@ -64,7 +64,7 @@ function Formulaire({ bgColor }) {
 					className="flex flex-col gap-2 lg:basis-1/2"
 				>
 					<div className="grid grid-cols-2 gap-4">
-						<label htmlFor="firstname" className="text-white">
+						<label htmlFor="firstname" className={`${labelColor}`}>
 							Prénom *
 							<input
 								className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
@@ -76,7 +76,7 @@ function Formulaire({ bgColor }) {
 							)}
 						</label>
 
-						<label htmlFor="name" className="text-white">
+						<label htmlFor="name" className={`${labelColor}`}>
 							Nom *
 							<input
 								className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
@@ -89,7 +89,7 @@ function Formulaire({ bgColor }) {
 						</label>
 					</div>
 
-					<label htmlFor="phone" className="text-white">
+					<label htmlFor="phone" className={`${labelColor}`}>
 						Téléphone
 						<input
 							className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
@@ -98,7 +98,7 @@ function Formulaire({ bgColor }) {
 						/>
 					</label>
 
-					<label htmlFor="email" className="text-white">
+					<label htmlFor="email" className={`${labelColor}`}>
 						Email *
 						<input
 							className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
@@ -123,7 +123,7 @@ function Formulaire({ bgColor }) {
 							{...register("reason")}
 						/>
 					) : (
-						<label htmlFor="reason" className="text-white">
+						<label htmlFor="reason" className={`${labelColor}`}>
 							Motif de votre demande de contact
 							<select
 								className="border text-black border-white bg-white rounded-md p-2 w-full outline-none"
@@ -145,7 +145,7 @@ function Formulaire({ bgColor }) {
 						</label>
 					)}
 
-					<label htmlFor="message" className="text-white">
+					<label htmlFor="message" className={`${labelColor}`}>
 						Votre message *
 						<textarea
 							className="border border-white text-black bg-white rounded-md p-2 w-full outline-none placeholder:text-gray-500"
