@@ -1,74 +1,54 @@
-import { useState } from "react";
-import { generatePDF, handlePreviewPDF } from "./pdfCarteCadeau";
+import { useForm } from "react-hook-form";
 
-function FormulaireCarteCadeau() {
-	const [envoyerDestinataire, setEnvoyerDestinataire] = useState(false);
-	const [personnaliserCarte, setPersonnaliserCarte] = useState(false);
-	const [formData, setFormData] = useState({
-		prestation: "",
-		emailDestinataire: "",
-		emailExpediteur: "",
-		nomDestinataire: "",
-		message: "",
-	});
+function FormCarteCadeau({ onSubmit, isLoading, isSended, errorMessage }) {
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm();
 
-	const handleCheckboxChange = (e, field) => {
-		const isChecked = e.target.checked;
-		if (field === "envoyerDestinataire") {
-			setEnvoyerDestinataire(isChecked);
-			if (!isChecked) setFormData({ ...formData, emailDestinataire: "" });
-		}
-		if (field === "personnaliserCarte") {
-			setPersonnaliserCarte(isChecked);
-		}
-	};
-
-	const handleInputChange = (e) => {
-		const { name, value } = e.target;
-		setFormData({ ...formData, [name]: value });
-	};
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		// Appeler la logique pour générer le PDF et envoyer par email via SendGrid
-		console.log("Données du formulaire :", formData);
-	};
+	const envoyerDestinataire = watch("envoyerDestinataire", false);
+	const personnaliserCarte = watch("personnaliserCarte", false);
 
 	return (
 		<form
-			onSubmit={handleSubmit}
-			className="p-4 max-w-lg mx-auto space-y-4 bg-gray-100 rounded shadow"
+			onSubmit={handleSubmit(onSubmit)}
+			className="p-4 flex flex-col gap-8 rounded basis-1/2"
 		>
+			<h2 className=" relative flex flex-col text-lg md:text-2xl font-tanker">
+				<span className="text-3xl z-10">Personnalisez votre carte</span>
+				<div className="w-[12rem] h-3  bg-sand -mt-3 -z-1" />
+			</h2>
 			<div>
-				<label htmlFor="prestation" className="block text-sm font-medium">
+				<label htmlFor="prestation" className="text-sm font-medium">
 					Choisissez une prestation :
 				</label>
 				<select
-					name="prestation"
 					id="prestation"
-					onChange={handleInputChange}
-					value={formData.prestation}
+					{...register("prestation", { required: "Ce champ est requis." })}
 					className="w-full mt-1 p-2 border border-gray-300 rounded"
-					required
 				>
 					<option value="">Sélectionnez une prestation</option>
 					<option value="prestation1">Prestation 1</option>
 					<option value="prestation2">Prestation 2</option>
 				</select>
+				{errors.prestation && (
+					<span className="text-red-500">{errors.prestation.message}</span>
+				)}
 			</div>
-
+			{/* Checkbox pour envoyer au destinataire */}
 			<div>
 				<label className="inline-flex items-center">
 					<input
 						type="checkbox"
-						checked={envoyerDestinataire}
-						onChange={(e) => handleCheckboxChange(e, "envoyerDestinataire")}
+						{...register("envoyerDestinataire")}
 						className="mr-2"
 					/>
 					Souhaitez-vous que la carte soit envoyée au destinataire ?
 				</label>
 			</div>
-
+			{/* Champ Email destinataire */}
 			{envoyerDestinataire && (
 				<div>
 					<label
@@ -79,43 +59,56 @@ function FormulaireCarteCadeau() {
 					</label>
 					<input
 						type="email"
-						name="emailDestinataire"
 						id="emailDestinataire"
-						value={formData.emailDestinataire}
-						onChange={handleInputChange}
 						className="w-full mt-1 p-2 border border-gray-300 rounded"
-						required
+						{...register("emailDestinataire", {
+							required: "Ce champ est requis.",
+							pattern: {
+								value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+								message: "Adresse email invalide.",
+							},
+						})}
 					/>
+					{errors.emailDestinataire && (
+						<span className="text-red-500">
+							{errors.emailDestinataire.message}
+						</span>
+					)}
 				</div>
 			)}
-
+			{/* Email de l'expéditeur */}
 			<div>
 				<label htmlFor="emailExpediteur" className="block text-sm font-medium">
-					Email de l&#39;expéditeur :
+					Email de l'expéditeur :
 				</label>
 				<input
 					type="email"
-					name="emailExpediteur"
 					id="emailExpediteur"
-					value={formData.emailExpediteur}
-					onChange={handleInputChange}
 					className="w-full mt-1 p-2 border border-gray-300 rounded"
-					required
+					{...register("emailExpediteur", {
+						required: "Ce champ est requis.",
+						pattern: {
+							value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+							message: "Adresse email invalide.",
+						},
+					})}
 				/>
+				{errors.emailExpediteur && (
+					<span className="text-red-500">{errors.emailExpediteur.message}</span>
+				)}
 			</div>
-
+			{/* Checkbox personnaliser la carte */}
 			<div>
 				<label className="inline-flex items-center">
 					<input
 						type="checkbox"
-						checked={personnaliserCarte}
-						onChange={(e) => handleCheckboxChange(e, "personnaliserCarte")}
-						className="mr-2  checked:bg-darkorange focus:ring-2 focus:ring-darkorange"
+						{...register("personnaliserCarte")}
+						className="mr-2"
 					/>
 					Souhaitez-vous personnaliser la carte ?
 				</label>
 			</div>
-
+			{/* Personnalisation */}
 			{personnaliserCarte && (
 				<div>
 					<div>
@@ -127,43 +120,46 @@ function FormulaireCarteCadeau() {
 						</label>
 						<input
 							type="text"
-							name="nomDestinataire"
 							id="nomDestinataire"
-							value={formData.nomDestinataire}
-							onChange={handleInputChange}
 							className="w-full mt-1 p-2 border border-gray-300 rounded"
-							required
+							{...register("nomDestinataire", {
+								required: "Ce champ est requis.",
+							})}
 						/>
+						{errors.nomDestinataire && (
+							<span className="text-red-500">
+								{errors.nomDestinataire.message}
+							</span>
+						)}
 					</div>
 					<label htmlFor="message" className="block text-sm font-medium">
 						Message personnalisé :
 					</label>
 					<textarea
-						name="message"
 						id="message"
 						rows="4"
-						value={formData.message}
-						onChange={handleInputChange}
 						className="w-full mt-1 p-2 border border-gray-300 rounded"
+						{...register("message")}
 					/>
 				</div>
 			)}
-			<button
-				type="button"
-				onClick={() => handlePreviewPDF(formData)}
-				className="py-2 px-4 bg-green-600 text-white rounded hover:bg-green-700"
-			>
-				Prévisualiser le PDF
-			</button>
-
-			<button
+			{/* Bouton Submit */}
+			<input
 				type="submit"
-				className="w-full py-2 px-4 bg-darkorange text-white rounded hover:opacity-80"
-			>
-				Envoyer
-			</button>
+				className={`w-full py-2 px-4 bg-sand text-white rounded ${
+					isLoading ? "opacity-50 cursor-not-allowed" : "hover:opacity-80"
+				}`}
+				value={isLoading ? "..." : "Envoyer"}
+				disabled={isLoading}
+			/>
+			{/* {isSended && (
+				<p className="text-green-600 mt-2">
+					Votre formulaire a été envoyé avec succès.
+				</p>
+			)} */}
+			{errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
 		</form>
 	);
 }
 
-export default FormulaireCarteCadeau;
+export default FormCarteCadeau;

@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 		});
 
 		const mailOptions = {
-			from: `"Henko Coaching" <${process.env.EMAIL_USER}>`, // Utilisez une adresse de domaine propre
+			from: `"Demande de contact site web - Henko Coaching" <${process.env.EMAIL_USER}>`, // Utilisez une adresse de domaine propre
 			replyTo: `${email}`, // Adresse de l'utilisateur
 			to: process.env.EMAIL_TO,
 			subject: `${reason} - ${firstname} ${name} demande des informations`,

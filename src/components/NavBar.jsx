@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBasketShopping } from "react-icons/fa6";
+import cartCount from "@/context/CartContext";
 
 // Composant de liens partagés
 const MenuLinks = ({ onClick }) => {
@@ -97,7 +98,7 @@ function NavBar({ logo }) {
 			<div
 				className={`${
 					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				} px-6 md:px-10 flex items-center justify-between py-2 md:py-8 xl:hidden z-20 transition-all duration-300 `}
+				} px-6 md:px-10 flex items-center justify-between py-2  xl:hidden z-20 transition-all duration-300 `}
 			>
 				<button
 					type="button"
@@ -142,8 +143,17 @@ function NavBar({ logo }) {
 					<Link href="/cadeaux" className="bg-black p-4 text-white rounded-lg">
 						OFFRIR UNE CARTE CADEAU
 					</Link>
-					<Link href="/" aria-label="cliquer pour accéder au panier">
-						<FaBasketShopping className="text-2xl text-black" />
+					<Link href="/panier" aria-label="cliquer pour accéder au panier">
+						<FaBasketShopping
+							className="text-2xl text-black"
+							alt="panier"
+							aria-label="Cliquer pour accéder au panier"
+						/>
+						{cartCount > 0 && (
+							<span className="absolute -top-2 -right-2 bg-darkorange text-white rounded-full text-xs px-1.5 py-0.5">
+								{cartCount}
+							</span>
+						)}
 					</Link>
 				</div>
 			</div>
