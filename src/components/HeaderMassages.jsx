@@ -10,7 +10,7 @@ import massage4 from "@images/massage4.jpg";
 const HeaderMassages = () => {
 	return (
 		<div className="px-10 lg:px-20 flex flex-col gap-10 ">
-			<div className="lg:px-40 grid grid-cols-4 gap-4">
+			<div className="lg:px-40 grid grid-cols-2 lg:grid-cols-4 gap-4">
 				<Image
 					src={massage1}
 					width={"auto"}
@@ -22,21 +22,21 @@ const HeaderMassages = () => {
 					src={massage2}
 					width={"auto"}
 					height={"auto"}
-					className="mt-32"
+					className="mt-20"
 					alt="Photo d'un massage"
 				/>
 				<Image
 					src={massage3}
 					width={"auto"}
 					height={"auto"}
-					className="mt-8"
+					className="hidden lg:block lg:mt-8"
 					alt="Photo d'un massage"
 				/>
 				<Image
 					src={massage4}
 					width={"auto"}
 					height={"auto"}
-					className=""
+					className="hidden lg:block"
 					alt="Photo d'un massage"
 				/>
 			</div>
