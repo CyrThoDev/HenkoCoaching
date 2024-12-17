@@ -44,32 +44,32 @@ function Icons() {
 	return (
 		<div className="grid md:grid-cols-2 lg:grid-cols-4 px-20 gap-16 md:gap-8">
 			{iconsTab.map((icon) => (
-				<div
-					className="flex flex-col gap-4 h-full justify-between"
-					key={icon.name}
-				>
-					<div className="flex flex-col gap-2">
-						<Image
-							src={icon.icon}
-							width={100}
-							height={100}
-							className="self-center"
-							alt={icon.alt}
-						/>
-						<h2 className="text-xl font-tanker self-center">{icon.name}</h2>
-					</div>
-					<p className="text-center md:text-left">{icon.description}</p>
-					<div className="flex justify-center mt-auto">
-						<Link href={icon.link}>
+				<Link key={icon.link} href={icon.link}>
+					<div
+						className="flex flex-col gap-4 h-full justify-between"
+						key={icon.name}
+					>
+						<div className="flex flex-col gap-2">
+							<Image
+								src={icon.icon}
+								width={100}
+								height={100}
+								className="self-center"
+								alt={icon.alt}
+							/>
+							<h2 className="text-xl font-tanker self-center">{icon.name}</h2>
+						</div>
+						<p className="text-center md:text-left">{icon.description}</p>
+						<div className="flex justify-center mt-auto">
 							<Image
 								src={icon.forward}
 								width={40}
 								height={40}
 								alt="flèche indiquant de se déplacer vers la page correspondante au bloc mentionné au dessus"
 							/>
-						</Link>
+						</div>
 					</div>
-				</div>
+				</Link>
 			))}
 		</div>
 	);

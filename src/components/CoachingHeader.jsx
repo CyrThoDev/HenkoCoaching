@@ -81,7 +81,7 @@ function CoachingHeader() {
 							<p>Cadre discret et intimiste</p>
 						</div>
 					</div>
-					<div className="flex items-center flex-col gap-2 lg:justify-start">
+					<div className="flex items-center lg:items-start flex-col gap-2   ">
 						<ButtonOrange
 							title="RESERVEZ VOTRE SEANCE D'ESSAI A 25€*"
 							link="https://calendly.com/henkocoaching/coaching-essai-1h"
