@@ -4,16 +4,26 @@ import logoSable from "@images//logoSableHenko.webp";
 import WaveSable from "@/components/WaveSable";
 import Prestations from "@/components/Prestations";
 import HeaderMassages from "@/components/HeaderMassages";
+import Image from "next/image";
+import basdepagemassage from "@images/basdepagemassage.jpg";
 
 function Massages() {
 	return (
 		<>
 			<NavBar logo={logoSable} />
-			<div className="flex flex-col gap-10">
+			<div className="flex flex-col gap-10 mb-10">
 				<HeadPages title="MASSAGES ET RECUPERATION" />
 				<WaveSable />
 				<HeaderMassages />
 				<Prestations />
+				<Image
+					src={basdepagemassage}
+					width={"auto"}
+					height={400}
+					className="-mt-10 lg:m-auto"
+					alt="Photo d'un massage"
+				/>
+				<WaveSable />
 			</div>
 		</>
 	);

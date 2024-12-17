@@ -62,16 +62,16 @@ const Prestations = () => {
 	];
 
 	return (
-		<section className="bg-sand px-10 lg:px-20">
+		<section className="bg-sand px-10 lg:px-20" id="prestations">
 			<div className="mx-auto">
-				<h2 className="font-tanker text-2xl font-bold text-black py-10">
+				<h2 className="font-tanker text-2xl font-bold text-black pt-10">
 					LES PRESTATIONS ET TARIFS
 				</h2>
-				<div className="flex flex-col">
+				<div className="flex flex-col  pb-10">
 					{prestations.map((prestation) => (
 						<div key={prestation.id} className="border-b border-black pb-6">
 							<div className="flex flex-col lg:flex-row py-10 gap-8">
-								<div className="lg:basis-2/5 pr-20">
+								<div className="lg:basis-2/5 lg:pr-20">
 									<h3 className="text-lg font-bold text-black mb-2">
 										{prestation.title}
 									</h3>
