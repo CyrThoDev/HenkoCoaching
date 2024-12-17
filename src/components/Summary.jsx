@@ -8,7 +8,7 @@ function Summary() {
 	return (
 		<div className="flex-flex-col gap-0">
 			<div className="bg-darkorange text-white">
-				<div className=" px-10 lg:px-20 pt-10 flex flex-col md:flex-row gap-10 justify-evenly items-center">
+				<div className=" px-10 lg:px-20 pb-10 lg:pb-0 pt-10 flex flex-col md:flex-row gap-10 justify-evenly items-center">
 					<Image
 						src={salle3}
 						width={300}
