@@ -8,7 +8,7 @@ function Summary() {
 	return (
 		<div className="flex-flex-col gap-0">
 			<div className="bg-darkorange text-white">
-				<div className=" px-10 lg:px-20 pt-10 flex flex-col md:flex-row gap-10 justify-around items-center">
+				<div className=" px-10 lg:px-20 pt-10 flex flex-col md:flex-row gap-10 justify-evenly items-center">
 					<Image
 						src={salle3}
 						width={300}
@@ -16,24 +16,24 @@ function Summary() {
 						className=""
 						alt="photo de la salle avec des poids"
 					/>
-					<div className="flex flex-col gap-8 lg:basis-1/2 ">
+					<div className="flex flex-col gap-10 lg:basis-1/2 justify-between">
 						<h2 className="text-2xl md:text-3xl ">
 							Des services sur-mesure pour tous les âges!
 						</h2>
 						<p>
 							Mes services s&#39;adaptent à tous les âges et répondent à une
-							variété de besoins en fonction de vos spécificités (pathologies,
-							métiers, quotidien).
+							variété de besoins en fonction de vos pathologies, métier ou
+							quotidien.
 						</p>
 						<p>
 							Allant de la reprise d&#39;activité à la remise en forme
-							(bien-être), au développement des qualités physiques ou à la
+							bien-être, au développement des qualités physiques ou à la
 							préparation physique spécifique (force, prise de masse, volume,
 							puissance, vitesse) et même au maintien de l&#39;autonomie de la
 							personne (motricité, renforcement, amélioration de la santé par le
 							sport).
 						</p>
-						<div className="self-center lg:self-start pb-8">
+						<div className="self-center lg:self-start  mt-auto ">
 							<ButtonBlack
 								title="JE SOUHAITE AVOIR PLUS D'INFOS"
 								link="/#contact"

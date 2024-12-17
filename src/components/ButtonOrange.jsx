@@ -4,7 +4,7 @@ function ButtonOrange({ title, link, width }) {
 	return (
 		<Link
 			href={link}
-			className={`bg-darkorange text-white text-center rounded-md p-3 ${width}  `}
+			className={`bg-darkorange text-white text-center rounded-md py-3 px-4 ${width}  `}
 		>
 			{title}
 		</Link>

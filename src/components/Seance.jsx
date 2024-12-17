@@ -4,6 +4,12 @@ import lift from "../../public/images/lift.webp";
 import workout from "../../public/images/Workout.webp";
 import curls from "../../public/images/Curls.webp";
 import CalendlyModal from "@/components/Calendly";
+import {
+	PiNumberCircleOneLight,
+	PiNumberCircleTwoLight,
+	PiNumberCircleThreeLight,
+	PiNumberCircleFourLight,
+} from "react-icons/pi";
 
 function Seance() {
 	return (
@@ -18,9 +24,10 @@ function Seance() {
 
 				{/* Contenu */}
 				<div className="grid grid-cols-12 gap-2 items-center">
-					<p className="col-span-5">
-						1- Briefing et explication du déroulé de la séance à venir
-					</p>
+					<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
+						<PiNumberCircleOneLight className=" text-3xl md:text-4xl lg:text-3xl text-darkorange" />
+						<p>Briefing et explication du déroulé de la séance à venir</p>
+					</div>
 					<div className="col-span-2 flex justify-center">
 						<Image
 							src={Strength}
@@ -43,14 +50,20 @@ function Seance() {
 							className="relative "
 						/>
 					</div>
-					<p className="col-span-5">
-						2- Échauffement : mobilité, activation cardiovasculaire & musculaire
-					</p>
+					<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
+						<PiNumberCircleTwoLight className="text-3xl md:text-5xl lg:text-4xl text-darkorange" />
+						<p>
+							Échauffement : mobilité, activation cardiovasculaire & musculaire
+						</p>
+					</div>
 				</div>
 				<div className="grid grid-cols-12 gap-2 items-center">
-					<p className="col-span-5">
-						3- Corps de séance en fonction de l’objectif et de la planification
-					</p>
+					<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
+						<PiNumberCircleThreeLight className=" text-3xl md:text-5xl lg:text-4xl text-darkorange" />
+						<p>
+							Corps de séance en fonction de l’objectif et de la planification
+						</p>
+					</div>
 					<div className="col-span-2 flex justify-center">
 						<Image
 							src={workout}
@@ -73,7 +86,10 @@ function Seance() {
 							className="relative "
 						/>
 					</div>
-					<p className="col-span-5">4- Retour au calme et échange</p>
+					<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
+						<PiNumberCircleFourLight className="text-3xl  md:text-2xl text-darkorange" />
+						<p>Retour au calme et échange</p>
+					</div>
 				</div>
 			</div>
 			<div className="flex justify-center">

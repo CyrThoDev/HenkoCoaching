@@ -20,7 +20,7 @@ const FloatingGiftIcon = () => {
 		<div className="fixed bottom-4 right-4 z-50">
 			{/* Icône cadeau */}
 			<div className="relative cursor-pointer" onClick={toggleWindow}>
-				<div className="w-12 h-12 bg-darkseagreen rounded-full flex items-center justify-center shadow-lg">
+				<div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
 					<span className="text-gray text-xl">
 						<FaGift />
 					</span>

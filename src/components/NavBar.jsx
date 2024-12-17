@@ -140,7 +140,10 @@ function NavBar({ logo }) {
 				</Link>
 				<MenuLinks />
 				<div className="flex items-center gap-8">
-					<Link href="/cadeaux" className="bg-black p-4 text-white rounded-lg">
+					<Link
+						href="/cadeaux"
+						className="bg-black py-3 px-4 text-white rounded-lg"
+					>
 						OFFRIR UNE CARTE CADEAU
 					</Link>
 					<Link href="/panier" aria-label="cliquer pour accéder au panier">

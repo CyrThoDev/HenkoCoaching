@@ -54,19 +54,19 @@ function MainCoaching() {
 				</div>
 
 				{/* Vectors en arrière-plan */}
-				<div className="absolute hidden -inset-10 lg:-inset-20 lg:flex flex-col items-center justify-center z-0">
+				<div className="absolute hidden  -inset-10 lg:-inset-20 lg:flex flex-col items-center justify-center z-0">
 					<Image
 						src={vector}
 						width={"auto"}
 						height={"auto"}
-						className="rotate-180"
+						className="rotate-180 -mb-4"
 						alt="Vector 1"
 					/>
 					<Image
 						src={vector}
 						width={"auto"}
 						height={"auto"}
-						className=""
+						className="-mt-2"
 						alt="Vector 2"
 					/>
 				</div>
