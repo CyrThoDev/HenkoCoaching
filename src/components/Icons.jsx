@@ -7,16 +7,16 @@ const iconsTab = [
 		icon: "/images/coaching.svg",
 		name: "COACHING",
 		description:
-			"Seul ou accompagné, je vous accompagne personnellement à améliorer vos mouvements et à révéler tout votre potentiel sportif dans le but d'atteindre vos objectifs sans vous blesser. Découvrez les options qui s’offrent à vous !",
+			"Seul ou à plusieurs, je vous accompagne personnellement à améliorer vos mouvements et à révéler tout votre potentiel sportif dans le but d'atteindre vos objectifs sans vous blesser. Découvrez les options qui s’offrent à vous !",
 		forward: "/images/orangeArrow.webp",
-		link: "/coaching",
+		link: "https://calendly.com/henkocoaching/coaching-essai-1h?back=1&month=2024-12",
 		alt: "icone d'une personne en mouvement",
 	},
 	{
 		icon: "/images/recup.svg",
 		name: "MASSAGES ET RECUPERATION",
 		description:
-			"En complément de vos séances de sport ou tout simplement pour vous faire du bien, et vous relaxer offrez-vous la possibilité de vous faire masser au même endroit. Découvrez les différents types de massages et de récupération proposés!",
+			"En complément de vos séances de sport ou tout simplement pour vous faire du bien et vous relaxer, offrez-vous la possibilité de vous faire masser au même endroit. Découvrez les différents types de massages et de récupération proposés!",
 		forward: "/images/orangeArrow.webp",
 		link: "/massages",
 		alt: "icone batterie pour illustrer la recuperation",
@@ -25,7 +25,7 @@ const iconsTab = [
 		icon: "/images/libre.svg",
 		name: "ACCES LIBRE",
 		description:
-			"Pour les couche-tard ou lève-tôt, Henko coaching propose un accès libre limité & sur réservation. Voir conditions et planning. ",
+			"Pour que vous puissiez adapter vos séances à votre emploi du temps Henko Coaching vous propose à partir de février un accès libre sur réservation avec un badge. Profitez d’un espace moderne, bien équipé et conçu pour tous les niveaux. ",
 		forward: "/images/orangeArrow.webp",
 		link: "/acceslibre",
 		alt: "icone avec des poids qui seraient en libre accès",
@@ -34,7 +34,7 @@ const iconsTab = [
 		icon: "/images/location.svg",
 		name: "LOCATION ESPACE PRO",
 		description:
-			"Le local est disponible ponctuellement à la location pour les professionnels du sport et du bien-être : heure, ½ journée, journée. Contactez-moi pour un devis.",
+			"Vous avez un projet ou un événement à organiser ? Cet espace sportif et bien-être est disponible à la location ponctuelle ! Que ce soit pour des cours particuliers, des ateliers, des séminaires ou des événements privés, notre lieu modulable s’adapte à vos besoins.",
 		forward: "/images/orangeArrow.webp",
 		link: "/locationespacepro",
 		alt: "icone d'un personne qui donne les clés à une autre pour imager la location d'un espace",

@@ -2,10 +2,10 @@ const plans = [
 	{
 		name: "À l’année",
 		options: [
-			{ type: "Avec engagement 12 mois", price: "39,99€/mois" },
-			{ type: "Avec engagement 6 mois", price: "42,50€/mois" },
-			{ type: "Avec engagement 3 mois", price: "45€/mois" },
 			{ type: "Sans engagement", price: "49,99€/mois" },
+			{ type: "Avec engagement 3 mois", price: "45€/mois" },
+			{ type: "Avec engagement 6 mois", price: "42,50€/mois" },
+			{ type: "Avec engagement 12 mois", price: "39,99€/mois" },
 		],
 	},
 	{
@@ -36,7 +36,14 @@ function Formules() {
 						</h3>
 						<ul className="space-y-4">
 							{plan.options.map((option, index) => (
-								<li key={index} className="flex justify-between items-center">
+								<li
+									key={index}
+									className={`flex justify-between items-center p-3 rounded-lg ${
+										option.price === "45€/mois"
+											? "shadow-[0_-4px_8px_rgba(210,180,140,0.4),0_4px_8px_rgba(210,180,140,0.4)]"
+											: ""
+									}`}
+								>
 									<p className="font-medium text-gray-800">{option.type}</p>
 									<p className="text-lg font-bold text-darkorange">
 										{option.price}
