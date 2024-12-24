@@ -21,21 +21,22 @@ function Summary() {
 							Des services sur-mesure pour tous les âges!
 						</h2>
 						<p>
-							Mes services s&#39;adaptent à tous les âges et répondent à une
-							variété de besoins en fonction de vos pathologies, métier ou
-							quotidien.
+							Bienvenue dans un lieu où le bien-être de votre corps et de votre
+							esprit est au cœur de toutes mon attention. Ici, chaque geste,
+							chaque espace, est conçu pour vous offrir une expérience unique de
+							relaxation et de dynamisme.
 						</p>
 						<p>
-							Allant de la reprise d&#39;activité à la remise en forme
-							bien-être, au développement des qualités physiques ou à la
-							préparation physique spécifique (force, prise de masse, volume,
-							puissance, vitesse) et même au maintien de l&#39;autonomie de la
-							personne (motricité, renforcement, amélioration de la santé par le
-							sport).
+							Que vous veniez pour un entraînement physique stimulant ou pour un
+							moment de détente absolue, chaque détail est pensé pour vous
+							permettre de vous ressourcer pleinement. Venez découvrir
+							l’équilibre parfait entre performance et relaxation, pour une
+							harmonie totale. Vous méritez ce moment, et je suis là pour vous y
+							conduire.
 						</p>
-						<div className="self-center lg:self-start  mt-auto ">
+						<div className="self-center lg:self-start  mt-auto mb-10 ">
 							<ButtonBlack
-								title="JE SOUHAITE AVOIR PLUS D'INFOS"
+								title="CONTACTEZ-MOI"
 								link="/#contact"
 								width="w-[15rem] md:w-[20rem]"
 							/>

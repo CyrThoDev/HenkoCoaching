@@ -16,31 +16,34 @@ export const CartProvider = ({ children }) => {
 		localStorage.setItem("cart", JSON.stringify(cart));
 	}, [cart]);
 
-	const addToCart = (item) => {
+	const addToCart = (article) => {
 		console.log("added to cart");
-		// const prestationType = item.selectedOption || "cabinet";
-		// setCart((prevCart) => {
-		// 	const existingItem = prevCart.find(
-		// 		(cartItem) =>
-		// 			cartItem.id === item.id && cartItem.prestation === prestationType,
-		// 	);
-		// 	if (existingItem) {
-		// 		return prevCart.map((cartItem) =>
-		// 			cartItem.id === item.id && cartItem.prestation === prestationType
-		// 				? { ...cartItem, quantity: cartItem.quantity + 1 }
-		// 				: cartItem,
-		// 		);
-		// 	}
-		// 	return [
-		// 		...prevCart,
-		// 		{ ...item, quantity: 1, prestation: prestationType },
-		// 	];
-		// });
+		setPanier((prev) => [...prev, article]);
+		const prestationType = item.selectedOption || "cabinet";
+		setCart((prevCart) => {
+			const existingItem = prevCart.find(
+				(cartItem) =>
+					cartItem.id === item.id && cartItem.prestation === prestationType,
+			);
+			if (existingItem) {
+				return prevCart.map((cartItem) =>
+					cartItem.id === item.id && cartItem.prestation === prestationType
+						? { ...cartItem, quantity: cartItem.quantity + 1 }
+						: cartItem,
+				);
+			}
+			return [
+				...prevCart,
+				{ ...item, quantity: 1, prestation: prestationType },
+			];
+		});
 	};
 
-	const clearCart = useCallback(() => {
-		setCart([]);
-	}, []);
+	const clearCart =
+		(() => {
+			setCart([]);
+		},
+		[]);
 	const calculateTotal = () => {
 		return cart.reduce((total, item) => total + item.prix * item.quantity, 0);
 	};
