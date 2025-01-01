@@ -11,12 +11,12 @@ function Header() {
     bg-[url('/images/HPopacity.png')] 
     lg:bg-[url('/images/HPopacity.png')] 
     md:bg-[url('/images/HPopacity.png')] 
-   bg-no-repeat bg-cover bg-center h-[70vh]
+   bg-no-repeat bg-cover bg-center h-[80vh]
 					lg:h-[90vh]
   "
 			>
 				<div className=" px-10 md:px-20 flex  flex-col  justify-center gap-4 lg:gap-10  h-full">
-					<h1 className="flex flex-col gap-2 md:gap-4 lg:gap-4 text-5xl  md:text-[64px] lg:text-[5rem] font-tanker text-black ">
+					<h1 className="flex flex-col gap-2 md:gap-4 lg:gap-4 text-4xl min-[375px]:text-5xl  md:text-[64px] lg:text-[5rem] font-tanker text-black ">
 						<span>Sport </span>
 						<span>Bien-être </span>
 						<span>et récupération</span>

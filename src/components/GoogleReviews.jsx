@@ -24,7 +24,7 @@ export default function Google() {
 	}, []);
 
 	return (
-		<div className="px-10 lg:px-20 flex flex-col gap-8">
+		<div className="px-10 lg:px-20 flex flex-col gap-10">
 			<h2 className="text-3xl font-tanker text-start ">
 				✨ Ils me font confiance ✨
 			</h2>
@@ -34,10 +34,6 @@ export default function Google() {
 				<Swiper
 					slidesPerView={"1.3"}
 					spaceBetween={30}
-					pagination={{
-						type: "bullets",
-						clickable: true,
-					}}
 					modules={[Pagination]}
 					className="mySwiper"
 				>
@@ -45,12 +41,12 @@ export default function Google() {
 						{reviews.length > 0 ? (
 							reviews.map((review) => (
 								<SwiperSlide key={review.time}>
-									<li className="border-[0.025rem] rounded-xl border-gold flex flex-col w-full gap-2 p-4 bg-gradient-to-r from-yellow-50 via-white to-yellow-50 shadow-lg">
-										<p className="text-mb font-bold font-lora text-gold underline">
-											“ {review.author_name.split(" ")[0].toUpperCase()} ”
+									<li className="border-[0.025rem] rounded-xl border-gold flex flex-col w-full gap-2 p-4  shadow-lg">
+										<p className="text-mb font-bold font-tanker">
+											{review.author_name.split(" ")[0].toUpperCase()}
 										</p>
 										<p className="line-clamp-4 italic text-gray-700">
-											{review.text}
+											{`&#34;${review.text}&#34;`}
 										</p>
 										<Link
 											href={review.author_url}
@@ -87,10 +83,12 @@ export default function Google() {
 							key={review.time}
 							className="border-[0.025rem] rounded-xl border-gold flex flex-col w-full lg:w-1/5 gap-2 p-4 bg-white shadow-md  transition-all"
 						>
-							<p className="text-mb font-bold text-gold underline decoration-dashed">
+							<p className=" text-mb font-bold font-tanker">
 								{review.author_name.split(" ")[0].toUpperCase()}
 							</p>
-							<p className="line-clamp-4 text-gray-600">{review.text}</p>
+							<p className="line-clamp-4 text-gray-600">
+								{`&#34;${review.text}&#34;`}
+							</p>
 							<Link
 								href={review.author_url}
 								className="font-semibold text-darkorange hover:text-darkorange"
@@ -116,7 +114,7 @@ export default function Google() {
 			</ul>
 			<div className="self-center">
 				<ButtonOrange
-					title="✨ VOIR TOUS LES AVIS ✨"
+					title="VOIR TOUS LES AVIS"
 					link="https://www.google.com/search?sca_esv=6031b854f1326109&sxsrf=ADLYWILYFOvw0lEukaJpfnxI7pcKpwTllA:1733923708813&q=HENKO+COACHING+%28Jessica+Perestrelo%29+Avis&ludocid=16045312707983094160&ibp=gwp;0,7&hl=fr-FR&sa=X&ved=2ahUKEwjRvuyV6Z-KAxUeTaQEHdW5CIwQ9fQKegQISxAF&biw=440&bih=706&dpr=2#lkt=LocalPoiReviews&lpg=cid:CgIgAQ%3D%3D"
 					width="w-[20rem]"
 				/>

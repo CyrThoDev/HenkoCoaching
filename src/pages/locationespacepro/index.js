@@ -46,7 +46,11 @@ function LocationEspacePro() {
 					</span>
 					<div className="w-[12rem] h-3  bg-sand -mt-3 -z-1" />
 				</h2>
-				<Formulaire bgColor="bg-white" labelColor="text-black" />
+				<Formulaire
+					bgColor="bg-white"
+					labelColor="text-black"
+					borderColor="border-gray-400"
+				/>
 			</div>
 			<WaveSable />
 			<span className="mb-10" />

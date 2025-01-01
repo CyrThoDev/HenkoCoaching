@@ -43,20 +43,20 @@ const HeaderMassages = () => {
 			<div>
 				<div className="flex flex-col gap-10 lg:px-40">
 					<p>
-						Le massage représente une solution à explorer. En effet, le massage
-						vous offre de nombreux bienfaits pour votre corps, votre organisme
-						et votre équilibre émotionnel. Si les bienfaits du massage sur le
-						corps sont souvent ceux qui nous viennent en premier à l’esprit, les
-						bienfaits du massage sur notre état de bien-être ne sont pas à
-						négliger.
+						Offrez à votre corps et à votre esprit un moment de pure détente !
+						Le massage, bien plus qu’une simple relaxation, est une véritable
+						parenthèse de bien-être qui aide à évacuer le stress, soulager les
+						tensions et revitaliser le corps. Que ce soit pour vous ressourcer
+						après une journée intense ou pour offrir à un proche une expérience
+						de relaxation profonde, un massage est le cadeau parfait pour
+						prendre soin de soi.
 					</p>
 					<p>
-						Le massage a en effet de nombreuses vertus. Il agit sur notre état
-						physiologique, psychologique et émotionnel. Le massage s’avère donc
-						bénéfique pour réduire le stress, améliorer le sommeil et favoriser
-						la connexion à soi-même. Il permet aussi après une séance de sport
-						de récupérer plus rapidement et éviter les courbatures ou les
-						crampes.
+						Laissez-vous envelopper par la douceur d’un instant privilégié, et
+						redécouvrez l’harmonie intérieure. Parce que vous méritez de vous
+						sentir bien, offrez ou offrez-vous ce moment unique de sérénité ! Il
+						permet aussi après une séance de sport de récupérer plus rapidement
+						et éviter les courbatures ou les crampes.
 					</p>
 				</div>
 			</div>
