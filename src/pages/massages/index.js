@@ -11,19 +11,19 @@ function Massages() {
 	return (
 		<>
 			<NavBar logo={logoSable} />
-			<div className="flex flex-col gap-10 mb-10">
+			<div className="flex flex-col gap-10 ">
 				<HeadPages title="MASSAGES ET RECUPERATION" />
 				<WaveSable />
 				<HeaderMassages />
 				<Prestations />
-				<Image
+				{/* <Image
 					src={basdepagemassage}
 					width={"auto"}
 					height={400}
 					className="-mt-10 lg:m-auto"
 					alt="Photo d'un massage"
-				/>
-				<WaveSable />
+				/> */}
+				{/* <WaveSable /> */}
 			</div>
 		</>
 	);

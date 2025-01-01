@@ -22,7 +22,7 @@ function Summary() {
 						</h2>
 						<p>
 							Bienvenue dans un lieu où le bien-être de votre corps et de votre
-							esprit est au cœur de toutes mon attention. Ici, chaque geste,
+							esprit est au cœur de toute mon attention. Ici, chaque geste,
 							chaque espace, est conçu pour vous offrir une expérience unique de
 							relaxation et de dynamisme.
 						</p>

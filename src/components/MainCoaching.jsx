@@ -1,10 +1,10 @@
+import { useRef } from "react";
 import salle from "../../public/images/salle3.jpg";
 import Image from "next/image";
 import vector from "../../public/images/vector.svg";
 import CalendlyModal from "@/components/Calendly";
 import { FaCheck } from "react-icons/fa6";
 import planningHenko from "@images/planningHenko.png";
-import { useRef } from "react";
 
 const coachingBenefits = [
 	"Se remettre en forme et/ou perdre du poids, reprendre confiance en soi",
@@ -21,6 +21,19 @@ const trainingDetails = [
 ];
 
 function MainCoaching() {
+	const dialogRef = useRef(null);
+	const openDialog = () => {
+		if (dialogRef.current) {
+			dialogRef.current.showModal();
+		}
+	};
+
+	const closeDialog = () => {
+		if (dialogRef.current) {
+			dialogRef.current.close();
+		}
+	};
+
 	return (
 		<>
 			<div className="relative">
@@ -84,7 +97,33 @@ function MainCoaching() {
 							<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
 						</h2>
 						<div className="space-y-4 flex flex-col gap-4">
-							<Image src={planningHenko} alt="Planning Henko" />
+							<Image
+								src={planningHenko}
+								alt="Planning Henko"
+								width={"auto"}
+								height={"auto"}
+								onClick={openDialog}
+							/>
+							<dialog
+								ref={dialogRef}
+								className=" bg-lightgreen rounded-lg p-6  "
+							>
+								<button
+									type="button"
+									className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+									onClick={closeDialog}
+								>
+									&times;
+								</button>
+								<div className="w-[90svw] lg:w-[70vw]">
+									<Image
+										src={planningHenko}
+										alt="Planning Henko"
+										width={"auto"}
+										height={"auto"}
+									/>
+								</div>
+							</dialog>
 							<div className="flex flex-col gap-2 ">
 								{trainingDetails.map((detail, index) => (
 									<p key={index}>{detail}</p>

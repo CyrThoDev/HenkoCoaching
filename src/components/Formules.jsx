@@ -76,7 +76,7 @@ function Formules() {
 				{plans.map((plan) => (
 					<div
 						key={plan.name}
-						className="border rounded-lg shadow-md p-6 transition-transform transform hover:scale-105 bg-white"
+						className="border  rounded-lg shadow-md p-6 transition-transform transform hover:scale-105 bg-white"
 					>
 						<div className="flex flex-col gap-2 text-darkorange font-tanker items-center justify-center mb-8">
 							<p>{plan.icone}</p>
@@ -87,7 +87,7 @@ function Formules() {
 							{plan.options.map((option) => (
 								<li
 									key={`${option.type}-${option.perSession}`}
-									className={`flex justify-between items-center p-3 rounded-lg  ${
+									className={`flex flex-col md:flex-row gap-4 justify-between items-center p-3 rounded-lg  ${
 										option.price === "140€/mois" || option.price === "240€/mois"
 											? "shadow-xl "
 											: ""
