@@ -86,7 +86,9 @@ export default function Google() {
 							<p className=" text-mb font-bold font-tanker">
 								{review.author_name.split(" ")[0].toUpperCase()}
 							</p>
-							<p className="line-clamp-4 text-gray-600">"{review.text}"</p>
+							<p className="line-clamp-4 text-gray-600">
+								&#34;{review.text}&#34;
+							</p>
 							<Link
 								href={review.author_url}
 								className="font-semibold text-darkorange hover:text-darkorange"
