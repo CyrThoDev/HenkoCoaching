@@ -41,12 +41,12 @@ export default function Google() {
 						{reviews.length > 0 ? (
 							reviews.map((review) => (
 								<SwiperSlide key={review.time}>
-									<li className="border-[0.025rem] rounded-xl border-gold flex flex-col w-full gap-2 p-4 bg-gradient-to-r  shadow-lg">
+									<li className="border-[0.025rem] rounded-xl border-gold flex flex-col w-full gap-2 p-4  shadow-lg">
 										<p className="text-mb font-bold font-tanker">
 											{review.author_name.split(" ")[0].toUpperCase()}
 										</p>
 										<p className="line-clamp-4 italic text-gray-700">
-											“{review.text}“
+											&#34;{review.text}&#34;
 										</p>
 										<Link
 											href={review.author_url}
