@@ -84,7 +84,7 @@ function FAQ() {
 				<ButtonOrange
 					title="JE SOUHAITE AVOIR PLUS D'INFOS"
 					link="/#contact"
-					width="w-[15rem] md:w-[20rem]"
+					width="w-[18rem] md:w-[20rem]"
 				/>
 			</div>
 		</div>

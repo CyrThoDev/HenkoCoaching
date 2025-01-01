@@ -12,8 +12,10 @@ const Prestations = () => {
 			title: "Massage suédois relaxant",
 			description:
 				"Le massage suédois relaxant est une technique de massage très populaire, idéale pour détendre en profondeur le corps tout en apaisant l'esprit. Il se compose de mouvements longs et fluides, de pétrissages, de frictions et de tapotements, réalisés à un rythme modéré pour favoriser la relaxation musculaire et améliorer la circulation sanguine. L’objectif principal est de réduire le stress, soulager les tensions musculaires et favoriser un bien-être général. Ce massage aide également à libérer les toxines tout en apportant une sensation de légèreté et de calme profond. Il est particulièrement recommandé pour ceux qui recherchent une détente totale et un moment de calme absolu.",
-			prix: "Zone -  30 min :  40€ | Corps entier -  60 min : 65€",
-			calendlyUrl: "https://calendly.com/your-calendar-link-1",
+			prix1: "Zone -  30 min :  40€ ",
+			prix2: "Corps entier -  60 min : 65€",
+			calendlyUrl:
+				"https://calendly.com/henkocoaching/massage-suedois?back=1&month=2025-01",
 			button: "RESERVER",
 		},
 		{
@@ -24,8 +26,10 @@ const Prestations = () => {
 			details:
 				"Avant l'effort, il aide à échauffer les muscles et à augmenter la circulation sanguine, réduisant ainsi le risque de blessures. Après l'exercice, il permet de détendre les muscles, d'éliminer les tensions accumulées et de réduire les douleurs post-effort, tout en favorisant la récupération en optimisant l'élimination des déchets métaboliques (comme l'acide lactique). Ce massage est donc idéal pour les sportifs de tous niveaux, qu’ils pratiquent régulièrement ou occasionnellement, et contribue à maintenir la performance et la flexibilité.",
 
-			prix: "Zone -  30 min :  45€ | Corps entier -  60 min : 70€",
-			calendlyUrl: "https://calendly.com/your-calendar-link-2",
+			prix1: "Zone -  30 min :  45€",
+			prix2: "Corps entier -  60 min : 70€",
+			calendlyUrl:
+				"https://calendly.com/henkocoaching/massage-sportif?back=1&month=2025-01",
 			button: "RESERVER",
 		},
 		{
@@ -36,7 +40,8 @@ const Prestations = () => {
 			details:
 				"Les ventouses sont souvent posées sur des zones stratégiques du corps, comme le dos, les épaules ou les cuisses, pendant environ 10 à 15 minutes. Bien que cette pratique soit très appréciée des sportifs pour la récupération musculaire, elle est aussi utilisée pour traiter des problèmes tels que les douleurs chroniques, les tensions, l'anxiété, ou encore la cellulite. Les marques laissées par les ventouses (souvent de couleur rouge ou pourpre) sont temporaires et témoignent de la stimulation des vaisseaux sanguins sous la peau.",
 
-			prix: "Prestation à venir pour 2025",
+			prix1: "Prestation à venir pour 2025",
+			prix2: "",
 			calendlyUrl: "https://calendly.com/your-calendar-link-3",
 			button: "ME CONTACTER",
 		},
@@ -48,17 +53,20 @@ const Prestations = () => {
 
 			details:
 				"Les bottes de compression Compex sont un excellent complément aux méthodes de récupération traditionnelles, comme les massages ou l'étirement, en offrant une approche technologique et ciblée pour améliorer la circulation et réduire la fatigue musculaire.",
-			prix: "20 min : 30€ ",
-			calendlyUrl: "https://calendly.com/your-calendar-link-4",
-			button: "ME CONTACTER",
+			prix1: "20 min : 30€ ",
+			prix2: "",
+			calendlyUrl:
+				"https://calendly.com/henkocoaching/pressotherapie?back=1&month=2025-01",
+			button: "RESERVER",
 		},
 		{
 			id: 5,
 			title: "Massage spécifique 100% personnalisé",
 			description:
 				"Offrez-vous une expérience de bien-être unique avec un massage personnalisé sur mesure. Conçu spécifiquement en fonction de vos besoins et de vos attentes, ce massage combine différentes techniques pour répondre à vos objectifs de relaxation, de soulagement des tensions ou de récupération musculaire. Que vous cherchiez à diminuer le stress, apaiser des douleurs chroniques ou simplement vous accorder un moment de détente totale, notre praticien s’adapte à votre corps et à vos sensations. Lors de votre séance, nous prenons le temps d’évaluer vos besoins et vos préférences pour créer un soin sur mesure, en choisissant les mouvements, l'intensité et les zones à traiter. Vous pourrez ainsi profiter d’un massage véritablement personnalisé, qui vous offrira une sensation de bien-être immédiate et durable. Offrez-vous ce moment de sérénité, car chaque corps mérite d’être écouté et traité avec soin.",
-			prix: "Sur devis",
-			calendlyUrl: "https://calendly.com/your-calendar-link-4",
+			prix1: "Sur devis",
+			prix2: "",
+			calendlyUrl: "/#contact",
 			button: "ME CONTACTER",
 		},
 	];
@@ -78,40 +86,43 @@ const Prestations = () => {
 	return (
 		<section className=" " id="prestations">
 			<div className="mx-auto">
-				<h2 className="font-tanker text-2xl font-bold text-black px-10 lg:px-20 py-10">
-					LES PRESTATIONS ET TARIFS
+				<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker px-10 lg:px-20 py-10">
+					<span className="text-3xl z-10">LES PRESTATIONS ET TARIFS</span>
+					<div className="w-[12rem] h-3  bg-sand -mt-3 -z-1" />
 				</h2>
-				<div className="grid grid-cols-3 gap-4 bg-sand px-10 lg:px-20 py-10">
+				<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 bg-sand px-10 lg:px-20 py-10">
 					{prestations.map((prestation) => (
-						<div key={prestation.id} className=" pb-10 ">
-							<div className="flex flex-col  py-10 gap-8 rounded-md bg-white p-10">
-								<div className="lg:basis-2/5 flex flex-col items-center gap-4 ">
-									<Image
-										src={massage4}
-										width={"300"}
-										height={"auto"}
-										className="rounded-md"
-										alt="Photo d'un massage"
-									/>
-									<h3 className="w-[17rem] text-md font-bold bg-white -mt-24 text-black  text-center  rounded-md border border-sand p-8">
-										{prestation.title}
-									</h3>
-								</div>
-
-								<div className="lg:basis-3/5 flex flex-col gap-8 ">
-									<p className="text-black mb-2 line-clamp-6">
+						<div
+							key={prestation.id}
+							className="flex flex-col gap-2 rounded-md bg-white p-10 h-full"
+						>
+							<div className="flex flex-col items-center gap-4">
+								<Image
+									src={massage4}
+									width={"auto"}
+									height={"250"}
+									className="rounded-md"
+									alt="Photo d'un massage"
+								/>
+								<h3 className="w-[17rem] text-md font-bold bg-white -mt-12 text-black text-center rounded-md border border-sand p-4">
+									{prestation.title}
+								</h3>
+							</div>
+							<div className="flex flex-col gap-6 flex-grow">
+								<div className="flex flex-col gap-2">
+									<p className="text-black line-clamp-6">
 										{prestation.description}
 									</p>
 									<button
 										type="button"
 										onClick={openDialog}
-										className=" self-start font-semibold text-darkolivegreen"
+										className="self-start font-semibold text-sm text-sand"
 									>
 										Lire plus
 									</button>
 									<dialog
 										ref={dialogRef}
-										className=" bg-lightgreen rounded-lg p-6  "
+										className="bg-lightgreen rounded-lg p-6"
 									>
 										<button
 											type="button"
@@ -122,10 +133,14 @@ const Prestations = () => {
 										</button>
 										<p className="text-justify p-4">{prestation.description}</p>
 									</dialog>
-									{/* {prestation.details && (
-										<p className="text-black mb-2">{prestation.details}</p>
-									)} */}
-									<p className="text-black font-semibold">{prestation.prix}</p>
+								</div>
+								<div className="mt-auto flex flex-col gap-2">
+									<p className="text-black font-semibold">{prestation.prix1}</p>
+									{prestation.prix2 && (
+										<p className="text-black font-semibold">
+											{prestation.prix2}
+										</p>
+									)}
 									{prestation.button === "RESERVER" ? (
 										<Calendly
 											url={prestation.calendlyUrl}
@@ -136,30 +151,12 @@ const Prestations = () => {
 									) : (
 										<Link
 											href="/#contact"
-											className="bg-black text-white text-center rounded-md p-3 hover:bg-opacity-80 w-[18rem] block"
+											className="bg-black text-white text-center rounded-md p-3 hover:bg-opacity-80 w-[14rem] block"
 										>
 											{prestation.button}
 										</Link>
 									)}
 								</div>
-								{/* <div className="lg:basis-1/5 flex  flex-col justify-center items-center gap-4">
-									<p className="text-black font-semibold">{prestation.prix}</p>
-									{prestation.button === "RESERVER" ? (
-										<Calendly
-											url={prestation.calendlyUrl}
-											title={prestation.button}
-											color="bg-black"
-											width="w-[18rem]"
-										/>
-									) : (
-										<Link
-											href="/#contact"
-											className="bg-black text-white text-center rounded-md p-3 hover:bg-opacity-80 w-[18rem] block"
-										>
-											{prestation.button}
-										</Link>
-									)}
-								</div> */}
 							</div>
 						</div>
 					))}

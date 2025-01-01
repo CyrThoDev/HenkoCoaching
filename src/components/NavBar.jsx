@@ -115,7 +115,7 @@ function NavBar({ logo }) {
 						src={logo}
 						alt="logo Orange Henko"
 						width={"auto"}
-						height={50}
+						height={70}
 					/>
 				</Link>
 				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} logo={logo} />

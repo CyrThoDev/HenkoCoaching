@@ -22,7 +22,6 @@ function Coaching() {
 				<CoachingHeader />
 				<MainCoaching />
 				<Seance />
-
 				<WaveOrange />
 			</div>
 			<Formules />
