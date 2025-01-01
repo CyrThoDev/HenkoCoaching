@@ -62,7 +62,7 @@ const MobileMenu = ({ isNavOpen, toggleNav, logo }) => {
 			<Link href="/" onClick={toggleNav}>
 				<Image
 					src={logo}
-					height={150}
+					height={75}
 					width={"auto"}
 					alt="logo de Henko Coaching"
 				/>
@@ -115,7 +115,7 @@ function NavBar({ logo }) {
 						src={logo}
 						alt="logo Orange Henko"
 						width={"auto"}
-						height={100}
+						height={50}
 					/>
 				</Link>
 				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} logo={logo} />

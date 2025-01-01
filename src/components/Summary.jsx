@@ -6,17 +6,17 @@ import ButtonBlack from "./ButtonBlack";
 
 function Summary() {
 	return (
-		<div className="flex-flex-col gap-0">
+		<div className="flex flex-col gap-0">
 			<div className="bg-darkorange text-white">
-				<div className=" px-10 lg:px-20 pb-10 lg:pb-0 pt-10 flex flex-col md:flex-row gap-10 justify-evenly items-center">
+				<div className=" px-10 lg:px-20 pb-10 lg:pb-0 pt-10 flex flex-col lg:flex-row gap-10 justify-around items-center">
 					<Image
 						src={salle3}
-						width={300}
+						width={400}
 						height={""}
-						className=""
+						className="rounded-sm"
 						alt="photo de la salle avec des poids"
 					/>
-					<div className="flex flex-col gap-10 lg:basis-1/2 justify-between">
+					<div className="flex flex-col gap-10 lg:basis-3/5 justify-between">
 						<h2 className="text-2xl md:text-3xl ">
 							Des services sur-mesure pour tous les âges!
 						</h2>
@@ -34,11 +34,11 @@ function Summary() {
 							harmonie totale. Vous méritez ce moment, et je suis là pour vous y
 							conduire.
 						</p>
-						<div className="self-center lg:self-start  mt-auto mb-10 ">
+						<div className="self-center lg:pt-20 ">
 							<ButtonBlack
 								title="CONTACTEZ-MOI"
 								link="/#contact"
-								width="w-[15rem] md:w-[20rem]"
+								width="w-[15rem] md:w-[18rem]"
 							/>
 						</div>
 					</div>

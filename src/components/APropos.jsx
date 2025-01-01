@@ -5,8 +5,11 @@ import apropos from "../../public/images/apropos.jpg";
 const APropos = () => {
 	return (
 		<div className="px-10 lg:px-20 flex flex-col gap-8">
-			<h2 className="text-3xl font-tanker">Présentation de la coach</h2>
-			<div className=" flex flex-col lg:flex-row gap-10 justify-around items-center">
+			<h2 className="relative flex flex-col text-lg md:text-xl font-tanker">
+				<span className=" text-3xl z-10">Présentation de la coach</span>
+				<div className="w-[12rem] h-3 bg-darkorange -mt-3 -z-1" />
+			</h2>
+			<div className=" flex flex-col lg:flex-row gap-10 justify-between items-center">
 				<Image
 					src={apropos}
 					width={"auto"}

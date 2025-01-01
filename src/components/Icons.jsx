@@ -59,7 +59,7 @@ function Icons() {
 							/>
 							<h2 className="text-xl font-tanker self-center">{icon.name}</h2>
 						</div>
-						<p className="text-center md:text-left">{icon.description}</p>
+						<p className="text-left">{icon.description}</p>
 						<div className="flex justify-center mt-auto">
 							<Image
 								src={icon.forward}

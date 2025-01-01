@@ -8,6 +8,14 @@ const destination = {
 	lng: -1.2919671088411526,
 };
 
+const mapStyles = [
+	{
+		featureType: "all",
+		elementType: "all",
+		stylers: [{ saturation: -100 }, { lightness: -10 }],
+	},
+];
+
 const MapsGoogle = () => {
 	const [origin, setOrigin] = useState(null);
 
@@ -43,6 +51,9 @@ const MapsGoogle = () => {
 						mapContainerClassName=" flex items-center lg:w-full min-h-[300px] lg:min-h-[500px] rounded-sm"
 						center={destination}
 						zoom={13}
+						options={{
+							styles: mapStyles,
+						}}
 					>
 						<Marker position={destination} />
 					</GoogleMap>

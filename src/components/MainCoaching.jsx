@@ -3,20 +3,23 @@ import Image from "next/image";
 import vector from "../../public/images/vector.svg";
 import CalendlyModal from "@/components/Calendly";
 import { FaCheck } from "react-icons/fa6";
+import planningHenko from "@images/planningHenko.png";
+import { useRef } from "react";
 
 const coachingBenefits = [
 	"Se remettre en forme et/ou perdre du poids, reprendre confiance en soi",
-	"Sortir de la dépression et du stress en reprenant goût à la vie et à l’effort",
+	"Réduire le stress, améliorer la qualité du sommeil ou combattre la dépression pour vous aider à retrouver énergie, équilibre et sérénité au quotidien. ",
 	"Réduire les risques pouvant entraîner une maladie cardiovasculaire (tabagisme, diabète, cholestérol, sédentarité, obésité, etc.)",
 	"Développer ses capacités physiques (renforcement, tonification, prise de masse musculaire, gain de force)",
-	"Réduire les blessures et améliorer la qualité de sommeil",
+	"Éviter les blessures",
 ];
 
 const trainingDetails = [
-	"Du lundi au vendredi",
-	"1, 2 ou 3 fois par semaine pendant 1h",
-	"Créneaux sur réservation",
+	"Planning du 1er février au 06 juillet inclus.",
+	"Accès libre : Sur réservation jusqu'à la dernière minute. *Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre *",
+	"Coaching / Massage : Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
 ];
+
 function MainCoaching() {
 	return (
 		<>
@@ -33,7 +36,7 @@ function MainCoaching() {
 						<div className="space-y-4 flex flex-col">
 							<p>
 								La séance de coaching sportif privé s’adresse aux sportifs et
-								non sportifs souhaitant pratiquer seul ou en binôme pour :
+								non sportifs souhaitant :
 							</p>
 							<ul className="flex flex-col gap-4 list-disc list-inside">
 								{coachingBenefits.map((benefit, index) => (
@@ -47,14 +50,14 @@ function MainCoaching() {
 							src={salle}
 							width={"auto"}
 							height={"auto"}
-							className="max-h-[25rem] w-auto shadow-perso shadow-darkorange"
+							className="max-h-[30rem] w-auto shadow-perso shadow-darkorange"
 							alt="Salle de sport"
 						/>
 					</div>
 				</div>
 
 				{/* Vectors en arrière-plan */}
-				<div className="absolute hidden  -inset-10 lg:-inset-20 lg:flex flex-col items-center justify-center z-0">
+				<div className="absolute hidden -mt-56 -inset-10 lg:-inset-20 lg:flex flex-col items-center justify-center z-0">
 					<Image
 						src={vector}
 						width={"auto"}
@@ -80,12 +83,13 @@ function MainCoaching() {
 							</span>
 							<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
 						</h2>
-						<div className="space-y-4 flex flex-col gap-10">
-							<ul className="flex flex-col gap-4 list-disc list-inside">
+						<div className="space-y-4 flex flex-col gap-4">
+							<Image src={planningHenko} alt="Planning Henko" />
+							<div className="flex flex-col gap-2 ">
 								{trainingDetails.map((detail, index) => (
-									<li key={index}>{detail}</li>
+									<p key={index}>{detail}</p>
 								))}
-							</ul>
+							</div>
 							<div className="flex justify-center lg:justify-start">
 								<CalendlyModal
 									url="https://calendly.com/henkocoaching/coaching-essai-1h"
@@ -101,7 +105,7 @@ function MainCoaching() {
 							src={salle}
 							width={"auto"}
 							height={"auto"}
-							className="max-h-[25rem] w-auto shadow-perso shadow-darkorange"
+							className="max-h-[30rem] w-auto shadow-perso shadow-darkorange"
 							alt="Salle de sport"
 						/>
 					</div>

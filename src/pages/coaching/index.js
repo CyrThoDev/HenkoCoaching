@@ -24,8 +24,8 @@ function Coaching() {
 				<Seance />
 
 				<WaveOrange />
-				<Formules />
 			</div>
+			<Formules />
 			<FAQ />
 		</>
 	);

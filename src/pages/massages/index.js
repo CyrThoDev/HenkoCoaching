@@ -6,6 +6,7 @@ import Prestations from "@/components/Prestations";
 import HeaderMassages from "@/components/HeaderMassages";
 import Image from "next/image";
 import basdepagemassage from "@images/basdepagemassage.jpg";
+import Massagesbis from "@/components/Massagesbis";
 
 function Massages() {
 	return (
@@ -16,6 +17,7 @@ function Massages() {
 				<WaveSable />
 				<HeaderMassages />
 				<Prestations />
+				{/* <Massagesbis /> */}
 				<Image
 					src={basdepagemassage}
 					width={"auto"}
