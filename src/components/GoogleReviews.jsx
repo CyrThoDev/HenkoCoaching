@@ -46,7 +46,7 @@ export default function Google() {
 											{review.author_name.split(" ")[0].toUpperCase()}
 										</p>
 										<p className="line-clamp-4 italic text-gray-700">
-											&#34;{review.text}&#34;
+											{`&#34;${review.text}&#34;`}
 										</p>
 										<Link
 											href={review.author_url}
@@ -87,7 +87,7 @@ export default function Google() {
 								{review.author_name.split(" ")[0].toUpperCase()}
 							</p>
 							<p className="line-clamp-4 text-gray-600">
-								&#34;{review.text}&#34;
+								{`&#34;${review.text}&#34;`}
 							</p>
 							<Link
 								href={review.author_url}
