@@ -4,50 +4,48 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
-	console.log(cart);
+
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			const savedCart = localStorage.getItem("cart");
-			if (savedCart) setCart(JSON.parse(savedCart));
+		try {
+			const savedCart = localStorage.getItem("cartHenko");
+			console.log("Données chargées depuis localStorage :", savedCart);
+			if (savedCart) {
+				setCart(JSON.parse(savedCart));
+			}
+		} catch (error) {
+			console.error("Erreur lors du chargement depuis localStorage :", error);
 		}
 	}, []);
 
 	useEffect(() => {
-		localStorage.setItem("cart", JSON.stringify(cart));
+		try {
+			console.log("Données sauvegardées dans localStorage :", cart);
+			localStorage.setItem("cartHenko", JSON.stringify(cart));
+		} catch (error) {
+			console.error("Erreur lors de la sauvegarde dans localStorage :", error);
+		}
 	}, [cart]);
 
-	const addToCart = (article) => {
-		console.log("added to cart");
-		setPanier((prev) => [...prev, article]);
-		const prestationType = item.selectedOption || "cabinet";
+	const addToCart = (item) => {
+		console.log("Article ajouté :", item); // Journal pour voir l'article ajouté
 		setCart((prevCart) => {
-			const existingItem = prevCart.find(
-				(cartItem) =>
-					cartItem.id === item.id && cartItem.prestation === prestationType,
-			);
-			if (existingItem) {
-				return prevCart.map((cartItem) =>
-					cartItem.id === item.id && cartItem.prestation === prestationType
-						? { ...cartItem, quantity: cartItem.quantity + 1 }
-						: cartItem,
-				);
-			}
-			return [
-				...prevCart,
-				{ ...item, quantity: 1, prestation: prestationType },
-			];
+			const newCart = [...prevCart, item];
+			console.log("Nouveau contenu du panier :", newCart); // Vérifie le contenu après ajout
+			return newCart;
 		});
 	};
 
-	const clearCart =
-		(() => {
-			setCart([]);
-		},
-		[]);
-	const calculateTotal = () => {
-		return cart.reduce((total, item) => total + item.prix * item.quantity, 0);
+	const removeFromCart = (itemId) => {
+		setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
 	};
 
+	const clearCart = () => {
+		setCart([]);
+	};
+
+	// const calculateTotal = () => {
+	// 	return cart.reduce((total, item) => total + item.prix * item.quantity, 0);
+	// };
 	const cartCount = cart.length;
 
 	return (
@@ -55,8 +53,8 @@ export const CartProvider = ({ children }) => {
 			value={{
 				cart,
 				addToCart,
+				removeFromCart,
 				clearCart,
-				calculateTotal,
 				cartCount,
 			}}
 		>

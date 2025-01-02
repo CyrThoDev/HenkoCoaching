@@ -8,34 +8,53 @@ import Image from "next/image";
 import cartecadeaurecto from "@images/cartecadeaurecto.png";
 import logoSableHenko from "@images/logoSableHenko.webp";
 import WaveSable from "@/components/WaveSable";
+import { useCart } from "@/context/CartContext";
 
 function Cadeaux() {
-	// const [isSended, setIsSended] = useState(false);
-	const [isLoading, setIsLoading] = useState(false);
-	const [errorMessage, setErrorMessage] = useState("");
-
-	const [formData, setFormData] = useState({
+	const { addToCart } = useCart();
+	const [customizations, setCustomizations] = useState({
 		prestation: "",
-		nomDestinataire: "",
-		emailExpediteur: "",
-		personnaliserCarte: false,
+		from: "",
+		to: "",
+		email: "", // Adresse email pour l'envoi
+		message: "", // Message facultatif
 	});
 
-	const onSubmitHandler = async (data) => {
-		if (!isLoading) {
-			setIsLoading(true);
-			setErrorMessage("");
-
-			try {
-				setFormData(data);
-				// setIsSended(true);
-			} catch (error) {
-				setErrorMessage("Une erreur est survenue. Veuillez réessayer.");
-			} finally {
-				setIsLoading(false);
-			}
-		}
+	const SaveCustomization = (formData) => {
+		console.log("personnalisation dans la page cadeaux", formData);
+		setCustomizations(formData);
 	};
+
+	const handleAddToCart = () => {
+		if (
+			!customizations.prestation ||
+			!customizations.from ||
+			!customizations.to ||
+			!customizations.email
+		) {
+			alert(
+				"Veuillez remplir tous les champs obligatoires avant d'ajouter au panier.",
+			);
+			return;
+		}
+		addToCart({
+			id: Date.now(),
+			type: "Carte Cadeau",
+			customizations,
+		});
+
+		// A MODIFIER avec vrai message d'enregistrement et d'ajout au panier
+
+		// setCustomizations({
+		// 	prestation: "",
+		// 	from: "",
+		// 	to: "",
+		// 	email: "",
+		// 	message: "",
+		// });
+		alert("Carte cadeau ajoutée au panier !");
+	};
+
 	return (
 		<div className="flex flex-col ">
 			<NavBar logo={logoSableHenko} />
@@ -43,19 +62,17 @@ function Cadeaux() {
 				<HeadPages title="CARTES CADEAUX" />
 				<WaveSable />
 			</div>
-			<div className="flex flex-row gap-20 px-10 lg:px-20 items-center ">
-				<div>
-					<FormCarteCadeau
-						onSubmit={onSubmitHandler}
-						isLoading={isLoading}
-						// isSended={isSended}
-						errorMessage={errorMessage}
-					/>
-					<button
-						type="button"
-						className="bg-darkorange text-gray py-3 w-56 text-center rounded-xl text-base font-lora hover:bg-darkseagreen"
-					>
-						Ajouter au panier
+			<div className="flex flex-col px-10 lg:px-20  ">
+				<div className="flex flex-row">
+					<FormCarteCadeau SaveCustomization={SaveCustomization} />
+					{/* <CardPreview
+						personnaliserCarte={formData.personnaliserCarte}
+						prestation={formData.prestation}
+						nomDestinataire={formData.nomDestinataire}
+						emailExpediteur={formData.emailExpediteur}
+					/> */}
+					<button type="button" onClick={handleAddToCart}>
+						Ajouter au Panier
 					</button>
 				</div>
 				<div className="flex flex-col gap-10 mt-10 ">
@@ -69,12 +86,7 @@ function Cadeaux() {
 						Choisissez la prestation de votre choix et si vous souhaitez ajouter
 						un message personnalisé pour rendre ce cadeau unique.
 					</p>
-					<CardPreview
-						personnaliserCarte={formData.personnaliserCarte}
-						prestation={formData.prestation}
-						nomDestinataire={formData.nomDestinataire}
-						emailExpediteur={formData.emailExpediteur}
-					/>
+
 					{/* <Image
 						src={cartecadeaurecto}
 						width={"auto"}

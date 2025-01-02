@@ -17,7 +17,7 @@ function Summary() {
 						alt="photo de la salle avec des poids"
 					/>
 					<div className="flex flex-col gap-10 lg:basis-3/5 justify-between">
-						<h2 className="text-2xl md:text-3xl ">
+						<h2 className="text-2xl md:text-3xl font-semibold ">
 							Des services sur-mesure pour tous les âges!
 						</h2>
 						<p>

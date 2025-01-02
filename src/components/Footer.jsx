@@ -8,12 +8,14 @@ function Footer() {
 		<div className="bg-black px-10 lg:px-20  text-white text-xs py-4 flex flex-col gap-4">
 			<div className=" grid grid-cols-1 lg:grid-cols-3 items-center justify-between  font-poppins gap-8 ">
 				<div className=" flex flex-col gap-2 items-center lg:items-start">
-					<Image
-						src={LOGO}
-						width={"auto"}
-						className="w-1/4"
-						alt="logo de Henko coaching en blanc"
-					/>
+					<Link href="/">
+						<Image
+							src={LOGO}
+							width={"auto"}
+							className="w-1/4"
+							alt="logo de Henko coaching en blanc"
+						/>
+					</Link>
 					<div className="text-center lg:text-start">
 						<a
 							href="https://www.google.com/maps/search/?api=1&query=43+avenue+Maurice+Martin,+40200+Mimizan"

@@ -51,9 +51,9 @@ function Formulaire({ bgColor, labelColor, borderColor }) {
 
 	return (
 		<div className={`${bgColor} px-10 lg:px-20 py-10`} id="contact">
-			<h2 className="text-3xl font-tanker text-start text-white pb-4">
+			{/* <h2 className="text-3xl font-tanker text-start text-white pb-4">
 				CONTACTEZ-MOI
-			</h2>
+			</h2> */}
 			<div className=" flex flex-col lg:flex-row  items-center gap-10">
 				<div className="w-full basis-1/2 h-auto">
 					<MapsGoogle />

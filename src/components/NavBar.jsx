@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBasketShopping } from "react-icons/fa6";
-import cartCount from "@/context/CartContext";
+import { useCart } from "@/context/CartContext";
 
 // Composant de liens partagés
 const MenuLinks = ({ onClick }) => {
@@ -77,6 +77,7 @@ const MobileMenu = ({ isNavOpen, toggleNav, logo }) => {
 
 // Composant NavBar principal
 function NavBar({ logo }) {
+	const { cartCount } = useCart();
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [isSticky, setIsSticky] = useState(false);
 
@@ -119,8 +120,16 @@ function NavBar({ logo }) {
 					/>
 				</Link>
 				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} logo={logo} />
-				<Link href="/" aria-label="cliquer pour accéder au panier">
-					<FaBasketShopping className="text-2xl text-black" />
+
+				<Link href="/panier" aria-label="cliquer pour accéder au panier">
+					<div className="relative inline-block">
+						<FaBasketShopping className="text-2xl text-black" />
+						{cartCount > 0 && (
+							<span className="absolute -top-2 -right-2 bg-darkorange text-white rounded-full text-xs px-1.5 py-0.5">
+								{cartCount}
+							</span>
+						)}
+					</div>
 				</Link>
 			</div>
 
@@ -147,16 +156,18 @@ function NavBar({ logo }) {
 						OFFRIR UNE CARTE CADEAU
 					</Link>
 					<Link href="/panier" aria-label="cliquer pour accéder au panier">
-						<FaBasketShopping
-							className="text-2xl text-black"
-							alt="panier"
-							aria-label="Cliquer pour accéder au panier"
-						/>
-						{cartCount > 0 && (
-							<span className="absolute -top-2 -right-2 bg-darkorange text-white rounded-full text-xs px-1.5 py-0.5">
-								{cartCount}
-							</span>
-						)}
+						<div className="relative inline-block">
+							<FaBasketShopping
+								className="text-2xl text-black"
+								alt="panier"
+								aria-label="Cliquer pour accéder au panier"
+							/>
+							{cartCount > 0 && (
+								<span className="absolute -top-2 -right-2 bg-darkorange text-white rounded-full text-xs px-1.5 py-0.5">
+									{cartCount}
+								</span>
+							)}
+						</div>
 					</Link>
 				</div>
 			</div>

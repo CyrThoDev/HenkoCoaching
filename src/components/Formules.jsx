@@ -13,12 +13,12 @@ const plans = [
 		options: [
 			{ type: "Sans engagement", price: "200€/mois", perSession: "50€/séance" },
 			{
-				type: "Avec engagement 4 mois",
+				type: "Engagement 4 mois",
 				price: "140€/mois",
 				perSession: "35€/séance",
 			},
 			{
-				type: "Avec engagement 6 mois",
+				type: "Engagement 6 mois",
 				price: "120€/mois",
 				perSession: "30€/séance",
 			},
@@ -32,12 +32,12 @@ const plans = [
 		options: [
 			{ type: "Sans engagement", price: "360€/mois", perSession: "45€/séance" },
 			{
-				type: "Avec engagement 4 mois",
+				type: "Engagement 4 mois",
 				price: "240€/mois",
 				perSession: "30€/séance",
 			},
 			{
-				type: "Avec engagement 6 mois",
+				type: "Engagement 6 mois",
 				price: "200€/mois",
 				perSession: "25€/séance",
 			},
@@ -51,12 +51,12 @@ const plans = [
 		options: [
 			{ type: "Sans engagement", price: "480€/mois", perSession: "40€/séance" },
 			{
-				type: "Avec engagement 4 mois",
+				type: "Engagement 4 mois",
 				price: "300€/mois",
 				perSession: "25€/séance",
 			},
 			{
-				type: "Avec engagement 6 mois",
+				type: "Engagement 6 mois",
 				price: "240€/mois",
 				perSession: "20€/séance",
 			},
