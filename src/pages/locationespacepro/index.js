@@ -17,7 +17,7 @@ function LocationEspacePro() {
 			</div>
 
 			<div className="flex flex-col md:flex-row gap-10 px-10 lg:px-20 items-center">
-				<div className="flex flex-col gap-10">
+				<div className="flex flex-col gap-10 basis-1/2">
 					<p>
 						Le local HENKO COACHING peut être disponible à la location
 						ponctuellement sur demande et sur devis pour les professionnels du
@@ -35,7 +35,7 @@ function LocationEspacePro() {
 					src={salle}
 					width={"auto"}
 					height={"auto"}
-					className="max-h-[25rem] w-auto shadow-perso shadow-sand"
+					className="max-h-[25rem] w-auto shadow-perso shadow-sand basis-1/2"
 					alt="Salle de sport"
 				/>
 			</div>

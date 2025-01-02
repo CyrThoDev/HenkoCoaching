@@ -3,9 +3,9 @@ const plans = [
 		name: "À l’année",
 		options: [
 			{ type: "Sans engagement", price: "49,99€/mois" },
-			{ type: "Avec engagement 3 mois", price: "45€/mois" },
-			{ type: "Avec engagement 6 mois", price: "42,50€/mois" },
-			{ type: "Avec engagement 12 mois", price: "39,99€/mois" },
+			{ type: "Engagement 3 mois", price: "45€/mois" },
+			{ type: "Engagement 6 mois", price: "42,50€/mois" },
+			{ type: "Engagement 12 mois", price: "39,99€/mois" },
 		],
 	},
 	{
@@ -38,9 +38,9 @@ function FormulesLibres() {
 							{plan.options.map((option, index) => (
 								<li
 									key={index}
-									className={`flex justify-between items-center p-3 rounded-lg hover:shadow-lg ${
+									className={`flex flex-col lg:flex-row justify-between items-center p-3 rounded-lg hover:shadow-lg ${
 										option.price === "45€/mois"
-											? "border border-darkorange"
+											? "border  border-darkorange"
 											: ""
 									}`}
 								>

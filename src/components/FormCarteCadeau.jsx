@@ -1,165 +1,116 @@
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 
-function FormCarteCadeau({ onSubmit, isLoading, isSended, errorMessage }) {
-	const {
-		register,
-		handleSubmit,
-		watch,
-		formState: { errors },
-	} = useForm();
+const FormCarteCadeau = ({ SaveCustomization }) => {
+	const [formData, setFormData] = useState({
+		prestation: "",
+		from: "",
+		to: "",
+		email: "", // Adresse email pour l'envoi
+		message: "", // Message facultatif
+	});
 
-	const envoyerDestinataire = watch("envoyerDestinataire", false);
-	const personnaliserCarte = watch("personnaliserCarte", false);
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+
+		const updatedFormData = { ...formData, [name]: value };
+		setFormData(updatedFormData);
+		SaveCustomization(updatedFormData);
+	};
 
 	return (
-		<form
-			onSubmit={handleSubmit(onSubmit)}
-			className="p-4 flex flex-col gap-8 rounded basis-1/2"
-		>
-			<h2 className=" relative flex flex-col text-lg md:text-2xl font-tanker">
-				<span className="text-3xl z-10">Personnalisez votre carte</span>
-				<div className="w-[12rem] h-3  bg-sand -mt-3 -z-1" />
+		<div className="p-4  shadow-md rounded-sm border border-gold mt-10 mb-10">
+			<h2 className="text-xl font-semibold mb-4   text-darkolivegreen">
+				Personnalisez votre carte cadeau
 			</h2>
 			<div>
-				<label htmlFor="prestation" className="text-sm font-medium">
-					Choisissez une prestation :
+				<label
+					htmlFor="prestation"
+					className="block text-sm font-medium text-gray-700"
+				>
+					Prestation *
 				</label>
 				<select
 					id="prestation"
-					{...register("prestation", { required: "Ce champ est requis." })}
+					name="prestation"
 					className="w-full mt-1 p-2 border border-gray-300 rounded"
+					value={formData.prestation}
+					onChange={handleChange}
+					required
 				>
 					<option value="">Sélectionnez une prestation</option>
 					<option value="prestation1">Prestation 1</option>
 					<option value="prestation2">Prestation 2</option>
 				</select>
-				{errors.prestation && (
-					<span className="text-red-500">{errors.prestation.message}</span>
-				)}
 			</div>
-			{/* Checkbox pour envoyer au destinataire */}
-			<div>
-				<label className="inline-flex items-center">
-					<input
-						type="checkbox"
-						{...register("envoyerDestinataire")}
-						className="mr-2"
-					/>
-					Souhaitez-vous que la carte soit envoyée au destinataire ?
+			<div className="mb-4">
+				<label
+					htmlFor="from"
+					className="block text-sm font-medium  text-gray-700 "
+				>
+					De la part de : *
 				</label>
+				<input
+					type="text"
+					id="from"
+					name="from"
+					value={formData.from}
+					onChange={handleChange}
+					className="mt-1 block w-full  bg-transparent rounded-sm  border-b-[0.05rem] border-darkseagreen focus:outline-none"
+					placeholder="Votre nom"
+				/>
 			</div>
-			{/* Champ Email destinataire */}
-			{envoyerDestinataire && (
-				<div>
-					<label
-						htmlFor="emailDestinataire"
-						className="block text-sm font-medium"
-					>
-						Email du destinataire :
-					</label>
-					<input
-						type="email"
-						id="emailDestinataire"
-						className="w-full mt-1 p-2 border border-gray-300 rounded"
-						{...register("emailDestinataire", {
-							required: "Ce champ est requis.",
-							pattern: {
-								value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-								message: "Adresse email invalide.",
-							},
-						})}
-					/>
-					{errors.emailDestinataire && (
-						<span className="text-red-500">
-							{errors.emailDestinataire.message}
-						</span>
-					)}
-				</div>
-			)}
-			{/* Email de l&#39;expéditeur */}
-			<div>
-				<label htmlFor="emailExpediteur" className="block text-sm font-medium">
-					Email de l&#39;expéditeur :
+			<div className="mb-4">
+				<label
+					htmlFor="to"
+					className="block text-sm   font-medium text-gray-700"
+				>
+					Pour : *
+				</label>
+				<input
+					type="text"
+					id="to"
+					name="to"
+					value={formData.to}
+					onChange={handleChange}
+					className="mt-1 block w-full  bg-transparent rounded-sm  border-b-[0.05rem] border-darkseagreen focus:outline-none"
+					placeholder="Nom du destinataire"
+				/>
+			</div>
+			<div className="mb-4">
+				<label
+					htmlFor="email"
+					className="block text-sm font-medium   text-gray-700"
+				>
+					Adresse email : *
 				</label>
 				<input
 					type="email"
-					id="emailExpediteur"
-					className="w-full mt-1 p-2 border border-gray-300 rounded"
-					{...register("emailExpediteur", {
-						required: "Ce champ est requis.",
-						pattern: {
-							value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-							message: "Adresse email invalide.",
-						},
-					})}
+					id="email"
+					name="email"
+					value={formData.email}
+					onChange={handleChange}
+					className="mt-1 block w-full  bg-transparent rounded-sm  border-b-[0.05rem] border-darkseagreen focus:outline-none"
+					placeholder="Email du destinataire"
 				/>
-				{errors.emailExpediteur && (
-					<span className="text-red-500">{errors.emailExpediteur.message}</span>
-				)}
 			</div>
-			{/* Checkbox personnaliser la carte */}
-			<div>
-				<label className="inline-flex items-center">
-					<input
-						type="checkbox"
-						{...register("personnaliserCarte")}
-						className="mr-2"
-					/>
-					Souhaitez-vous personnaliser la carte ?
+			<div className="mb-4">
+				<label
+					htmlFor="message"
+					className="block text-sm font-medium   text-gray-700"
+				>
+					Message (optionnel) :
 				</label>
+				<textarea
+					id="message"
+					name="message"
+					value={formData.message}
+					onChange={handleChange}
+					className="mt-1 block w-full  bg-transparent rounded-sm  border-b-[0.05rem] border-darkseagreen focus:outline-none"
+					placeholder="Ajoutez un message personnel"
+				/>
 			</div>
-			{/* Personnalisation */}
-			{personnaliserCarte && (
-				<div>
-					<div>
-						<label
-							htmlFor="nomDestinataire"
-							className="block text-sm font-medium"
-						>
-							Prénom et/ou nom du destinataire
-						</label>
-						<input
-							type="text"
-							id="nomDestinataire"
-							className="w-full mt-1 p-2 border border-gray-300 rounded"
-							{...register("nomDestinataire", {
-								required: "Ce champ est requis.",
-							})}
-						/>
-						{errors.nomDestinataire && (
-							<span className="text-red-500">
-								{errors.nomDestinataire.message}
-							</span>
-						)}
-					</div>
-					<label htmlFor="message" className="block text-sm font-medium">
-						Message personnalisé :
-					</label>
-					<textarea
-						id="message"
-						rows="4"
-						className="w-full mt-1 p-2 border border-gray-300 rounded"
-						{...register("message")}
-					/>
-				</div>
-			)}
-			{/* Bouton Submit */}
-			<input
-				type="submit"
-				className={`w-full py-2 px-4 bg-sand text-white rounded ${
-					isLoading ? "opacity-50 cursor-not-allowed" : "hover:opacity-80"
-				}`}
-				value={isLoading ? "..." : "Envoyer"}
-				disabled={isLoading}
-			/>
-			{/* {isSended && (
-				<p className="text-green-600 mt-2">
-					Votre formulaire a été envoyé avec succès.
-				</p>
-			)} */}
-			{errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
-		</form>
+		</div>
 	);
-}
+};
 
 export default FormCarteCadeau;
