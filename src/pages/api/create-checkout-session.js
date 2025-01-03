@@ -6,16 +6,32 @@ export default async function handler(req, res) {
 	if (req.method === "POST") {
 		try {
 			const { cart } = req.body;
+			console.log("panier : ", cart);
+
+			if (!cart || cart.length === 0) {
+				return res.status(400).json({ error: "Le panier est vide." });
+			}
+
+			const customizationsDetails = cart.map((item) => item.customizations);
+			console.log(customizationsDetails);
 
 			const lineItems = cart.map((item) => ({
 				price_data: {
 					currency: "eur",
 					product_data: {
-						name: item.name,
+						name: item.customizations.prestation || "Accès libre",
+						metadata: {
+							Prestation:
+								item.customizations.prestation || "Default Prestation",
+							De: item.customizations.from || "Default Sender",
+							Pour: item.customizations.to || "Default Recipient",
+							email: item.customizations.email || "default@example.com",
+							message: item.customizations.message || "No message provided",
+						},
 					},
-					unit_amount: item.prix * 100,
+					unit_amount: item.price * 100,
 				},
-				quantity: item.quantity,
+				quantity: 1,
 			}));
 
 			const session = await stripe.checkout.sessions.create({

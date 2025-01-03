@@ -12,7 +12,7 @@ function Footer() {
 						<Image
 							src={LOGO}
 							width={"auto"}
-							className="w-1/4"
+							className="w-1/4 justify-self-center lg:justify-self-start "
 							alt="logo de Henko coaching en blanc"
 						/>
 					</Link>
