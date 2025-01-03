@@ -9,10 +9,21 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 		message: "", // Message facultatif
 	});
 
+	const prestations = [
+		{ id: "prestation1", name: "Prestation 1", price: 50 },
+		{ id: "prestation2", name: "Prestation 2", price: 80 },
+	];
+
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 
 		const updatedFormData = { ...formData, [name]: value };
+
+		if (name === "prestation") {
+			const selectedPrestation = prestations.find((p) => p.id === value);
+			updatedFormData.price = selectedPrestation ? selectedPrestation.price : 0;
+		}
+
 		setFormData(updatedFormData);
 		SaveCustomization(updatedFormData);
 	};
@@ -41,6 +52,13 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 					<option value="prestation1">Prestation 1</option>
 					<option value="prestation2">Prestation 2</option>
 				</select>
+			</div>
+			<div className="mt-4">
+				{formData.prestation && (
+					<p className="text-sm text-gray-700">
+						Prix : <span className="font-semibold">{formData.price} €</span>
+					</p>
+				)}
 			</div>
 			<div className="mb-4">
 				<label

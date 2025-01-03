@@ -14,23 +14,24 @@ const stripePromise = loadStripe(
 	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
 );
 
-// A METTRE DANS LE PANIER
-// const handleCheckout = async () => {
-// 	const stripe = await stripePromise;
-// 	try {
-// 		const response = await axios.post("/api/create-checkout-session", {
-// 			cart,
-// 			customizations,
-// 		});
-// 		const sessionId = response.data.id;
-// 		await stripe.redirectToCheckout({ sessionId });
-// 	} catch (error) {
-// 		console.error("Erreur lors de la redirection vers Stripe:", error);
-// 	}
-// };
 function Cart() {
 	const { cart, removeFromCart } = useCart();
 	const [isCGVChecked, setIsCGVChecked] = useState(false);
+
+	const handleCheckout = async () => {
+		const stripe = await stripePromise;
+		try {
+			const response = await axios.post("/api/create-checkout-session", {
+				cart,
+			});
+			const sessionId = response.data.id;
+			await stripe.redirectToCheckout({ sessionId });
+		} catch (error) {
+			console.error("Erreur lors de la redirection vers Stripe:", error);
+		}
+	};
+
+	console.log("je passe dans mon panier", cart);
 	return (
 		<div>
 			<NavBar logo={logoOrange} />
@@ -41,17 +42,25 @@ function Cart() {
 				</div>
 			</div>
 			<ul>
-				{cart.map((item) => (
-					<li key={item.id}>
-						<p>Type : {item.type}</p>
-						<p>De : {item.customizations?.from}</p>
-						<p>À : {item.customizations?.to}</p>
-						<p>Message : {item.customizations?.message}</p>
-						<button type="button" onClick={() => removeFromCart(item.id)}>
-							Supprimer
-						</button>
-					</li>
-				))}
+				{cart.length === 0 ? (
+					<p>Votre panier est vide.</p>
+				) : (
+					<ul>
+						{cart.map((item) => (
+							<li key={item.id}>
+								<p>Type : {item.type}</p>
+								<p>Prestation : {item.customizations?.prestation}</p>
+								<p>Prix : {item.price}</p>
+								<p>De : {item.customizations?.from}</p>
+								<p>À : {item.customizations?.to}</p>
+								<p>Message : {item.customizations?.message}</p>
+								<button type="button" onClick={() => removeFromCart(item.id)}>
+									Supprimer
+								</button>
+							</li>
+						))}
+					</ul>
+				)}
 			</ul>
 			<div className="flex items-center gap-2">
 				<input
@@ -72,6 +81,18 @@ function Cart() {
 					avant de procéder au paiement
 				</label>
 			</div>
+			<button
+				type="button"
+				onClick={handleCheckout}
+				className={`mt-6 w-full font-semibold text-gray bg-darkolivegreen py-3 rounded-lg shadow-md ${
+					isCGVChecked
+						? "bg-darkolivegreen hover:bg-lightgreen"
+						: "bg-gray-400 cursor-not-allowed"
+				}`}
+				disabled={!isCGVChecked}
+			>
+				Passer au paiement
+			</button>
 		</div>
 	);
 }
