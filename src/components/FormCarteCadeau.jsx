@@ -5,8 +5,9 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 		prestation: "",
 		from: "",
 		to: "",
-		email: "", // Adresse email pour l'envoi
-		message: "", // Message facultatif
+		email: "",
+		message: "",
+		checked: false,
 	});
 
 	const prestations = [
@@ -15,9 +16,12 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 	];
 
 	const handleChange = (e) => {
-		const { name, value } = e.target;
+		const { name, value, type, checked } = e.target;
 
-		const updatedFormData = { ...formData, [name]: value };
+		const updatedFormData = {
+			...formData,
+			[name]: type === "checkbox" ? checked : value,
+		};
 
 		if (name === "prestation") {
 			const selectedPrestation = prestations.find((p) => p.id === value);
@@ -29,21 +33,19 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 	};
 
 	return (
-		<div className="p-4  shadow-md rounded-sm border border-gold mt-10 mb-10">
-			<h2 className="text-xl font-semibold mb-4   text-darkolivegreen">
-				Personnalisez votre carte cadeau
+		<div className=" p-4 shadow-sm rounded-sm my-10 flex flex-col gap-10 border border-sand">
+			<h2 className=" relative flex flex-col text-lg md:text-2xl font-tanker">
+				<span className="text-3xl z-10">Personnalisez votre cadeau</span>
+				<div className="w-[12rem] h-3  bg-sand -mt-3 -z-1" />
 			</h2>
-			<div>
-				<label
-					htmlFor="prestation"
-					className="block text-sm font-medium text-gray-700"
-				>
+			<div className="flex flex-col gap-4">
+				<label htmlFor="prestation" className=" font-semibold text-gray-700">
 					Prestation *
 				</label>
 				<select
 					id="prestation"
 					name="prestation"
-					className="w-full mt-1 p-2 border border-gray-300 rounded"
+					className="w-full mt-1 p-2 border border-gray-300 rounded outline-sand"
 					value={formData.prestation}
 					onChange={handleChange}
 					required
@@ -52,19 +54,14 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 					<option value="prestation1">Prestation 1</option>
 					<option value="prestation2">Prestation 2</option>
 				</select>
-			</div>
-			<div className="mt-4">
+
 				{formData.prestation && (
-					<p className="text-sm text-gray-700">
+					<p className=" text-sand">
 						Prix : <span className="font-semibold">{formData.price} €</span>
 					</p>
 				)}
-			</div>
-			<div className="mb-4">
-				<label
-					htmlFor="from"
-					className="block text-sm font-medium  text-gray-700 "
-				>
+
+				<label htmlFor="from" className="font-semibold text-gray-700 ">
 					De la part de : *
 				</label>
 				<input
@@ -76,12 +73,8 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 					className="mt-1 block w-full  bg-transparent rounded-sm  border-b-[0.05rem] border-darkseagreen focus:outline-none"
 					placeholder="Votre nom"
 				/>
-			</div>
-			<div className="mb-4">
-				<label
-					htmlFor="to"
-					className="block text-sm   font-medium text-gray-700"
-				>
+
+				<label htmlFor="to" className="font-semibold text-gray-700">
 					Pour : *
 				</label>
 				<input
@@ -93,12 +86,8 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 					className="mt-1 block w-full  bg-transparent rounded-sm  border-b-[0.05rem] border-darkseagreen focus:outline-none"
 					placeholder="Nom du destinataire"
 				/>
-			</div>
-			<div className="mb-4">
-				<label
-					htmlFor="email"
-					className="block text-sm font-medium   text-gray-700"
-				>
+
+				<label htmlFor="email" className="font-semibold text-gray-700">
 					Adresse email : *
 				</label>
 				<input
@@ -110,12 +99,8 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 					className="mt-1 block w-full  bg-transparent rounded-sm  border-b-[0.05rem] border-darkseagreen focus:outline-none"
 					placeholder="Email du destinataire"
 				/>
-			</div>
-			<div className="mb-4">
-				<label
-					htmlFor="message"
-					className="block text-sm font-medium   text-gray-700"
-				>
+
+				<label htmlFor="message" className="font-semibold text-gray-700">
 					Message (optionnel) :
 				</label>
 				<textarea
@@ -126,6 +111,22 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 					className="mt-1 block w-full  bg-transparent rounded-sm  border-b-[0.05rem] border-darkseagreen focus:outline-none"
 					placeholder="Ajoutez un message personnel"
 				/>
+				<fieldset>
+					<legend className="font-semibold">Version papier</legend>
+
+					<div className="flex flex-row gap-2">
+						<input
+							type="checkbox"
+							id="checked"
+							name="checked"
+							checked={formData.checked} // La valeur correcte
+							onChange={handleChange} // Appel au gestionnaire d'événements
+						/>
+						<label htmlFor="checked">
+							Je choisis la version papier pour 1 € de plus
+						</label>
+					</div>
+				</fieldset>
 			</div>
 		</div>
 	);
