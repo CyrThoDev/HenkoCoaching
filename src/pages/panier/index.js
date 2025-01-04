@@ -35,14 +35,14 @@ function Cart() {
 	return (
 		<div>
 			<NavBar logo={logoOrange} />
-			<div className="px-6 lg:px-20 flex flex-col gap-10">
+			<div className="px-10 lg:px-20 flex flex-col gap-10 mb-10">
 				<div className="flex flex-col gap-4">
 					<HeadPages title="VOTRE PANIER" />
 					<WaveOrange />
 				</div>
 
 				{/* Panier */}
-				<div className="bg-white shadow-lg rounded-lg p-6">
+				<div className="bg-white  rounded-lg ">
 					{cart.length === 0 ? (
 						<p className="text-center text-gray-500 text-lg">
 							Votre panier est vide.
@@ -54,19 +54,19 @@ function Cart() {
 									key={item.id}
 									className="flex flex-col lg:flex-row items-center justify-between gap-4 p-4 border border-gray-200 rounded-lg"
 								>
-									<div className="flex flex-col lg:flex-row items-center gap-4">
+									<div className="flex flex-col items-center lg:flex-row  gap-4">
 										{/* Image placeholder */}
 										<div className="flex items-center justify-center rounded-lg">
 											<Image
 												src={cartecadeaurecto}
 												alt="Produit"
-												width={150}
-												height={150}
+												width={200}
+												height={200}
 												className="object-cover"
 											/>
 										</div>
-										<div>
-											<h3 className="text-lg font-semibold text-darkolivegreen">
+										<div className="flex flex-col gap-4">
+											<h3 className="text-lg font-tanker font-semibold text-darkolivegreen">
 												{item.customizations?.prestation}
 											</h3>
 											<p className="text-gray-600 text-sm">
@@ -76,8 +76,8 @@ function Cart() {
 											<p className="text-gray-600 text-sm">
 												Message : {item.customizations?.message}
 											</p>
-											<p className="text-gray-800 font-bold">
-												Prix : {item.price}€
+											<p className="text-sand font-bold">
+												Prix : {item.price} €
 											</p>
 										</div>
 									</div>
@@ -85,7 +85,7 @@ function Cart() {
 										<button
 											type="button"
 											onClick={() => removeFromCart(item.id)}
-											className="bg-darkorange text-white px-4 py-2 rounded-lg shadow hover:bg-red-600"
+											className="bg-sand text-white px-4 py-2 rounded-md  hover:bg-black"
 										>
 											Supprimer
 										</button>
@@ -120,9 +120,9 @@ function Cart() {
 				<button
 					type="button"
 					onClick={handleCheckout}
-					className={`mt-6 w-full font-semibold text-white py-3 rounded-lg shadow-md ${
+					className={`mt-6 w-full font-semibold text-white py-3 rounded-lg  ${
 						isCGVChecked
-							? "bg-darkolivegreen hover:bg-lightgreen"
+							? "bg-darkorange hover:bg-black"
 							: "bg-gray-400 cursor-not-allowed"
 					}`}
 					disabled={!isCGVChecked}

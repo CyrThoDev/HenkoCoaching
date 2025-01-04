@@ -33,7 +33,7 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 	};
 
 	return (
-		<div className=" p-4 shadow-sm rounded-sm my-10 flex flex-col gap-10 border border-sand">
+		<div className=" p-4 shadow-sm rounded-sm my-10 flex flex-col gap-10 border">
 			<h2 className=" relative flex flex-col text-lg md:text-2xl font-tanker">
 				<span className="text-3xl z-10">Personnalisez votre cadeau</span>
 				<div className="w-[12rem] h-3  bg-sand -mt-3 -z-1" />
