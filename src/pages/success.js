@@ -5,7 +5,7 @@ import { useCart } from "../context/CartContext";
 const Success = () => {
 	const { clearCart } = useCart();
 	useEffect(() => {
-		// Vider le panier après le rendu
+		console.log("clear cart dans sucess");
 		clearCart();
 	}, [clearCart]);
 

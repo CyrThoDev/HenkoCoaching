@@ -9,6 +9,7 @@ import NavBar from "@/components/NavBar";
 import HeadPages from "@/components/HeadPages";
 import WaveOrange from "@/components/WaveOrange";
 import logoOrange from "@images/logoHenkoOrange.svg";
+import cartecadeaurecto from "@images/cartecadeaurecto.png";
 
 const stripePromise = loadStripe(
 	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
@@ -31,68 +32,104 @@ function Cart() {
 		}
 	};
 
-	console.log("je passe dans mon panier", cart);
 	return (
 		<div>
 			<NavBar logo={logoOrange} />
-			<div className="px-10 lg:px-20 flex flex-col gap-20">
-				<div className="flex flex-col gap-10">
+			<div className="px-10 lg:px-20 flex flex-col gap-10 mb-10">
+				<div className="flex flex-col gap-4">
 					<HeadPages title="VOTRE PANIER" />
 					<WaveOrange />
 				</div>
-			</div>
-			<ul>
-				{cart.length === 0 ? (
-					<p>Votre panier est vide.</p>
-				) : (
-					<ul>
-						{cart.map((item) => (
-							<li key={item.id}>
-								<p>Type : {item.type}</p>
-								<p>Prestation : {item.customizations?.prestation}</p>
-								<p>Prix : {item.price}</p>
-								<p>De : {item.customizations?.from}</p>
-								<p>À : {item.customizations?.to}</p>
-								<p>Message : {item.customizations?.message}</p>
-								<button type="button" onClick={() => removeFromCart(item.id)}>
-									Supprimer
-								</button>
-							</li>
-						))}
-					</ul>
-				)}
-			</ul>
-			<div className="flex items-center gap-2">
-				<input
-					type="checkbox"
-					id="cgv"
-					checked={isCGVChecked}
-					onChange={(e) => setIsCGVChecked(e.target.checked)}
-					className="w-5 h-5 text-gold focus:ring-darkolivegreen border-gray-300 rounded"
-				/>
 
-				<label htmlFor="cgv" className="text-gray-700 text-sm">
-					Veuillez accepter les{" "}
-					<Link href="/cgv" passHref>
-						<span className="text-gold underline cursor-pointer">
-							Conditions Générales de Vente
-						</span>
-					</Link>{" "}
-					avant de procéder au paiement
-				</label>
+				{/* Panier */}
+				<div className="bg-white  rounded-lg ">
+					{cart.length === 0 ? (
+						<p className="text-center text-gray-500 text-lg">
+							Votre panier est vide.
+						</p>
+					) : (
+						<div className="space-y-6">
+							{cart.map((item) => (
+								<div
+									key={item.id}
+									className="flex flex-col lg:flex-row items-center justify-between gap-4 p-4 border border-gray-200 rounded-lg"
+								>
+									<div className="flex flex-col items-center lg:flex-row  gap-4">
+										{/* Image placeholder */}
+										<div className="flex items-center justify-center rounded-lg">
+											<Image
+												src={cartecadeaurecto}
+												alt="Produit"
+												width={200}
+												height={200}
+												className="object-cover"
+											/>
+										</div>
+										<div className="flex flex-col gap-4">
+											<h3 className="text-lg font-tanker font-semibold text-darkolivegreen">
+												{item.customizations?.prestation}
+											</h3>
+											<p className="text-gray-600 text-sm">
+												De : {item.customizations?.from} | À :{" "}
+												{item.customizations?.to}
+											</p>
+											<p className="text-gray-600 text-sm">
+												Message : {item.customizations?.message}
+											</p>
+											<p className="text-sand font-bold">
+												Prix : {item.price} €
+											</p>
+										</div>
+									</div>
+									<div>
+										<button
+											type="button"
+											onClick={() => removeFromCart(item.id)}
+											className="bg-sand text-white px-4 py-2 rounded-md  hover:bg-black"
+										>
+											Supprimer
+										</button>
+									</div>
+								</div>
+							))}
+						</div>
+					)}
+				</div>
+
+				{/* CGV */}
+				<div className="flex items-center gap-2 mt-6">
+					<input
+						type="checkbox"
+						id="cgv"
+						checked={isCGVChecked}
+						onChange={(e) => setIsCGVChecked(e.target.checked)}
+						className="w-5 h-5 text-gold focus:ring-darkolivegreen border-gray-300 rounded"
+					/>
+					<label htmlFor="cgv" className="text-gray-700 text-sm">
+						Veuillez accepter les{" "}
+						<Link href="/cgv" passHref>
+							<span className="text-gold underline cursor-pointer">
+								Conditions Générales de Vente
+							</span>
+						</Link>{" "}
+						avant de procéder au paiement
+					</label>
+				</div>
+
+				{/* Bouton de paiement */}
+				<button
+					type="button"
+					onClick={handleCheckout}
+					className={`mt-6 w-full font-semibold text-white py-3 rounded-lg  ${
+						isCGVChecked
+							? "bg-darkorange hover:bg-black"
+							: "bg-gray-400 cursor-not-allowed"
+					}`}
+					disabled={!isCGVChecked}
+				>
+					Passer au paiement
+				</button>
 			</div>
-			<button
-				type="button"
-				onClick={handleCheckout}
-				className={`mt-6 w-full font-semibold text-gray bg-darkolivegreen py-3 rounded-lg shadow-md ${
-					isCGVChecked
-						? "bg-darkolivegreen hover:bg-lightgreen"
-						: "bg-gray-400 cursor-not-allowed"
-				}`}
-				disabled={!isCGVChecked}
-			>
-				Passer au paiement
-			</button>
 		</div>
 	);
 }

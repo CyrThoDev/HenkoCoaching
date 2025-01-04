@@ -16,8 +16,9 @@ function Cadeaux() {
 		prestation: "",
 		from: "",
 		to: "",
-		email: "", // Adresse email pour l'envoi
-		message: "", // Message facultatif
+		email: "",
+		message: "",
+		checked: false,
 	});
 
 	const SaveCustomization = (formData) => {
@@ -36,12 +37,14 @@ function Cadeaux() {
 			);
 			return;
 		}
-
+		if (customizations.checked) {
+			customizations.price += 1;
+		}
 		addToCart({
 			id: Date.now(),
 			type: "Carte Cadeau",
 			customizations,
-			price: customizations.price,
+			price: Number(customizations.price),
 		});
 
 		// A MODIFIER avec vrai message d'enregistrement et d'ajout au panier, pas une alerte
@@ -49,37 +52,38 @@ function Cadeaux() {
 	};
 
 	return (
-		<div className="flex flex-col ">
+		<div className="flex flex-col gap-10">
 			<NavBar logo={logoSableHenko} />
 			<div className="flex flex-col gap-10">
 				<HeadPages title="CARTES CADEAUX" />
 				<WaveSable />
 			</div>
-			<div className="flex flex-col gap-10 mt-10 ">
-				<p className="">
-					Il n’y a pas de plus beau cadeau que de prendre soin des gens qu’on
-					aime. Que ce soit grâce à un massage ou un coaching privé, voire les
-					deux combinés.
-				</p>
-
-				<p>
-					Choisissez la prestation de votre choix et si vous souhaitez ajouter
-					un message personnalisé pour rendre ce cadeau unique.
-				</p>
-
-				<Image
-					src={cartecadeaurecto}
-					width={"auto"}
-					height={"auto"}
-					alt="recto de la carte cadeau de Henko Coaching"
-					className="self-center w-1/2 border border-sand rounded"
-				/>
-			</div>
-			<div className="flex flex-row px-10 lg:px-20  ">
-				<div className="flex flex-col ">
-					<div className="basis-1/2">
-						<FormCarteCadeau SaveCustomization={SaveCustomization} />
+			<div className="flex flex-col lg:flex-row ">
+				<div className="flex flex-col  px-10 lg:px-20 lg:basis-1/2 justify-around mt-10 items-center ">
+					<div className="flex flex-col gap-8">
+						<p>
+							Il n’y a pas de plus beau cadeau que de prendre soin des gens
+							qu’on aime. Que ce soit grâce à un massage ou un coaching privé,
+							voire les deux combinés.
+						</p>
+						<p>
+							Choisissez la prestation de votre choix , et si vous le souhaitez,
+							ajoutez un message personnalisé pour rendre ce cadeau unique.
+						</p>
 					</div>
+
+					<Image
+						src={cartecadeaurecto}
+						width={"auto"}
+						height={"auto"}
+						alt="recto de la carte cadeau de Henko Coaching"
+						className="self-center border border-sand rounded"
+					/>
+				</div>
+
+				<div className="flex flex-col px-10 lg:px-20 lg:basis-1/2 ">
+					<FormCarteCadeau SaveCustomization={SaveCustomization} />
+
 					{/* <CardPreview
 						personnaliserCarte={formData.personnaliserCarte}
 						prestation={formData.prestation}
@@ -89,19 +93,13 @@ function Cadeaux() {
 					<button
 						type="button"
 						onClick={handleAddToCart}
-						className="bg-darkorange text-white text-center rounded-md py-3 px-4"
+						className="bg-sand text-white text-center rounded-md py-3"
 					>
 						Ajouter au Panier
 					</button>
 				</div>
-				<Image
-					src={cartecadeaurecto}
-					width={"auto"}
-					height={"auto"}
-					alt="recto de la carte cadeau de Henko Coaching"
-					className="self-center border border-sand rounded"
-				/>
 			</div>
+
 			<div className="py-20">
 				<WaveSable />
 			</div>
