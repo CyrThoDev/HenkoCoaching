@@ -7,8 +7,10 @@ import Link from "next/link";
 import logoHenkoOrange from "@images/logoHenkoOrange.svg";
 import NavBar from "@/components/NavBar";
 import HeadPages from "@/components/HeadPages";
-import WaveOrange from "@/components/WaveOrange";
-import logoOrange from "@images/logoHenkoOrange.svg";
+// import WaveOrange from "@/components/WaveOrange";
+// import logoOrange from "@images/logoHenkoOrange.svg";
+import logoSableHenko from "@images/logoSableHenko.webp";
+import WaveSable from "@/components/WaveSable";
 import cartecadeaurecto from "@images/cartecadeaurecto.png";
 
 const stripePromise = loadStripe(
@@ -34,27 +36,27 @@ function Cart() {
 
 	return (
 		<div>
-			<NavBar logo={logoOrange} />
-			<div className="px-10 lg:px-20 flex flex-col gap-10 mb-10">
+			<NavBar logo={logoSableHenko} />
+			<div className="px-10 md:px-72 flex flex-col gap-10 mb-10">
 				<div className="flex flex-col gap-4">
 					<HeadPages title="VOTRE PANIER" />
-					<WaveOrange />
+					<WaveSable />
 				</div>
 
 				{/* Panier */}
-				<div className="bg-white  rounded-lg ">
+				<div className="bg-white  rounded-lg">
 					{cart.length === 0 ? (
 						<p className="text-center text-gray-500 text-lg">
 							Votre panier est vide.
 						</p>
 					) : (
-						<div className="space-y-6">
+						<div className="space-y-6 0">
 							{cart.map((item) => (
 								<div
 									key={item.id}
 									className="flex flex-col lg:flex-row items-center justify-between gap-4 p-4 border border-gray-200 rounded-lg"
 								>
-									<div className="flex flex-col items-center lg:flex-row  gap-4">
+									<div className="flex flex-col items-center md:flex-row  gap-4">
 										{/* Image placeholder */}
 										<div className="flex items-center justify-center rounded-lg">
 											<Image

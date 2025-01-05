@@ -45,7 +45,7 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 				<select
 					id="prestation"
 					name="prestation"
-					className="w-full mt-1 p-2 border border-gray-300 rounded outline-sand"
+					className="w-full mt-1 p-2 border border-sand text-gray-700 bg-white rounded outline-sand"
 					value={formData.prestation}
 					onChange={handleChange}
 					required
