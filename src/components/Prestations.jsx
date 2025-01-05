@@ -104,7 +104,7 @@ const Prestations = () => {
 									className="rounded-md"
 									alt="Photo d'un massage"
 								/>
-								<h3 className="w-[17rem] text-md font-bold bg-white -mt-12 text-black text-center rounded-md border border-sand p-4">
+								<h3 className="w-[17rem] text-xl font-tanker bg-sand -mt-12 text-white text-center rounded-md border border-sand  p-4">
 									{prestation.title}
 								</h3>
 							</div>
@@ -135,12 +135,16 @@ const Prestations = () => {
 									</dialog>
 								</div>
 								<div className="mt-auto flex flex-col gap-2">
-									<p className="text-black font-semibold">{prestation.prix1}</p>
-									{prestation.prix2 && (
+									<div>
 										<p className="text-black font-semibold">
-											{prestation.prix2}
+											{prestation.prix1}
 										</p>
-									)}
+										{prestation.prix2 && (
+											<p className="text-black font-semibold">
+												{prestation.prix2}
+											</p>
+										)}
+									</div>
 									{prestation.button === "RESERVER" ? (
 										<Calendly
 											url={prestation.calendlyUrl}

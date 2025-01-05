@@ -7,8 +7,10 @@ import Link from "next/link";
 import logoHenkoOrange from "@images/logoHenkoOrange.svg";
 import NavBar from "@/components/NavBar";
 import HeadPages from "@/components/HeadPages";
-import WaveOrange from "@/components/WaveOrange";
-import logoOrange from "@images/logoHenkoOrange.svg";
+// import WaveOrange from "@/components/WaveOrange";
+// import logoOrange from "@images/logoHenkoOrange.svg";
+import logoSableHenko from "@images/logoSableHenko.webp";
+import WaveSable from "@/components/WaveSable";
 import cartecadeaurecto from "@images/cartecadeaurecto.png";
 
 const stripePromise = loadStripe(
@@ -34,11 +36,11 @@ function Cart() {
 
 	return (
 		<div>
-			<NavBar logo={logoOrange} />
+			<NavBar logo={logoSableHenko} />
 			<div className="px-10 lg:px-20 flex flex-col gap-10 mb-10">
 				<div className="flex flex-col gap-4">
 					<HeadPages title="VOTRE PANIER" />
-					<WaveOrange />
+					<WaveSable />
 				</div>
 
 				{/* Panier */}

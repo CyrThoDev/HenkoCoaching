@@ -58,8 +58,8 @@ function Cadeaux() {
 				<HeadPages title="CARTES CADEAUX" />
 				<WaveSable />
 			</div>
-			<div className="flex flex-col lg:flex-row ">
-				<div className="flex flex-col  px-10 lg:px-20 lg:basis-1/2 justify-around mt-10 items-center ">
+			<div className="flex flex-col md:flex-row  ">
+				<div className="flex flex-col gap-10 px-10 lg:px-20 md:basis-1/2 justify-around mt-10 items-center ">
 					<div className="flex flex-col gap-8">
 						<p>
 							Il n’y a pas de plus beau cadeau que de prendre soin des gens
@@ -81,7 +81,7 @@ function Cadeaux() {
 					/>
 				</div>
 
-				<div className="flex flex-col px-10 lg:px-20 lg:basis-1/2 ">
+				<div className="flex flex-col px-10 lg:px-20 md:basis-1/2 ">
 					<FormCarteCadeau SaveCustomization={SaveCustomization} />
 
 					{/* <CardPreview
