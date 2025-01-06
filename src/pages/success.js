@@ -11,7 +11,7 @@ const Success = () => {
 
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center">
-			<h1 className=" text-darkolivegreen text-4xl font-bold">
+			<h1 className=" text-sand text-4xl font-bold">
 				Merci pour votre achat !
 			</h1>
 			<p className="text-lg mt-4">
@@ -19,7 +19,7 @@ const Success = () => {
 				de confirmation.
 			</p>
 			<Link href="/">
-				<href className="mt-8 text-darkseagreen hover:underline">
+				<href className="mt-8 text-sand hover:underline">
 					Retourner à l&#39;accueil
 				</href>
 			</Link>

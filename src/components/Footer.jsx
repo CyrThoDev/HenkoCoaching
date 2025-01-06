@@ -46,7 +46,7 @@ function Footer() {
 							<FaInstagramSquare className="text-white text-4xl self-center" />
 						</Link>
 						<Link
-							href="https://www.instagram.com/henko/"
+							href="https://g.co/kgs/EESbZTV"
 							alt="lien Google My business Henko Coaching"
 							target="_blanck"
 							aria-label="cliquer pour aller sur la page google My business de Henko coaching"
@@ -61,7 +61,7 @@ function Footer() {
 					<p>CGV</p>
 				</div>
 			</div>
-			<div className="text-center">2024-Henko Coaching</div>
+			<div className="text-center">©️ 2024 - Henko Coaching</div>
 		</div>
 	);
 }
