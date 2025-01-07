@@ -20,9 +20,9 @@ const cgv = () => {
 						</h2>
 						<p>
 							Les présentes Conditions Générales de Vente (CGV) régissent
-							l'ensemble des ventes de cartes cadeaux effectuées sur le site
+							l&#39ensemble des ventes de cartes cadeaux effectuées sur le site
 							Henko Coaching (« le Site »). En validant une commande sur le
-							Site, l'utilisateur (« le Client ») reconnaît avoir pris
+							Site, l&#39utilisateur (« le Client ») reconnaît avoir pris
 							connaissance des présentes CGV et les accepter sans réserve.
 						</p>
 						<p>
@@ -38,7 +38,7 @@ const cgv = () => {
 							<br />
 							Adresse électronique de l’entreprise : []
 							<br />
-							SIREN : "" <br />
+							SIREN : [] <br />
 						</p>
 						<p>
 							D’autre part, les clients, personnes physiques ou morales ayant
@@ -66,7 +66,7 @@ const cgv = () => {
 						</h2>
 						<p>
 							Les cartes cadeaux disponibles sur le Site permettent au
-							bénéficiaire d'accéder à des prestations définies par Henko
+							bénéficiaire d&#39accéder à des prestations définies par Henko
 							Coaching. Les détails des prestations incluses dans chaque carte
 							cadeau sont précisés sur la page produit.
 						</p>
@@ -84,12 +84,12 @@ const cgv = () => {
 							3 - Commande
 						</h2>
 						<p>
-							Le Client s'engage à fournir des informations exactes lors de la
-							passation de commande, notamment pour l'adresse e-mail qui sera
-							utilisée pour envoyer la carte cadeau. Toute erreur de saisie
+							Le Client s&#39engage à fournir des informations exactes lors de
+							la passation de commande, notamment pour l&#39adresse e-mail qui
+							sera utilisée pour envoyer la carte cadeau. Toute erreur de saisie
 							relève de la responsabilité du Client. Après validation du panier,
 							le Client est redirigé vers la plateforme de paiement Stripe, qui
-							gère l'ensemble des transactions de manière sécurisée.
+							gère l&#39ensemble des transactions de manière sécurisée.
 						</p>
 					</section>
 
@@ -98,12 +98,12 @@ const cgv = () => {
 							4 - Paiement
 						</h2>
 						<p className="italic">
-							Le paiement des commandes s'effectue exclusivement via Stripe. Les
-							moyens de paiement acceptés (carte bancaire, etc.) sont indiqués
-							lors de la validation du paiement. Le paiement est immédiat, et la
-							commande n'est validée qu'une fois le paiement confirmé. En cas de
-							refus du paiement par Stripe, la commande sera automatiquement
-							annulée.
+							Le paiement des commandes s&#39effectue exclusivement via Stripe.
+							Les moyens de paiement acceptés (carte bancaire, etc.) sont
+							indiqués lors de la validation du paiement. Le paiement est
+							immédiat, et la commande n&#39est validée qu&#39une fois le
+							paiement confirmé. En cas de refus du paiement par Stripe, la
+							commande sera automatiquement annulée.
 						</p>
 					</section>
 
@@ -112,11 +112,12 @@ const cgv = () => {
 							5 - Livraison
 						</h2>
 						<p className="italic">
-							Les cartes cadeaux sont envoyées par e-mail à l'adresse indiquée
-							par le Client lors de la commande, sous un délai maximum de 24
-							heures après confirmation du paiement. Henko Coaching ne saurait
-							être tenu responsable des retards ou des erreurs de livraison dus
-							à une saisie incorrecte de l'adresse e-mail par le Client.
+							Les cartes cadeaux sont envoyées par e-mail à l&#39adresse
+							indiquée par le Client lors de la commande, sous un délai maximum
+							de 24 heures après confirmation du paiement. Henko Coaching ne
+							saurait être tenu responsable des retards ou des erreurs de
+							livraison dus à une saisie incorrecte de l&#39adresse e-mail par
+							le Client.
 						</p>
 					</section>
 
@@ -125,8 +126,8 @@ const cgv = () => {
 							6 -Validité des cartes cadeaux
 						</h2>
 						<p>
-							Conformément à l'article L221-28 du Code de la consommation, le
-							droit de rétractation ne s'applique pas aux cartes cadeaux,
+							Conformément à l&#39article L221-28 du Code de la consommation, le
+							droit de rétractation ne s&#39applique pas aux cartes cadeaux,
 							celles-ci étant considérées comme des produits personnalisés et
 							immédiatement utilisables après achat. Toute commande validée est
 							donc ferme et définitive.
@@ -138,9 +139,9 @@ const cgv = () => {
 						</h2>
 						<p>
 							Henko Coaching ne saurait être tenu responsable en cas
-							d'utilisation frauduleuse de la carte cadeau par un tiers ou en
-							cas d'erreur dans les informations fournies par le Client lors de
-							la commande.
+							d&#39utilisation frauduleuse de la carte cadeau par un tiers ou en
+							cas d&#39erreur dans les informations fournies par le Client lors
+							de la commande.
 						</p>
 					</section>
 					<section>
@@ -180,7 +181,7 @@ const cgv = () => {
 						<p>
 							Les présentes CGV sont soumises au droit français. En cas de
 							litige, une solution amiable sera recherchée avant tout recours
-							judiciaire. Si aucune solution amiable n'est trouvée, les
+							judiciaire. Si aucune solution amiable n&#39est trouvée, les
 							tribunaux compétents seront ceux du ressort du siège social de
 							Henko Coaching.
 						</p>
@@ -192,7 +193,7 @@ const cgv = () => {
 						<p>
 							Pour toute question ou réclamation concernant les cartes cadeaux
 							ou les présentes CGV, le Client peut contacter Henko Coaching via
-							""
+							[]
 						</p>
 					</section>
 					<p className="italic">Dernière mise à jour : 07/01/2024</p>
