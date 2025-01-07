@@ -27,13 +27,13 @@ function Header() {
 					<div className="flex flex-col md:flex-row gap-4 font-poppins">
 						<ButtonOrange
 							title="RESERVER UN COACHING"
-							link="/coaching"
+							link="https://calendly.com/henkocoaching/coaching-essai-1h?month=2025-01"
 							width="w-[16rem]"
 						/>
 
 						<ButtonBlack
 							title="RESERVER UN MASSAGE"
-							link="/coaching"
+							link="https://calendly.com/henkocoaching/"
 							width="w-[16rem]"
 						/>
 					</div>
