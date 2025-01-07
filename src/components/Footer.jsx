@@ -56,9 +56,10 @@ function Footer() {
 					</div>
 				</div>
 				<div className="flex flex-col gap-2 text-white text-center">
-					<p>Mentions légales</p>
-					<p>Politique de confidentialité</p>
-					<p>CGV</p>
+					<Link href="/mentionslegales">
+						Mentions légales & Politique de confidentialité
+					</Link>
+					<Link href="/cgv">CGV</Link>
 				</div>
 			</div>
 			<div className="text-center">©️ 2024 - Henko Coaching</div>
