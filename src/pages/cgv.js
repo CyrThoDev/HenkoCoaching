@@ -158,7 +158,7 @@ const cgv = () => {
 						<br /> En utilisant notre Site et en passant commande, vous déclarez
 						accepter sans réserve les termes de la présente{" "}
 						<Link href="mentionslegales" className="font-semibold">
-							"Politique de protection des données personnelles"
+							&#34;Politique de protection des données personnelles&#34;
 						</Link>{" "}
 						. Le vendeur pourra modifier librement la présente Politique de
 						protection des données personnelles. Toute modification prendra
