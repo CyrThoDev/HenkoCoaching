@@ -77,7 +77,7 @@ function Cadeaux() {
 						width={"auto"}
 						height={"auto"}
 						alt="recto de la carte cadeau de Henko Coaching"
-						className="self-center border border-sand rounded"
+						className="self-center border border-sand rounded-sm"
 					/>
 				</div>
 

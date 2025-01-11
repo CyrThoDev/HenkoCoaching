@@ -7,8 +7,7 @@ export const prestations = [
 		prix1: "Zone -  30 min :  40€ ",
 		prix2: "Corps entier -  60 min : 65€",
 		image: "/images/massage4.jpg",
-		calendlyUrl:
-			"https://calendly.com/henkocoaching/massage-suedois?back=1&month=2025-01",
+		calendlyUrl: "https://calendly.com/henkocoaching/massage-suedois",
 		button: "RESERVER",
 	},
 	{
@@ -22,8 +21,7 @@ export const prestations = [
 		prix1: "Zone -  30 min :  45€",
 		prix2: "Corps entier -  60 min : 70€",
 		image: "/images/massage4.jpg",
-		calendlyUrl:
-			"https://calendly.com/henkocoaching/massage-sportif?back=1&month=2025-01",
+		calendlyUrl: "https://calendly.com/henkocoaching/massage-sportif",
 		button: "RESERVER",
 	},
 	{
@@ -70,8 +68,7 @@ export const prestations = [
 		prix1: "20 min : 30€ ",
 		prix2: "",
 		image: "/images/massage4.jpg",
-		calendlyUrl:
-			"https://calendly.com/henkocoaching/pressotherapie?back=1&month=2025-01",
+		calendlyUrl: "https://calendly.com/henkocoaching/pressotherapie",
 		button: "RESERVER",
 	},
 	{

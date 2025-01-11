@@ -9,15 +9,15 @@ const APropos = () => {
 				<span className=" text-3xl z-10">Présentation de la coach</span>
 				<div className="w-[12rem] h-3 bg-darkorange -mt-3 -z-1" />
 			</h2>
-			<div className=" flex flex-col lg:flex-row gap-10 justify-between items-center">
+			<div className=" flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center">
 				<Image
 					src={apropos}
 					width={"auto"}
 					height={"auto"}
-					className="basis-1/2"
+					className="basis-1/5 shadow-perso shadow-darkorange rounded-sm"
 					alt="Photo d'un sportive à la montagne"
 				/>
-				<div className="flex flex-col gap-4 basis-1/2 ">
+				<div className="flex flex-col gap-4 basis-3/5 ">
 					<p className="font-pinyon text-4xl">Jessica Perestrelo</p>
 					<p className="">
 						Passionnée et pratiquant le sport depuis toujours, j&#39;ai su me

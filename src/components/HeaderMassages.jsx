@@ -15,28 +15,28 @@ const HeaderMassages = () => {
 					src={massage1}
 					width={"auto"}
 					height={"auto"}
-					className=""
+					className="rounded-sm"
 					alt="Photo d'un massage"
 				/>
 				<Image
 					src={massage2}
 					width={"auto"}
 					height={"auto"}
-					className="mt-20"
+					className="mt-20 rounded-sm"
 					alt="Photo d'un massage"
 				/>
 				<Image
 					src={massage3}
 					width={"auto"}
 					height={"auto"}
-					className="hidden lg:block lg:mt-8"
+					className="hidden lg:block lg:mt-8 rounded-sm"
 					alt="Photo d'un massage"
 				/>
 				<Image
 					src={massage4}
 					width={"auto"}
 					height={"auto"}
-					className="hidden lg:block"
+					className="hidden lg:block rounded-sm"
 					alt="Photo d'un massage"
 				/>
 			</div>

@@ -95,7 +95,7 @@ function Seance() {
 			<div className="flex justify-center">
 				<CalendlyModal
 					url="https://calendly.com/henkocoaching/coaching-essai-1h"
-					title="RESERVER MA SEANCE D'ESSAI"
+					title="RESERVER MA PREMIERE SEANCE"
 					color="bg-darkorange"
 					width="w-[18rem] lg:w-[20rem]"
 				/>

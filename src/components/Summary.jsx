@@ -11,12 +11,12 @@ function Summary() {
 				<div className=" px-10 lg:px-20 pb-10 lg:pb-0 pt-10 flex flex-col lg:flex-row gap-10 justify-around items-center">
 					<Image
 						src={salle3}
-						width={400}
-						height={""}
-						className="rounded-sm"
+						width={"300"}
+						height={"auto"}
+						className="rounded-sm  "
 						alt="photo de la salle avec des poids"
 					/>
-					<div className="flex flex-col gap-10 lg:basis-3/5 justify-between">
+					<div className="flex flex-col gap-8 lg:basis-3/5 justify-between">
 						<h2 className="text-2xl md:text-3xl font-semibold ">
 							Des services sur-mesure pour tous les âges!
 						</h2>
@@ -34,7 +34,7 @@ function Summary() {
 							harmonie totale. Vous méritez ce moment, et je suis là pour vous y
 							conduire.
 						</p>
-						<div className="self-center lg:pt-20 ">
+						<div className="self-center ">
 							<ButtonBlack
 								title="CONTACTEZ-MOI"
 								link="/#contact"

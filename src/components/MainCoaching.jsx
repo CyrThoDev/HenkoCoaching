@@ -4,7 +4,9 @@ import Image from "next/image";
 import vector from "../../public/images/vector.svg";
 import CalendlyModal from "@/components/Calendly";
 import { FaCheck } from "react-icons/fa6";
-import planningHenko from "@images/planningHenko.png";
+import PlanningHenkoDesktopv2 from "@images/PlanningHenkoDesktopv2.png";
+import PlanningHenkoMobile from "@images/PlanningHenkoMobile.png";
+import ButtonOrange from "./ButtonOrange";
 
 const coachingBenefits = [
 	"Se remettre en forme et/ou perdre du poids, reprendre confiance en soi",
@@ -63,7 +65,7 @@ function MainCoaching() {
 							src={salle}
 							width={"auto"}
 							height={"auto"}
-							className="max-h-[30rem] w-auto shadow-perso shadow-darkorange"
+							className="max-h-[30rem] w-auto shadow-perso shadow-darkorange rounded-sm"
 							alt="Salle de sport"
 						/>
 					</div>
@@ -98,16 +100,22 @@ function MainCoaching() {
 						</h2>
 						<div className="space-y-4 flex flex-col gap-4">
 							<Image
-								src={planningHenko}
+								src={PlanningHenkoDesktopv2}
 								alt="Planning Henko"
 								width={"auto"}
 								height={"auto"}
 								onClick={openDialog}
+								className="hidden lg:block"
 							/>
-							<dialog
-								ref={dialogRef}
-								className=" bg-lightgreen rounded-lg p-6  "
-							>
+							<Image
+								src={PlanningHenkoMobile}
+								alt="Planning Henko"
+								width={"auto"}
+								height={"auto"}
+								onClick={openDialog}
+								className=" lg:hidden"
+							/>
+							<dialog ref={dialogRef} className=" bg-white rounded-lg p-6  ">
 								<button
 									type="button"
 									className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
@@ -115,12 +123,21 @@ function MainCoaching() {
 								>
 									&times;
 								</button>
-								<div className="w-[90svw] lg:w-[70vw]">
+								<div className=" lg:w-[70vw]">
 									<Image
-										src={planningHenko}
+										src={PlanningHenkoDesktopv2}
 										alt="Planning Henko"
 										width={"auto"}
 										height={"auto"}
+										className="hidden lg:block"
+									/>
+									<Image
+										src={PlanningHenkoMobile}
+										alt="Planning Henko"
+										width={"auto"}
+										height={"auto"}
+										onClick={openDialog}
+										className=" lg:hidden w-[80svw]"
 									/>
 								</div>
 							</dialog>
@@ -129,13 +146,22 @@ function MainCoaching() {
 									<p key={index}>{detail}</p>
 								))}
 							</div>
-							<div className="flex justify-center lg:justify-start">
-								<CalendlyModal
+							<div className="flex  flex-col justify-center lg:justify-start">
+								{/* <CalendlyModal
 									url="https://calendly.com/henkocoaching/coaching-essai-1h"
 									title="RESERVER MA SEANCE D'ESSAI"
 									color="bg-darkorange"
 									width="w-[18rem] lg:=w-[20rem]"
+								/> */}
+								<ButtonOrange
+									title="RESERVER MA SEANCE"
+									link="https://calendly.com/henkocoaching/reservation-creneau-coaching"
+									target="_blank"
+									width="w-[18rem]"
 								/>
+								<p className="font-semibold">
+									*Ce lien de réservation est réservé aux clients existants.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -144,7 +170,7 @@ function MainCoaching() {
 							src={salle}
 							width={"auto"}
 							height={"auto"}
-							className="max-h-[30rem] w-auto shadow-perso shadow-darkorange"
+							className="max-h-[30rem] w-auto shadow-perso shadow-darkorange rounded-sm"
 							alt="Salle de sport"
 						/>
 					</div>

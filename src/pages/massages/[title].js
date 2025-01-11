@@ -22,7 +22,7 @@ const PrestationCard = () => {
 						src={prestationDetail.image}
 						width={"250"}
 						height={"250"}
-						className="rounded-md"
+						className="rounded-sm"
 						alt="Photo d'un massage"
 					/>
 				)}

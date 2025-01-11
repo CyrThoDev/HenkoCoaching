@@ -84,7 +84,7 @@ export default function Google() {
 							key={review.time}
 							className="border-[0.025rem] rounded-xl border-gold flex flex-col w-full lg:w-1/5 gap-2 p-4 bg-white shadow-md  transition-all"
 						>
-							<p className=" text-mb font-bold font-tanker">
+							<p className=" text-mb font-bold font-poppin">
 								{review.author_name.split(" ")[0].toUpperCase()}
 							</p>
 							<p className="line-clamp-4 text-gray-600">

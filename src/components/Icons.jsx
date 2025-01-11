@@ -9,15 +9,15 @@ const iconsTab = [
 		description:
 			"Seul ou à plusieurs, je vous accompagne personnellement à améliorer vos mouvements et à révéler tout votre potentiel sportif dans le but d'atteindre vos objectifs sans vous blesser. Découvrez les options qui s’offrent à vous !",
 		forward: "/images/orangeArrow.webp",
-		link: "https://calendly.com/henkocoaching/coaching-essai-1h?back=1&month=2024-12",
+		link: "https://calendly.com/henkocoaching/coaching-essai-1h",
 		alt: "icone d'une personne en mouvement",
 	},
 	{
-		icon: "/images/recup.svg",
+		icon: "/images/recupsand.svg",
 		name: "MASSAGES ET RECUPERATION",
 		description:
 			"En complément de vos séances de sport ou tout simplement pour vous faire du bien et vous relaxer, offrez-vous la possibilité de vous faire masser au même endroit. Découvrez les différents types de massages et de récupération proposés!",
-		forward: "/images/orangeArrow.webp",
+		forward: "/images/arrow-sand.svg",
 		link: "/massages",
 		alt: "icone batterie pour illustrer la recuperation",
 	},
@@ -31,11 +31,11 @@ const iconsTab = [
 		alt: "icone avec des poids qui seraient en libre accès",
 	},
 	{
-		icon: "/images/location.svg",
+		icon: "/images/location-sand.svg",
 		name: "LOCATION ESPACE PRO",
 		description:
 			"Vous avez un projet ou un événement à organiser ? Cet espace sportif et bien-être est disponible à la location ponctuelle ! Que ce soit pour des cours particuliers, des ateliers, des séminaires ou des événements privés, notre lieu modulable s’adapte à vos besoins.",
-		forward: "/images/orangeArrow.webp",
+		forward: "/images/arrow-sand.svg",
 		link: "/locationespacepro",
 		alt: "icone d'un personne qui donne les clés à une autre pour imager la location d'un espace",
 	},
