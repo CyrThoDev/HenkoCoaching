@@ -35,7 +35,7 @@ function LocationEspacePro() {
 					src={salle}
 					width={"auto"}
 					height={"auto"}
-					className="max-h-[25rem] w-auto shadow-perso shadow-sand basis-1/2"
+					className="max-h-[25rem] w-auto shadow-perso shadow-sand basis-1/2 rounded-sm"
 					alt="Salle de sport"
 				/>
 			</div>

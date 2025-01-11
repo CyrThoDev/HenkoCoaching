@@ -7,7 +7,10 @@ import { useCart } from "@/context/CartContext";
 // Composant de liens partagés
 const MenuLinks = ({ onClick }) => {
 	return (
-		<div className="flex flex-col lg:flex-row gap-8 lg:gap-8 items-center">
+		<div className="flex flex-col lg:flex-row gap-8 lg:gap-4 xl:gap-6 items-center">
+			<Link href="/" onClick={onClick}>
+				ACCUEIL
+			</Link>
 			<Link href="/coaching" onClick={onClick}>
 				COACHING
 			</Link>
@@ -137,7 +140,7 @@ function NavBar({ logo }) {
 			<div
 				className={`hidden ${
 					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				} xl:flex justify-between items-center px-20 py-2 z-20`}
+				} lg:flex justify-between  px-10 xl:px-20 py-2 z-20`}
 			>
 				<Link href="/">
 					<Image

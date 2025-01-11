@@ -26,15 +26,17 @@ function Header() {
 					</p>
 					<div className="flex flex-col md:flex-row gap-4 font-poppins">
 						<ButtonOrange
-							title="RESERVER UN COACHING"
-							link="https://calendly.com/henkocoaching/coaching-essai-1h?month=2025-01"
-							width="w-[16rem]"
+							title="RESERVER MA PREMIERE SEANCE"
+							link="https://calendly.com/henkocoaching/coaching-essai-1h"
+							target="_blank"
+							width="w-[18rem]"
 						/>
 
 						<ButtonBlack
 							title="RESERVER UN MASSAGE"
 							link="https://calendly.com/henkocoaching/"
-							width="w-[16rem]"
+							target="_blank"
+							width="w-[18rem]"
 						/>
 					</div>
 				</div>

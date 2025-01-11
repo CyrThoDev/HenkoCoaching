@@ -12,7 +12,7 @@ function CoachingHeader() {
 						src={salle}
 						width={"auto"}
 						height={"auto"}
-						className="max-h-[30rem] w-auto"
+						className="max-h-[30rem] w-auto rounded-sm"
 						alt="icone de poids à soulever"
 					/>
 				</div>
@@ -81,11 +81,11 @@ function CoachingHeader() {
 							<p>Cadre discret et intimiste</p>
 						</div>
 					</div>
-					<div className="flex items-center lg:items-start flex-col gap-2   ">
+					<div className="flex items-center lg:items-start flex-col gap-2  z-10 w-fit ">
 						<ButtonOrange
 							title="RESERVEZ VOTRE SEANCE D'ESSAI A 25€*"
 							link="https://calendly.com/henkocoaching/coaching-essai-1h"
-							width="w-[17rem] lg:w-[25rem]"
+							width=" w-fit lg:w-[25rem]"
 						/>
 						<p>* Remboursée pour toute souscription à un abonnement</p>
 					</div>

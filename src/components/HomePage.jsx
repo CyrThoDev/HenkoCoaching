@@ -7,6 +7,7 @@ import WaveOrange from "./WaveOrange";
 import APropos from "./APropos";
 import Header from "./Header";
 import Formulaire from "./Formulaire";
+import Actualites from "./Actualites";
 
 function HomePage() {
 	return (
@@ -22,6 +23,7 @@ function HomePage() {
 				labelColor="text-white"
 				borderColor="border-white"
 			/>
+			<Actualites />
 		</div>
 	);
 }
