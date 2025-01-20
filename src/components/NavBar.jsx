@@ -102,7 +102,7 @@ function NavBar({ logo }) {
 			<div
 				className={`${
 					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				} px-6 md:px-10 flex items-center justify-between py-2  xl:hidden z-20 transition-all duration-300 `}
+				} px-6 md:px-10 flex items-center justify-between py-2  lg:hidden z-20 transition-all duration-300 `}
 			>
 				<button
 					type="button"

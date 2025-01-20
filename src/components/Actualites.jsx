@@ -34,7 +34,7 @@ const Actualites = ({ news, urlFor }) => {
 	}, [hasScrolled]);
 
 	return (
-		<div className="flex flex-col ">
+		<div className="flex flex-col -mt-20 ">
 			<dialog
 				ref={dialogRef}
 				className=" rounded-lg py-20 shadow-lg max-w-screen-xs  md:max-w-screen-md w-full  text-white bg-black opacity-95 "

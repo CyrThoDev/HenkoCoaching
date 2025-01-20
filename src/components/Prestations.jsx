@@ -4,6 +4,7 @@ import Calendly from "../components/Calendly";
 import Image from "next/image";
 import massage4 from "@images/massage4.jpg";
 import { prestations } from "@/data/data";
+import ButtonBlack from "./ButtonBlack";
 
 const Prestations = () => {
 	const [activeDialog, setActiveDialog] = useState(null);
@@ -99,72 +100,39 @@ const Prestations = () => {
 	return (
 		<section id="prestations">
 			<div className="mx-auto">
-				<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker px-10 lg:px-20 py-10">
+				<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker px-10 lg:px- py-10">
 					<span className="text-3xl z-10">LES PRESTATIONS ET TARIFS</span>
 					<div className="w-[12rem] h-3 bg-sand -mt-3 -z-1" />
 				</h2>
-				<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 bg-sand px-10 lg:px-20 py-10">
+				<div className="flex flex-col  gap-4 bg-sand lg:px-20  ">
 					{prestations.map((prestation) => (
 						<div
 							key={prestation.id}
-							className="flex flex-col gap-2 rounded-md bg-white p-10 h-full"
+							className="flex flex-col  lg:flex-row gap-10 lg:gap-40  p-10 border-b border-b-black h-full"
 						>
-							<div className="flex flex-col items-center gap-4">
-								<Image
+							<div className="flex flex-col lg:flex-row gap-4 ">
+								{/* <Image
 									src={massage4}
 									width={"auto"}
 									height={"250"}
 									className="rounded-md"
 									alt="Photo d'un massage"
-								/>
-								<h3 className="w-[17rem] text-xl font-tanker bg-sand -mt-12 text-white text-center rounded-md border border-sand p-4">
+								/> */}
+
+								<h3 className=" text-xl  font-tanker bg-sand  text-black order-1 ">
 									{prestation.title}
 								</h3>
-							</div>
-							<div className="flex flex-col gap-6 flex-grow">
-								<div className="flex flex-col gap-2">
-									<p className="text-black line-clamp-6">
-										{prestation.description}
-									</p>
-									<Link
-										href={`/massages/${encodeURIComponent(prestation.title)}`}
-										className="self-start font-semibold text-sm text-sand"
-									>
-										Lire plus
-									</Link>
-									{/* Dialog */}
-									{/* {activeDialog === prestation.id && (
-										<dialog
-											open
-											className="bg-lightgreen rounded-lg p-6 max-w-lg mx-auto"
-										>
-											<button
-												type="button"
-												className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
-												onClick={closeDialog}
-											>
-												&times;
-											</button>
-											<p className="text-justify p-4">
-												{prestation.description}
-											</p>
-										</dialog>
-									)} */}
-								</div>
-								<div className="mt-auto flex flex-col gap-2">
+								<div className="mt-auto flex flex-col gap-4 order-3">
 									<div>
-										<p className="text-black font-medium">{prestation.prix1}</p>
+										<p className="text-black text-sm">{prestation.prix1}</p>
 										{prestation.prix2 && (
-											<p className="text-black font-medium">
-												{prestation.prix2}
-											</p>
+											<p className="text-black text-sm ">{prestation.prix2}</p>
 										)}
 									</div>
 									{prestation.button === "RESERVER" ? (
-										<Calendly
-											url={prestation.calendlyUrl}
+										<ButtonBlack
+											link={prestation.calendlyUrl}
 											title={prestation.button}
-											color="bg-black"
 											width="w-[14rem]"
 										/>
 									) : (
@@ -176,7 +144,34 @@ const Prestations = () => {
 										</Link>
 									)}
 								</div>
+
+								<div className="flex flex-col gap-6 flex-grow order-2 lg:order-3">
+									<div className="flex flex-col gap-2">
+										<p className="text-black line-clamp-6">
+											{prestation.description}
+										</p>
+										<Link
+											href={`/massages/${encodeURIComponent(prestation.slug)}`}
+											className="self-start font-semibold text-sm text-black"
+										>
+											Lire plus
+										</Link>
+									</div>
+								</div>
 							</div>
+							{/* <div className="flex flex-col gap-6 flex-grow">
+								<div className="flex flex-col gap-2">
+									<p className="text-black line-clamp-6">
+										{prestation.description}
+									</p>
+									<Link
+										href={`/massages/${encodeURIComponent(prestation.slug)}`}
+										className="self-start font-semibold text-sm text-black"
+									>
+										Lire plus
+									</Link>
+								</div>
+							</div> */}
 						</div>
 					))}
 				</div>

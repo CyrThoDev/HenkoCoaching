@@ -2,6 +2,7 @@ export const prestations = [
 	{
 		id: 1,
 		title: "Massage suédois relaxant",
+		slug: "massage-suédois-relaxant",
 		description:
 			"Le massage suédois relaxant est une technique de massage très populaire, idéale pour détendre en profondeur le corps tout en apaisant l'esprit. Il se compose de mouvements longs et fluides, de pétrissages, de frictions et de tapotements, réalisés à un rythme modéré pour favoriser la relaxation musculaire et améliorer la circulation sanguine. L’objectif principal est de réduire le stress, soulager les tensions musculaires et favoriser un bien-être général. Ce massage aide également à libérer les toxines tout en apportant une sensation de légèreté et de calme profond. Il est particulièrement recommandé pour ceux qui recherchent une détente totale et un moment de calme absolu.",
 		prix1: "Zone -  30 min :  40€ ",
@@ -13,6 +14,7 @@ export const prestations = [
 	{
 		id: 2,
 		title: "Massage suédois sportif",
+		slug: "massage-suédois-sportif",
 		description:
 			"Le massage suédois sportif est une variante du massage suédois classique, spécifiquement conçu pour répondre aux besoins des sportifs, avant ou après l'effort. Ce type de massage vise à préparer les muscles à l’exercice, à améliorer la performance et à accélérer la récupération. Il combine des techniques de pétrissage, de frictions profondes, de tapotements et d'étirements, qui ciblent les groupes musculaires sollicités par l'activité physique.",
 		details:
@@ -27,6 +29,7 @@ export const prestations = [
 	{
 		id: 3,
 		title: "Massage avec ventouses",
+		slug: "massage-ventouses",
 		description:
 			"Le massage ventouse, ou cupping, est une technique de thérapie manuelle ancestrale, utilisée pour stimuler la circulation sanguine, soulager les tensions musculaires et favoriser la détoxification du corps. Il consiste à appliquer des ventouses (généralement en verre, silicone ou plastique) sur la peau, créant ainsi un vide partiel qui attire la peau et les tissus sous-jacents vers l'intérieur de la ventouse. Ce phénomène génère une sorte de 'suction' qui active la circulation sanguine, aide à dissoudre les nœuds musculaires et favorise l'élimination des toxines.",
 		details:
@@ -42,6 +45,7 @@ export const prestations = [
 	{
 		id: 4,
 		title: "Bottes de compression & pressothérapie",
+		slug: "bottes-pressothérapie",
 		description:
 			"C’est dispositif de récupération utilisé principalement dans le domaine sportif, mais également pour améliorer la circulation sanguine et traiter diverses problématiques de santé. Elles fonctionnent grâce à un système de compression graduée appliquée sur les jambes, généralement autour des cuisses, des mollets et des pieds. Les bottes de compression Compex utilisent des chambres d'air qui se gonflent et se dégonflent successivement, créant une pression ciblée sur les muscles et les tissus. Ce processus est conçu pour imiter les effets d'un massage profond en favorisant la circulation sanguine et lymphatique. La compression progressive aide à éliminer les déchets métaboliques (comme l'acide lactique) accumulés dans les muscles après un effort, à réduire les œdèmes (gonflements) et à soulager les tensions musculaires.",
 		details:
@@ -74,6 +78,7 @@ export const prestations = [
 	{
 		id: 5,
 		title: "Massage spécifique 100% personnalisé",
+		slug: "massage-personnalisé",
 		description:
 			"Offrez-vous une expérience de bien-être unique avec un massage personnalisé sur mesure. Conçu spécifiquement en fonction de vos besoins et de vos attentes, ce massage combine différentes techniques pour répondre à vos objectifs de relaxation, de soulagement des tensions ou de récupération musculaire. Que vous cherchiez à diminuer le stress, apaiser des douleurs chroniques ou simplement vous accorder un moment de détente totale, notre praticien s’adapte à votre corps et à vos sensations.",
 		details:

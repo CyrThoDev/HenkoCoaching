@@ -4,6 +4,8 @@ import lift from "../../public/images/lift.webp";
 import workout from "../../public/images/Workout.webp";
 import curls from "../../public/images/Curls.webp";
 import CalendlyModal from "@/components/Calendly";
+import ButtonOrange from "./ButtonOrange";
+
 import {
 	PiNumberCircleOneLight,
 	PiNumberCircleTwoLight,
@@ -93,11 +95,16 @@ function Seance() {
 				</div>
 			</div>
 			<div className="flex justify-center">
-				<CalendlyModal
+				{/* <CalendlyModal
 					url="https://calendly.com/henkocoaching/coaching-essai-1h"
 					title="RESERVER MA PREMIERE SEANCE"
 					color="bg-darkorange"
 					width="w-[18rem] lg:w-[20rem]"
+				/> */}
+				<ButtonOrange
+					title="RESERVEZ VOTRE SEANCE D'ESSAI"
+					link="https://calendly.com/henkocoaching/coaching-essai-1h"
+					width=" w-fit lg:w-[18rem]"
 				/>
 			</div>
 		</div>

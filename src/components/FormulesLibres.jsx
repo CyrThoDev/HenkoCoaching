@@ -25,27 +25,29 @@ function FormulesLibres() {
 				<span className="text-3xl z-10">LES FORMULES</span>
 				<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 			</h2>
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-10 lg:px-20 py-10">
 				{plans.map((plan) => (
 					<div
 						key={plan.name}
 						className=" rounded-lg shadow-md p-6 bg-white  transition-shadow"
 					>
-						<h3 className="text-3xl font-semibold text-center mb-4 font-pinyon">
+						<h3 className="flex flex-col gap-2 text-2xl text-darkorange font-tanker items-center justify-center mb-8">
 							{plan.name}
 						</h3>
 						<ul className="space-y-4">
 							{plan.options.map((option, index) => (
 								<li
 									key={index}
-									className={`flex flex-col lg:flex-row justify-between items-center p-3 rounded-lg hover:shadow-lg ${
-										option.price === "45€/mois"
-											? "border  border-darkorange"
-											: ""
+									className={`flex flex-col md:flex-row gap-4 justify-between items-center p-3 rounded-lg ${
+										option.price === "45€/mois" ? "shadow-xl" : ""
 									}`}
 								>
-									<p className="font-medium text-gray-800">{option.type}</p>
-									<p className="text-lg font-bold text-darkorange">
+									<p
+										className={`text-gray-800 ${option.price === "45€/mois" ? "font-semibold" : ""}`}
+									>
+										{option.type}
+									</p>
+									<p className="text-lg font-semibold text-darkorange">
 										{option.price}
 									</p>
 								</li>

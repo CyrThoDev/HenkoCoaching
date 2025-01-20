@@ -6,9 +6,9 @@ import Image from "next/image";
 
 const PrestationCard = () => {
 	const router = useRouter();
-	const { title } = router.query;
+	const { slug } = router.query;
 
-	const prestationDetail = prestations.find((p) => p.title === title);
+	const prestationDetail = prestations.find((p) => p.slug === slug);
 
 	if (!prestationDetail) {
 		return <div>Loading...</div>;

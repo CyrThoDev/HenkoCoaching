@@ -106,7 +106,7 @@ function Formules() {
 										</p>
 										<p className="text-sm text-gray-500">{option.perSession}</p>
 									</div>
-									<p className="text-lg font-bold text-darkorange">
+									<p className="text-lg font-semibold text-darkorange">
 										{option.price}
 									</p>
 								</li>
