@@ -116,7 +116,7 @@ export default function Google() {
 			<div className="self-center flex flex-col lg:flex-row  gap-4">
 				<ButtonOrange
 					title="VOIR TOUS LES AVIS"
-					link="https://www.google.com/search?sca_esv=6031b854f1326109&sxsrf=ADLYWILYFOvw0lEukaJpfnxI7pcKpwTllA:1733923708813&q=HENKO+COACHING+%28Jessica+Perestrelo%29+Avis&ludocid=16045312707983094160&ibp=gwp;0,7&hl=fr-FR&sa=X&ved=2ahUKEwjRvuyV6Z-KAxUeTaQEHdW5CIwQ9fQKegQISxAF&biw=440&bih=706&dpr=2#lkt=LocalPoiReviews&lpg=cid:CgIgAQ%3D%3D"
+					link="https://g.co/kgs/UyfvY31"
 					width="w-[16rem]"
 				/>
 				<ButtonBlack
