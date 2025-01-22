@@ -26,6 +26,7 @@ function Cadeaux() {
 	};
 
 	const handleAddToCart = () => {
+		console.info("add to cart", customizations);
 		if (
 			!customizations.prestation ||
 			!customizations.from ||
@@ -37,6 +38,11 @@ function Cadeaux() {
 			);
 			return;
 		}
+
+		if (customizations.price === null && customizations.montantLibre) {
+			customizations.price = Number(customizations.montantLibre);
+		}
+
 		if (customizations.checked) {
 			customizations.price += 1;
 		}
@@ -83,13 +89,6 @@ function Cadeaux() {
 
 				<div className="flex flex-col px-10 lg:px-20 md:basis-1/2 ">
 					<FormCarteCadeau SaveCustomization={SaveCustomization} />
-
-					{/* <CardPreview
-						personnaliserCarte={formData.personnaliserCarte}
-						prestation={formData.prestation}
-						nomDestinataire={formData.nomDestinataire}
-						emailExpediteur={formData.emailExpediteur}
-					/> */}
 					<button
 						type="button"
 						onClick={handleAddToCart}

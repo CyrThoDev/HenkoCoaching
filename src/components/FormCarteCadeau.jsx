@@ -8,11 +8,24 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 		email: "",
 		message: "",
 		checked: false,
+		montantLibre: 0,
 	});
 
 	const prestations = [
-		{ id: "prestation1", name: "Prestation 1", price: 50 },
-		{ id: "prestation2", name: "Prestation 2", price: 80 },
+		{ id: 1, name: "Massage relaxant 30 min", price: 40 },
+		{ id: 2, name: "Massage relaxant 1h", price: 65 },
+		{ id: 3, name: "Massage relaxant 1h30", price: 95 },
+		{ id: 4, name: "Massage sportif 30 min", price: 45 },
+		{ id: 5, name: "Massage sportif 1h", price: 70 },
+		{ id: 6, name: "Massage sportif 1h30", price: 100 },
+		{ id: 7, name: "Séance d'essai coaching 1h", price: 25 },
+		{ id: 8, name: "Séance de coaching 1h + massage 1h", price: 95 },
+		{ id: 9, name: "Forfait 10 séances de coaching", price: 350 },
+		{ id: 10, name: "Accès libre 1 mois", price: 50 },
+		{ id: 11, name: "Accès libre 3 mois", price: 135 },
+		{ id: 12, name: "Accès libre 6 mois", price: 255 },
+		{ id: 13, name: "Accès libre 12 mois", price: 480 },
+		{ id: 14, name: "Montant libre", price: null },
 	];
 
 	const handleChange = (e) => {
@@ -24,11 +37,21 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 		};
 
 		if (name === "prestation") {
-			const selectedPrestation = prestations.find((p) => p.id === value);
-			updatedFormData.price = selectedPrestation ? selectedPrestation.price : 0;
+			const selectedPrestation = prestations.find((p) => p.name === value);
+			console.info(selectedPrestation);
+			updatedFormData.price = selectedPrestation
+				? selectedPrestation.price
+				: null;
+
+			if (selectedPrestation.price === null) {
+				updatedFormData.montantLibre = 0;
+			} else {
+				updatedFormData.montantLibre = null;
+			}
 		}
 
 		setFormData(updatedFormData);
+		console.info("updated", updatedFormData);
 		SaveCustomization(updatedFormData);
 	};
 
@@ -51,12 +74,39 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 					required
 				>
 					<option value="">Sélectionnez une prestation</option>
-					<option value="prestation1">Prestation 1</option>
-					<option value="prestation2">Prestation 2</option>
+					{prestations.map((prestation) => (
+						<option key={prestation.id} value={prestation.name}>
+							{prestation.name} -{" "}
+							{prestation.price ? `${prestation.price} €` : "Montant libre"}
+						</option>
+					))}
 				</select>
 
-				{formData.prestation && (
-					<p className=" text-sand">
+				{formData.price === null && (
+					<div className="mt-4">
+						<label
+							htmlFor="montantLibre"
+							className="font-semibold text-gray-700"
+						>
+							Saisissez le montant :
+						</label>
+						<input
+							type="number"
+							id="montantLibre"
+							name="montantLibre"
+							min="0"
+							step="0.01"
+							value={formData.montantLibre}
+							onChange={handleChange}
+							className="w-full mt-1 p-2 border border-sand text-gray-700 bg-white rounded outline-sand"
+							placeholder="Entrez un montant"
+							required
+						/>
+					</div>
+				)}
+
+				{formData.prestation && formData.price !== null && (
+					<p className="text-sand">
 						Prix : <span className="font-semibold">{formData.price} €</span>
 					</p>
 				)}
@@ -119,8 +169,8 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 							type="checkbox"
 							id="checked"
 							name="checked"
-							checked={formData.checked} // La valeur correcte
-							onChange={handleChange} // Appel au gestionnaire d'événements
+							checked={formData.checked}
+							onChange={handleChange}
 						/>
 						<label htmlFor="checked">
 							Je choisis la version papier pour 1 € de plus
