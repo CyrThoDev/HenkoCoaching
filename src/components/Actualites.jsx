@@ -39,13 +39,18 @@ const Actualites = ({ news, urlFor }) => {
 				ref={dialogRef}
 				className=" rounded-lg py-20 shadow-lg max-w-screen-xs  md:max-w-screen-md w-full  text-white bg-black opacity-95 "
 			>
-				<div className=" flex flex-col items-center gap-14">
-					<h2 className=" relative flex-col text-2xl lg:text-3xl font-qwigley px-10 text-center inline-flex">
-						Bénéficiez de -10% sur votre première séance de coaching
-					</h2>
+				<div className=" flex flex-col items-center gap-10">
+					<div className="flex flex-col gap-4">
+						<h2 className="  text-2xl lg:text-3xl font-tanker px-10 text-center">
+							Offre Saint-Valentin jusqu&#39;au 14 février
+						</h2>
+						<p className="text-xl lg:text-2xl font-poppins px-10 text-center ">
+							-10% sur le massage suédois relaxant
+						</p>
+					</div>
 					<ButtonOrange
-						title="RESERVER MA PREMIERE SEANCE"
-						link="https://calendly.com/henkocoaching/coaching-essai-1h"
+						title="JE PROFITE DE L'OFFRE"
+						link="https://calendly.com/henkocoaching/massage-suedois-relaxant-90min?back=1&month=2025-01"
 						width=" w-[15rem] md:w-[18rem]"
 					/>
 				</div>
