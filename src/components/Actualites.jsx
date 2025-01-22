@@ -42,7 +42,7 @@ const Actualites = ({ news, urlFor }) => {
 				<div className=" flex flex-col items-center gap-10">
 					<div className="flex flex-col gap-4">
 						<h2 className="  text-2xl lg:text-3xl font-tanker px-10 text-center">
-							Offre Saint-Valentin jusqu'au 14 février
+							Offre Saint-Valentin jusqu&#39;au 14 février
 						</h2>
 						<p className="text-xl lg:text-2xl font-poppins px-10 text-center ">
 							-10% sur le massage suédois relaxant
