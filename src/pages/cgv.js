@@ -32,13 +32,14 @@ const cgv = () => {
 						</p>
 						<p>
 							Les conditions générales présentes concernent d’une part la
-							société : []
+							société : HENKO COACHING
 							<br />
 							Adresse de l’entreprise : 43 avenue Maurice Martin 40200 Mimizan
 							<br />
-							Adresse électronique de l’entreprise : []
+							Adresse électronique de l’entreprise :
+							contact.henko.coaching(@)gmail.com
 							<br />
-							SIREN : [] <br />
+							SIREN : 934346172 <br />
 						</p>
 						<p>
 							D’autre part, les clients, personnes physiques ou morales ayant
@@ -71,7 +72,7 @@ const cgv = () => {
 							cadeau sont précisés sur la page produit.
 						</p>
 						<p>
-							Les prix sont toujours indiqués en euros TTC ( Toutes taxes
+							Les prix sont toujours indiqués en euros TTC(Toutes taxes
 							comprises).À cela s’ajoute d’éventuels frais de livraison et de
 							services applicables le jour de la prise de commande, indiqués
 							clairement et séparément du prix du service.
@@ -89,7 +90,7 @@ const cgv = () => {
 							sera utilisée pour envoyer la carte cadeau. Toute erreur de saisie
 							relève de la responsabilité du Client. Après validation du panier,
 							le Client est redirigé vers la plateforme de paiement Stripe, qui
-							gère l&#39ensemble des transactions de manière sécurisée.
+							gère l&#39;ensemble des transactions de manière sécurisée.
 						</p>
 					</section>
 
@@ -97,7 +98,7 @@ const cgv = () => {
 						<h2 className="text-xl font-bold mb-3 text-darkorange">
 							4 - Paiement
 						</h2>
-						<p className="italic">
+						<p className="">
 							Le paiement des commandes s&#39;effectue exclusivement via Stripe.
 							Les moyens de paiement acceptés (carte bancaire, etc.) sont
 							indiqués lors de la validation du paiement. Le paiement est
@@ -111,7 +112,7 @@ const cgv = () => {
 						<h2 className="text-xl font-bold mb-3 text-darkorange">
 							5 - Livraison
 						</h2>
-						<p className="italic">
+						<p className="">
 							Les cartes cadeaux sont envoyées par e-mail à l&#39;adresse
 							indiquée par le Client lors de la commande, sous un délai maximum
 							de 24 heures après confirmation du paiement. Henko Coaching ne
@@ -193,7 +194,7 @@ const cgv = () => {
 						<p>
 							Pour toute question ou réclamation concernant les cartes cadeaux
 							ou les présentes CGV, le Client peut contacter Henko Coaching via
-							[]
+							téléphone ou email.
 						</p>
 					</section>
 					<p className="italic">Dernière mise à jour : 07/01/2024</p>

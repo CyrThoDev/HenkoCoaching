@@ -83,6 +83,7 @@ const Prestations = () => {
 												</ul>
 											)}
 											<button
+												type="button"
 												onClick={() => toggleExpand(prestation.id)}
 												className="self-start font-semibold text-sm text-black underline mt-3"
 											>

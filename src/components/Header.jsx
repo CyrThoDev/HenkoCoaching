@@ -8,9 +8,9 @@ function Header() {
 		<div className="">
 			<div
 				className="
-    bg-[url('/images/HPopacity.png')] 
-    lg:bg-[url('/images/HPopacity.png')] 
-    md:bg-[url('/images/HPopacity.png')] 
+    bg-[url('/images/HPopacity.webp')] 
+    lg:bg-[url('/images/HPopacity.webp')] 
+    md:bg-[url('/images/HPopacity.webp')] 
    bg-no-repeat bg-cover bg-center h-[80vh]
 					lg:h-[90vh]
   "

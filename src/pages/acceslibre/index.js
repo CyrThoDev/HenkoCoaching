@@ -16,7 +16,7 @@ function AccesLibre() {
 					<HeadPages title="ACCES LIBRE" />
 					<WaveOrange />
 				</div>
-				<div className="bg-white bg-opacity-75 -inset-10 lg:-inset-20 flex flex-col gap-20 bg-center bg-cover bg-[url('/images/acceslibre.jpg')] min-h-[30rem]" />
+				<div className="bg-white bg-opacity-75 -inset-10 lg:-inset-20 flex flex-col gap-20 bg-center bg-cover bg-[url('/images/acceslibre.webp')] min-h-[30rem]" />
 				<div className=" flex flex-col gap-10 px-10 lg:px-40">
 					<h3 className="font-tanker text-center text-2xl">
 						DISPO A PARTIR DE FEVRIER 2025

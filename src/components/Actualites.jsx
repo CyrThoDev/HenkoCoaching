@@ -15,7 +15,7 @@ const Actualites = ({ news, urlFor }) => {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY >= 500 && !hasScrolled) {
+			if (window.scrollY >= 500 && !hasScrolled && window.scrollY < 1000) {
 				setHasScrolled(true);
 			}
 		};
