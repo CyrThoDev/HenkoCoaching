@@ -12,7 +12,7 @@ function LocationEspacePro() {
 	return (
 		<div className="flex flex-col gap-20 ">
 			<div className="bg-white bg-opacity-75 flex flex-col gap-20 bg-center bg-cover bg-[url('/images/location.webp')] min-h-[30rem]">
-				<NavBar logo={logoSable} />
+				<NavBar logo={logoSable} bgbutton="bg-sand" />
 				<HeadPages title="LOCATION ESPACE PRO" />
 				<WaveSable />
 			</div>

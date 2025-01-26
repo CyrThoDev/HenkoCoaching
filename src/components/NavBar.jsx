@@ -31,7 +31,7 @@ const MenuLinks = ({ onClick }) => {
 };
 
 // Composant pour le menu mobile
-const MobileMenu = ({ isNavOpen, toggleNav, logo }) => {
+const MobileMenu = ({ isNavOpen, toggleNav, logo, bgbutton }) => {
 	return (
 		<div
 			className={`${
@@ -71,7 +71,10 @@ const MobileMenu = ({ isNavOpen, toggleNav, logo }) => {
 				/>
 			</Link>
 			<MenuLinks onClick={toggleNav} />
-			<Link href="/cadeaux" className="bg-black p-4 text-white rounded-lg">
+			<Link
+				href="/cadeaux"
+				className={`${bgbutton} py-3 px-4 text-white rounded-lg`}
+			>
 				OFFRIR UNE CARTE CADEAU
 			</Link>
 		</div>
@@ -79,7 +82,7 @@ const MobileMenu = ({ isNavOpen, toggleNav, logo }) => {
 };
 
 // Composant NavBar principal
-function NavBar({ logo }) {
+function NavBar({ logo, bgbutton }) {
 	const { cartCount } = useCart();
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [isSticky, setIsSticky] = useState(false);
@@ -122,7 +125,12 @@ function NavBar({ logo }) {
 						height={70}
 					/>
 				</Link>
-				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} logo={logo} />
+				<MobileMenu
+					isNavOpen={isNavOpen}
+					toggleNav={toggleNav}
+					logo={logo}
+					bgbutton={bgbutton}
+				/>
 
 				<Link href="/panier" aria-label="cliquer pour accéder au panier">
 					<div className="relative inline-block">
@@ -154,7 +162,7 @@ function NavBar({ logo }) {
 				<div className="flex items-center gap-8">
 					<Link
 						href="/cadeaux"
-						className="bg-black py-3 px-4 text-white rounded-lg"
+						className={`${bgbutton} py-3 px-4 text-white rounded-lg`}
 					>
 						OFFRIR UNE CARTE CADEAU
 					</Link>

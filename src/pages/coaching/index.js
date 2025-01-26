@@ -13,7 +13,7 @@ import Formules from "@/components/Formules";
 function Coaching() {
 	return (
 		<>
-			<NavBar logo={logoOrange} />
+			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
 			<div className="px-10 lg:px-20 flex flex-col gap-20">
 				<div className="flex flex-col gap-10">
 					<HeadPages title="COACHING EN SOLO OU EN DUO" />

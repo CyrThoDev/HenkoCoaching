@@ -10,7 +10,7 @@ import ButtonBlack from "@/components/ButtonBlack";
 function AccesLibre() {
 	return (
 		<div>
-			<NavBar logo={logoOrange} />
+			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
 			<div className="flex flex-col gap-20 mb-20  ">
 				<div className="flex flex-col gap-10 ">
 					<HeadPages title="ACCES LIBRE" />
