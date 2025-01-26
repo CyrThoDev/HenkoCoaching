@@ -12,6 +12,7 @@ import {
 	PiNumberCircleThreeLight,
 	PiNumberCircleFourLight,
 } from "react-icons/pi";
+import WaveOrange from "./WaveOrange";
 
 function Seance() {
 	return (
@@ -20,7 +21,7 @@ function Seance() {
 				<span className="text-3xl z-0">DEROULE D’UNE SEANCE DE COACHING</span>
 				<div className="w-[12rem] h-3 bg-darkorange -mt-3 -z-1" />
 			</h2>
-			<div className="relative flex flex-col gap-10 max-w-4xl mx-auto ">
+			<div className="relative flex flex-col gap-10 max-w-4xl mx-auto my-10 ">
 				{/* Ligne verticale au milieu */}
 				<div className="absolute inset-y-0 left-1/2 w-[2px] rounded-sm bg-darkorange -translate-x-1/2" />
 
