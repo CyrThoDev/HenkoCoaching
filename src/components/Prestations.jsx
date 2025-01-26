@@ -23,7 +23,7 @@ const Prestations = () => {
 					{prestations.map((prestation) => (
 						<div
 							key={prestation.id}
-							className="flex flex-col lg:flex-row gap-10 p-10 border-b border-b-black"
+							className="flex flex-col lg:flex-row gap-10 p-10 border-b border-b-black last:border-b-0"
 						>
 							{/* Titre, prix et bouton (en dessous pour lg et plus) */}
 							<div className="lg:flex lg:flex-col justify-between lg:gap-4  basis-1/3">
