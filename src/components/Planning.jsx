@@ -11,12 +11,12 @@ const trainingDetails = [
 		title: "Planning du 1er février au 06 juillet inclus.",
 	},
 	{
-		title: "Accès libre",
+		title: "Accès libre : ",
 		description:
 			"Sur réservation jusqu'à la dernière minute. Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre.",
 	},
 	{
-		title: "Coaching / Massage",
+		title: "Coaching / Massage : ",
 		description:
 			"Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
 	},
@@ -102,8 +102,8 @@ function Planning() {
 					</div>
 					<div className="flex flex-col gap-2 ">
 						{trainingDetails.map((detail, index) => (
-							<div key={index} className="flex ">
-								<p className="font-semibold">{detail.title} : </p>
+							<div key={index} className="flex flex-col lg:flex-row ">
+								<p className="font-semibold">{detail.title} </p>
 								<p className="pl-2">{detail.description}</p>
 							</div>
 						))}

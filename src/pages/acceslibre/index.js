@@ -14,7 +14,7 @@ function AccesLibre() {
 	return (
 		<div className="mb-20">
 			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
-			<div className="flex flex-col gap-20 mb-20  ">
+			<div className="flex flex-col gap-20 mb-20 ">
 				<div className="flex flex-col gap-10 ">
 					<HeadPages title="ACCES LIBRE" />
 					<WaveOrange />
@@ -68,8 +68,11 @@ function AccesLibre() {
 						width="w-[15rem] md:w-[20rem]"
 					/>
 				</div>
+				<div className=" px-10 lg:px-20">
+					<Planning />
+				</div>
 			</div>
-			<Planning />
+
 			<WaveOrange />
 		</div>
 	);
