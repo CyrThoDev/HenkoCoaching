@@ -8,9 +8,9 @@ function Header() {
 		<div className="">
 			<div
 				className="
-    bg-[url('/images/HPopacity.webp')] 
-    lg:bg-[url('/images/HPopacity.webp')] 
-    md:bg-[url('/images/HPopacity.webp')] 
+    bg-[url('/images/HomePage.jpg')] 
+    lg:bg-[url('/images/HomePage.jpg')] 
+    md:bg-[url('/images/HomePage.jpg')] 
    bg-no-repeat bg-cover bg-center h-[80vh]
 					lg:h-[90vh]
   "
@@ -21,7 +21,7 @@ function Header() {
 						<span>Bien-être </span>
 						<span>et récupération</span>
 					</h1>
-					<p className="font-poppins text-xl">
+					<p className="font-poppins text-2xl">
 						Votre studio au coeur de Mimizan-Plage
 					</p>
 					<div className="flex flex-col md:flex-row gap-4 font-poppins">
