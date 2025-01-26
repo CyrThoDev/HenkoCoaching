@@ -10,7 +10,7 @@ import basdepagemassage from "@images/basdepagemassage.jpg";
 function Massages() {
 	return (
 		<>
-			<NavBar logo={logoSable} />
+			<NavBar logo={logoSable} bgbutton="bg-sand" />
 			<div className="flex flex-col gap-10 mb-10">
 				<HeadPages title="MASSAGES ET RECUPERATION" />
 				<WaveSable />
