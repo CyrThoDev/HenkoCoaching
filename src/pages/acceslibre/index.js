@@ -7,9 +7,12 @@ import Image from "next/image";
 import acceslibre from "@images/acceslibre.jpg";
 import FormulesLibres from "@/components/FormulesLibres";
 import ButtonBlack from "@/components/ButtonBlack";
+
+import Planning from "@/components/Planning";
+
 function AccesLibre() {
 	return (
-		<div>
+		<div className="mb-20">
 			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
 			<div className="flex flex-col gap-20 mb-20  ">
 				<div className="flex flex-col gap-10 ">
@@ -65,8 +68,9 @@ function AccesLibre() {
 						width="w-[15rem] md:w-[20rem]"
 					/>
 				</div>
-				<WaveOrange />
 			</div>
+			<Planning />
+			<WaveOrange />
 		</div>
 	);
 }

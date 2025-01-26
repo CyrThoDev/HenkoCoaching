@@ -9,6 +9,7 @@ import WaveOrange from "@/components/WaveOrange";
 import HeadPages from "@/components/HeadPages";
 import FAQ from "@/components/FAQ";
 import Formules from "@/components/Formules";
+import Planning from "@/components/Planning";
 
 function Coaching() {
 	return (
@@ -24,6 +25,7 @@ function Coaching() {
 				<Seance />
 				<WaveOrange />
 			</div>
+
 			<Formules />
 			<FAQ />
 		</>

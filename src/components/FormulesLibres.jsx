@@ -25,7 +25,7 @@ function FormulesLibres() {
 				<span className="text-3xl z-10">LES FORMULES</span>
 				<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 			</h2>
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-10 lg:px-20 py-10">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 				{plans.map((plan) => (
 					<div
 						key={plan.name}
