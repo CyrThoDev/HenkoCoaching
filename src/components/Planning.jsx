@@ -46,12 +46,12 @@ function Planning() {
 				</h2>
 			</div>
 			<div className="flex flex-col gap-20">
-				<div className="flex flex-col gap-4  pt-10">
-					<div className="flex flex-row">
+				<div className="flex flex-col gap-4 pt-10">
+					<div className="flex flex-row gap-4 justify-between ">
 						<Image
 							src={PlanningHenkoDesktopv2}
 							alt="Planning Henko"
-							width={"800"}
+							width={800}
 							height={"auto"}
 							onClick={openDialog}
 							className="hidden md:block "
@@ -90,12 +90,12 @@ function Planning() {
 								/>
 							</div>
 						</dialog>
-						<div className="basis-1/2 flex justify-center">
+						<div className="">
 							<Image
 								src={salle}
 								width={"auto"}
 								height={"auto"}
-								className="max-h-[30rem] w-auto shadow-perso shadow-darkorange rounded-sm"
+								className=" hidden lg:block mr-20 max-h-[30rem] w-auto shadow-perso shadow-darkorange rounded-sm"
 								alt="Salle de sport"
 							/>
 						</div>

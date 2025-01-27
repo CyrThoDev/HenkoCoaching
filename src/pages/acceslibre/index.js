@@ -36,7 +36,7 @@ function AccesLibre() {
 						Pour un bon déroulement des séances, cet espace d’environ 40 m2 avec
 						du matériel limité ne peut pas accueillir un nombre important de
 						personnes en même temps. C’est pour cela que l’accès libre est
-						limité à 3 personne en même temps par créneau d’environ 1h30.{" "}
+						limité à 3 personnes en même temps par créneau d’environ 1h30.{" "}
 					</p>
 					<p>
 						<strong>10 personnes au total</strong> bénéficieront d’un pass
