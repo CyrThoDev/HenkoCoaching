@@ -68,7 +68,7 @@ function MainCoaching() {
 							src={salle}
 							width={"auto"}
 							height={"auto"}
-							className="max-h-[30rem] w-auto shadow-perso shadow-darkorange rounded-sm"
+							className="max-h-[30rem] w-auto shadow-persoreverse shadow-darkorange rounded-sm"
 							alt="Salle de sport"
 						/>
 					</div>
