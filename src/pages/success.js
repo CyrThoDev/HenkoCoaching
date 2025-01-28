@@ -5,7 +5,6 @@ import { useCart } from "../context/CartContext";
 const Success = () => {
 	const { clearCart } = useCart();
 	useEffect(() => {
-		console.log("clear cart dans sucess");
 		clearCart();
 	}, [clearCart]);
 

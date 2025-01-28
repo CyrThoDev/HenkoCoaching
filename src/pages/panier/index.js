@@ -36,7 +36,7 @@ function Cart() {
 
 	return (
 		<div>
-			<NavBar logo={logoSableHenko} />
+			<NavBar logo={logoSableHenko} bgbutton="bg-sand" />
 			<div className="px-10 md:px-72 flex flex-col gap-10 mb-10">
 				<div className="flex flex-col gap-4">
 					<HeadPages title="VOTRE PANIER" />

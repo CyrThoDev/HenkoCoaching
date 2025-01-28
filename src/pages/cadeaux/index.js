@@ -20,6 +20,7 @@ function Cadeaux() {
 		message: "",
 		checked: false,
 	});
+	const [addedToCart, setAddedToCart] = useState(false);
 
 	const SaveCustomization = (formData) => {
 		setCustomizations(formData);
@@ -54,12 +55,12 @@ function Cadeaux() {
 		});
 
 		// A MODIFIER avec vrai message d'enregistrement et d'ajout au panier, pas une alerte
-		alert("Carte cadeau ajoutée au panier !");
+		setAddedToCart(true);
 	};
 
 	return (
 		<div className="flex flex-col gap-10">
-			<NavBar logo={logoSableHenko} />
+			<NavBar logo={logoSableHenko} bgbutton="bg-sand" />
 			<div className="flex flex-col gap-10">
 				<HeadPages title="CARTES CADEAUX" />
 				<WaveSable />
@@ -88,7 +89,11 @@ function Cadeaux() {
 				</div>
 
 				<div className="flex flex-col px-10 lg:px-20 md:basis-1/2 ">
-					<FormCarteCadeau SaveCustomization={SaveCustomization} />
+					<FormCarteCadeau
+						SaveCustomization={SaveCustomization}
+						addedToCart={addedToCart}
+						setAddedToCart={setAddedToCart}
+					/>
 					<button
 						type="button"
 						onClick={handleAddToCart}
@@ -96,6 +101,11 @@ function Cadeaux() {
 					>
 						Ajouter au Panier
 					</button>
+					{addedToCart && (
+						<p className="text-sand font-semibold pt-2 text-center">
+							Votre carte cadeau a été ajoutée au panier!
+						</p>
+					)}
 				</div>
 			</div>
 

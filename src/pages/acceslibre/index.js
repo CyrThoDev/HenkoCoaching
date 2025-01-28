@@ -69,6 +69,14 @@ function AccesLibre() {
 					/>
 				</div>
 				<div className=" px-10 lg:px-20">
+					<div className="flex flex-col gap-2">
+						<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">
+							<span className="text-3xl z-10 ">
+								QUAND EST-CE QUE JE PEUX M’ENTRAINER EN ACCES LIBRE?
+							</span>
+							<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
+						</h2>
+					</div>
 					<Planning />
 				</div>
 			</div>
