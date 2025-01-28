@@ -37,25 +37,19 @@ function Planning() {
 	};
 	return (
 		<div>
-			<div className="flex flex-col gap-2">
-				<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">
-					<span className="text-3xl z-10 ">
-						QUAND EST-CE QUE JE PEUX M’ENTRAINER AVEC LA COACH ?
-					</span>
-					<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
-				</h2>
-			</div>
 			<div className="flex flex-col gap-20">
-				<div className="flex flex-col gap-4 pt-10">
-					<div className="flex flex-row gap-4 justify-between ">
-						<Image
-							src={PlanningHenkoDesktopv2}
-							alt="Planning Henko"
-							width={800}
-							height={"auto"}
-							onClick={openDialog}
-							className="hidden md:block "
-						/>
+				<div className="flex flex-col gap-4 ">
+					<div className="lg:flex lg:flex-row lg:gap-4 lg:justify-between ">
+						<div className="basis-1/2 self-center">
+							<Image
+								src={PlanningHenkoDesktopv2}
+								alt="Planning Henko"
+								width={"auto"}
+								height={"auto"}
+								onClick={openDialog}
+								className="hidden md:block "
+							/>
+						</div>
 						<Image
 							src={PlanningHenkoMobile}
 							alt="Planning Henko"
@@ -72,7 +66,7 @@ function Planning() {
 							>
 								&times;
 							</button>
-							<div className=" lg:w-[70vw]">
+							<div className="self-center lg:w-[70vw]">
 								<Image
 									src={PlanningHenkoDesktopv2}
 									alt="Planning Henko"
@@ -86,7 +80,7 @@ function Planning() {
 									width={"auto"}
 									height={"auto"}
 									onClick={openDialog}
-									className=" lg:hidden w-[80svw]"
+									className="lg:hidden w-[80svw]"
 								/>
 							</div>
 						</dialog>

@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const FormCarteCadeau = ({ SaveCustomization }) => {
+const FormCarteCadeau = ({
+	SaveCustomization,
+	addedToCart,
+	setAddedToCart,
+}) => {
 	const [formData, setFormData] = useState({
 		prestation: "",
 		from: "",
@@ -54,6 +58,23 @@ const FormCarteCadeau = ({ SaveCustomization }) => {
 		console.info("updated", updatedFormData);
 		SaveCustomization(updatedFormData);
 	};
+
+	useEffect(() => {
+		if (addedToCart) {
+			setFormData({
+				prestation: "",
+				from: "",
+				to: "",
+				email: "",
+				message: "",
+				checked: false,
+				montantLibre: 0,
+			});
+			setTimeout(() => {
+				setAddedToCart(false);
+			}, 3000);
+		}
+	}, [addedToCart, setAddedToCart]);
 
 	return (
 		<div className=" p-4 shadow-sm rounded-sm my-10 flex flex-col gap-10 border">
