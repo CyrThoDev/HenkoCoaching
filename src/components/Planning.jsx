@@ -5,6 +5,7 @@ import ButtonOrange from "@/components/ButtonOrange";
 import ButtonBlack from "./ButtonBlack";
 import Image from "next/image";
 import salle from "../../public/images/salle3.jpg";
+import Heure from "@images/Heure.png";
 
 const trainingDetails = [
 	{
@@ -40,15 +41,21 @@ function Planning() {
 			<div className="flex flex-col gap-20">
 				<div className="flex flex-col gap-4 ">
 					<div className="lg:flex lg:flex-row lg:gap-4 lg:justify-between ">
-						<div className="basis-1/2 self-center">
+						<div className="hidden md:block basis-1/2 self-center">
 							<Image
-								src={PlanningHenkoDesktopv2}
+								src={Heure}
 								alt="Planning Henko"
 								width={"auto"}
 								height={"auto"}
 								onClick={openDialog}
-								className="hidden md:block "
+								className="  "
 							/>
+							<div className="flex flex-row  gap-8 justify-center  pt-4 text-white ">
+								<p className="bg-sand p-2 rounded-sm">Accès libre</p>
+								<p className="bg-darkorange p-2 rounded-sm">
+									Coaching/massages
+								</p>
+							</div>
 						</div>
 						<Image
 							src={PlanningHenkoMobile}
