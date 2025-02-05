@@ -19,8 +19,6 @@ const tarifsacceslibre = [
 	{ label: "1,2 ou 3 semaines", price: "à partir de 70€" },
 	{ label: "1 jour", price: "10€" },
 ];
-const description =
-	"-50% pour les clients en coaching privé engagement 4 mois minimum ";
 
 function AccesLibre() {
 	return (
@@ -76,7 +74,13 @@ function AccesLibre() {
 					<span className="text-3xl z-10">LES TARIFS</span>
 					<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 				</h2>
-				<Tarifs tarifs={tarifsacceslibre} description={description} />
+				<div className="bg-darkorange lg:px-10  pb-10">
+					<Tarifs tarifs={tarifsacceslibre} />
+					<p className="px-10">
+						<strong>-50% </strong> pour les clients en coaching privé engagement
+						4 mois minimum
+					</p>
+				</div>
 				{/* <FormulesLibres /> */}
 				<div className="self-center -mt-10">
 					<ButtonBlack

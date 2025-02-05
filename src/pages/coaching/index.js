@@ -21,8 +21,6 @@ const tarifscoaching = [
 	{ label: "Séance d’essai", price: "25€" },
 ];
 
-const description =
-	"Pour des résultats durables en coaching sportif privé, un engagement d'au moins 4 mois est nécessaire. Cela permet au corps de s'adapter, d'installer de nouvelles habitudes et de progresser efficacement. Cette périoe permet également au coach d'ajuster les séances à vos objectifs pour un changement durable ";
 function Coaching() {
 	return (
 		<>
@@ -42,7 +40,17 @@ function Coaching() {
 					<span className="text-3xl z-10">LES TARIFS</span>
 					<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 				</h2>
-				<Tarifs tarifs={tarifscoaching} description={description} />
+				<div className="bg-darkorange lg:px-10 mx-auto pb-10">
+					<Tarifs tarifs={tarifscoaching} />
+					<p className="px-10">
+						Pour des résultats durables en coaching sportif privé, un engagement
+						<strong> d&#39;au moins 4 mois est nécessaire</strong>. Cela permet
+						au corps de s&#39;adapter, d&#39;installer de nouvelles habitudes et
+						de progresser efficacement. Cette période permet également au coach
+						d&#39;ajuster les séances à vos objectifs pour un changement
+						durable.
+					</p>
+				</div>
 				{/* <div className="bg-darkorange lg:px-20">
 					<div className=" mx-auto p-6  text-white ">
 				

@@ -6,6 +6,7 @@ import ButtonBlack from "./ButtonBlack";
 import Image from "next/image";
 import salle from "../../public/images/salle3.jpg";
 import Heure from "@images/Heure.png";
+import photocoach from "@images/photocoach.webp";
 
 const trainingDetails = [
 	{
@@ -93,7 +94,7 @@ function Planning() {
 						</dialog>
 						<div className="">
 							<Image
-								src={salle}
+								src={photocoach}
 								width={"auto"}
 								height={"auto"}
 								className=" hidden lg:block mr-20 max-h-[30rem] w-auto shadow-perso shadow-darkorange rounded-sm"

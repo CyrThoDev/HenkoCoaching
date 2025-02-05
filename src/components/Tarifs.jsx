@@ -1,7 +1,7 @@
-function Tarifs({ tarifs, description }) {
+function Tarifs({ tarifs }) {
 	return (
 		<div>
-			<div className="bg-darkorange lg:px-10 mx-auto text-black p-10">
+			<div className=" text-black p-10">
 				<div className="  ">
 					{tarifs.map((item, index) => {
 						const isLast = index === tarifs.length - 1;
@@ -18,7 +18,6 @@ function Tarifs({ tarifs, description }) {
 						);
 					})}
 				</div>
-				<p className="pt-10 ">{description}</p>
 			</div>
 		</div>
 	);
