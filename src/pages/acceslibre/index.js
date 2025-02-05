@@ -77,7 +77,7 @@ function AccesLibre() {
 				<div className="bg-darkorange lg:px-10  pb-10">
 					<Tarifs tarifs={tarifsacceslibre} />
 					<p className="px-10">
-						<strong>-50%</strong> pour les clients en coaching privé engagement
+						<strong>-50% </strong> pour les clients en coaching privé engagement
 						4 mois minimum
 					</p>
 				</div>

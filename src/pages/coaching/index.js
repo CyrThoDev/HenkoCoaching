@@ -44,10 +44,11 @@ function Coaching() {
 					<Tarifs tarifs={tarifscoaching} />
 					<p className="px-10">
 						Pour des résultats durables en coaching sportif privé, un engagement
-						<strong> d'au moins 4 mois est nécessaire</strong>. Cela permet au
-						corps de s'adapter, d'installer de nouvelles habitudes et de
-						progresser efficacement. Cette périoe permet également au coach
-						d'ajuster les séances à vos objectifs pour un changement durable.
+						<strong> d&#39;au moins 4 mois est nécessaire</strong>. Cela permet
+						au corps de s&#39;adapter, d&#39;installer de nouvelles habitudes et
+						de progresser efficacement. Cette période permet également au coach
+						d&#39;ajuster les séances à vos objectifs pour un changement
+						durable.
 					</p>
 				</div>
 				{/* <div className="bg-darkorange lg:px-20">
