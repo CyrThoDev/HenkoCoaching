@@ -3,6 +3,7 @@ import Image from "next/image";
 import salle3 from "../../public/images/salle3.jpg";
 import Link from "next/link";
 import ButtonBlack from "./ButtonBlack";
+import summary from "@images/summary.webp";
 
 function Summary() {
 	return (
@@ -10,10 +11,10 @@ function Summary() {
 			<div className="bg-darkorange text-white">
 				<div className=" px-10 lg:px-20 pb-10 lg:pb-0 pt-10 flex flex-col lg:flex-row gap-10 justify-around items-center">
 					<Image
-						src={salle3}
-						width={"300"}
+						src={summary}
+						width={"500"}
 						height={"auto"}
-						className="rounded-sm  "
+						className="rounded-md  "
 						alt="photo de la salle avec des poids"
 					/>
 					<div className="flex flex-col gap-8 lg:basis-3/5 justify-between">

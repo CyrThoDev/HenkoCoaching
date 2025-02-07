@@ -2,6 +2,7 @@ import Image from "next/image";
 import Dumbbell from "../../public/images/Dumbbell.webp";
 import salle from "../../public/images/salle3.jpg";
 import ButtonOrange from "./ButtonOrange";
+import coachingsolo from "@images/coachingsolo.webp";
 
 function CoachingHeader() {
 	return (
@@ -9,10 +10,10 @@ function CoachingHeader() {
 			<div className="flex flex-col-reverse items-center md:flex-row gap-10">
 				<div className="md:basis-1/2 flex justify-center">
 					<Image
-						src={salle}
-						width={"auto"}
+						src={coachingsolo}
+						width={"400"}
 						height={"auto"}
-						className="max-h-[30rem] w-auto rounded-sm"
+						className=" w-auto rounded-sm shadow-persoreverse shadow-darkorange"
 						alt="icone de poids à soulever"
 					/>
 				</div>

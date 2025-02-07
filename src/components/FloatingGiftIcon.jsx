@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaGift } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
-import cartecadeaurecto from "@images/cartecadeaurecto.png";
+import cartecadeaurecto from "@images/cartecadeaurecto.webp";
 
 const FloatingGiftIcon = () => {
 	const [isWindowOpen, setIsWindowOpen] = useState(false);

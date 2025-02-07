@@ -10,7 +10,8 @@ import ButtonOrange from "./ButtonOrange";
 import ButtonBlack from "./ButtonBlack";
 import Planning from "./Planning";
 import WaveOrange from "./WaveOrange";
-import coachingprive from "@images/coachingprive.webp";
+import photocoach from "@images/photocoach.webp";
+import sallecoaching from "@images/sallecoaching.webp";
 
 const coachingBenefits = [
 	"Se remettre en forme et/ou perdre du poids, reprendre confiance en soi",
@@ -66,10 +67,10 @@ function MainCoaching() {
 					</div>
 					<div className="basis-1/2 flex justify-center">
 						<Image
-							src={coachingprive}
-							width={"auto"}
+							src={sallecoaching}
+							width={"500"}
 							height={"auto"}
-							className="max-h-[30rem] w-auto shadow-persoreverse shadow-darkorange rounded-sm"
+							className="shadow-perso shadow-darkorange rounded-sm"
 							alt="Salle de sport"
 						/>
 					</div>
@@ -101,7 +102,7 @@ function MainCoaching() {
 						<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
 					</h2>
 				</div>
-				<Planning />
+				<Planning image={photocoach} />
 				<WaveOrange />
 			</div>
 		</>

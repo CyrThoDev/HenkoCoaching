@@ -11,7 +11,7 @@ import HeadPages from "@/components/HeadPages";
 // import logoOrange from "@images/logoHenkoOrange.svg";
 import logoSableHenko from "@images/logoSableHenko.webp";
 import WaveSable from "@/components/WaveSable";
-import cartecadeaurecto from "@images/cartecadeaurecto.png";
+import cartecadeaurecto from "@images/cartecadeaurecto.webp";
 
 const stripePromise = loadStripe(
 	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
