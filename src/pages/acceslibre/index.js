@@ -7,6 +7,7 @@ import Image from "next/image";
 import acceslibre from "@images/acceslibre.jpg";
 import FormulesLibres from "@/components/FormulesLibres";
 import ButtonBlack from "@/components/ButtonBlack";
+import espacepro from "@images/espacepro-salle.webp";
 
 import Planning from "@/components/Planning";
 import Tarifs from "@/components/Tarifs";
@@ -98,7 +99,7 @@ function AccesLibre() {
 							<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
 						</h2>
 					</div>
-					<Planning />
+					<Planning image={espacepro} />
 				</div>
 			</div>
 

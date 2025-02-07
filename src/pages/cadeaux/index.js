@@ -5,7 +5,7 @@ import HeadPages from "@/components/HeadPages";
 import NavBar from "@/components/NavBar";
 import logoOrange from "@images/logoHenkoOrange.svg";
 import Image from "next/image";
-import cartecadeaurecto from "@images/cartecadeaurecto.png";
+import cartecadeaurecto from "@images/cartecadeaurecto.webp";
 import logoSableHenko from "@images/logoSableHenko.webp";
 import WaveSable from "@/components/WaveSable";
 import { useCart } from "@/context/CartContext";
