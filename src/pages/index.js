@@ -1,4 +1,3 @@
-import Image from "next/image";
 import localFont from "next/font/local";
 import NavBar from "@/components/NavBar";
 import Head from "next/head";
@@ -12,18 +11,26 @@ export default function Home() {
 			<Head>
 				<title>Henko Coaching - Sport, bien-être et récupération</title>
 				<meta name="description" content="Henko Coaching" />
-				<meta name="keywords" content="" />
+				<meta
+					name="keywords"
+					content="coaching sportif, massages, bien-être, relaxation, fitness, entraînement"
+				/>
+				{/* Facebook */}
 				<meta
 					property="og:title"
-					content="Bienvenue sur le site de Henko Coaching"
+					content="Henko Coaching - Sport, bien-être et récupération"
 				/>
-				<meta property="og:description" content="" />
+				<meta
+					property="og:description"
+					content="Coaching sportif et massages bien-être pour améliorer votre santé physique et mentale."
+				/>
 				<meta property="og:type" content="website" />
 				<meta
 					property="og:image"
-					content="https://henkocoachingmimizan.fr/images/LOGO-4.png"
+					content="https://henko-coaching.vercel.app/images/HomePagereseaux.jpg"
 				/>
-				<meta property="og:image:type" content="image/png" />
+
+				<meta property="og:image:type" content="image/jpg" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:alt" content="Logo Henko Coaching" />
