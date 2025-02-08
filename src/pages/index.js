@@ -29,10 +29,10 @@ export default function Home() {
 				<meta property="og:url" content="https://henko-coaching.vercel.app/" />
 				<meta
 					property="og:image"
-					content="https://henko-coaching.vercel.app/reseaux/HomePagereseaux.webp?v=3"
+					content="https://henko-coaching.vercel.app/images/HomePagereseaux.jpg"
 				/>
 
-				<meta property="og:image:type" content="image/webp" />
+				<meta property="og:image:type" content="image/jpg" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:alt" content="Logo Henko Coaching" />
