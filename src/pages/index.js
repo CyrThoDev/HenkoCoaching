@@ -26,7 +26,6 @@ export default function Home() {
 					content="Coaching sportif et massages bien-être pour améliorer votre santé physique et mentale."
 				/>
 				<meta property="og:type" content="website" />
-				<meta property="og:url" content="https://henko-coaching.vercel.app/" />
 				<meta
 					property="og:image"
 					content="https://henko-coaching.vercel.app/images/HomePagereseaux.jpg"
