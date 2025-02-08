@@ -29,7 +29,7 @@ export default function Home() {
 				<meta property="og:url" content="https://henko-coaching.vercel.app/" />
 				<meta
 					property="og:image"
-					content="https://henko-coaching.vercel.app/images/reseaux/HomePagereseaux.webp"
+					content="https://henko-coaching.vercel.app/images/reseaux/HomePagereseaux.webp?v=2"
 				/>
 
 				<meta property="og:image:type" content="image/webp" />
