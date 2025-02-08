@@ -27,7 +27,10 @@ function Massages() {
 					property="og:description"
 					content="Profitez d'un moment de détente avec nos massages bien-être. Relaxation, récupération musculaire et anti-stress."
 				/>
-				<meta property="og:url" content="https://www.henkocoachingmimizan.fr" />
+				<meta
+					property="og:url"
+					content="https://www.henkocoachingmimizan.fr/massages"
+				/>
 				<meta property="og:type" content="website" />
 				<meta
 					property="og:image"

@@ -41,7 +41,10 @@ function Coaching() {
 					property="og:description"
 					content="Des séances de coaching sportif adaptées à vos besoins pour améliorer votre condition physique et atteindre vos objectifs."
 				/>
-				<meta property="og:url" content="https://www.henkocoachingmimizan.fr" />
+				<meta
+					property="og:url"
+					content="https://www.henkocoachingmimizan.fr/coaching"
+				/>
 				<meta property="og:type" content="website" />
 				<meta
 					property="og:image"
