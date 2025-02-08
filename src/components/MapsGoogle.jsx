@@ -20,21 +20,31 @@ const MapsGoogle = () => {
 	const [origin, setOrigin] = useState(null);
 
 	useEffect(() => {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(
-				(position) => {
-					setOrigin({
-						lat: position.coords.latitude,
-						lng: position.coords.longitude,
-					});
-				},
-				(error) => {
-					console.error("Error getting location: ", error);
-					alert("Merci d'autoriser le service de localisation");
-				},
-			);
+		// Vérifier si la localisation est déjà enregistrée
+		const savedLocation = sessionStorage.getItem("userLocation");
+
+		if (savedLocation) {
+			setOrigin(JSON.parse(savedLocation)); // Charger depuis sessionStorage
 		} else {
-			alert("La géolocalisation n'est pas supportée par votre navigateur");
+			navigator.permissions.query({ name: "geolocation" }).then((result) => {
+				if (result.state === "granted" || result.state === "prompt") {
+					navigator.geolocation.getCurrentPosition(
+						(position) => {
+							const location = {
+								lat: position.coords.latitude,
+								lng: position.coords.longitude,
+							};
+							setOrigin(location);
+							sessionStorage.setItem("userLocation", JSON.stringify(location)); // Sauvegarder pour éviter la demande répétée
+						},
+						(error) => {
+							console.error("Error getting location: ", error);
+						},
+					);
+				} else {
+					console.warn("L'utilisateur a refusé la géolocalisation.");
+				}
+			});
 		}
 	}, []);
 
@@ -48,7 +58,7 @@ const MapsGoogle = () => {
 			<Link href={mapsUrl} passHref target="_blank" rel="noopener noreferrer">
 				<div style={{ cursor: "pointer" }}>
 					<GoogleMap
-						mapContainerClassName=" flex items-center lg:w-full min-h-[300px] lg:min-h-[500px] rounded-sm"
+						mapContainerClassName="flex items-center lg:w-full min-h-[300px] lg:min-h-[500px] rounded-sm"
 						center={destination}
 						zoom={13}
 						options={{
