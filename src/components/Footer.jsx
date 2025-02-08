@@ -62,7 +62,7 @@ function Footer() {
 					<Link href="/cgv">CGV</Link>
 				</div>
 			</div>
-			<div className="text-center">©️ 2024 - Henko Coaching</div>
+			<div className="text-center">©️ 2025 - Henko Coaching</div>
 		</div>
 	);
 }
