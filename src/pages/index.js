@@ -29,12 +29,10 @@ export default function Home() {
 					property="og:image"
 					content="https://henko-coaching.vercel.app/images/HomePagereseaux.jpg"
 				/>
-
 				<meta property="og:image:type" content="image/jpg" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:alt" content="Logo Henko Coaching" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				{/* <meta name="robots" content="index, follow" /> */}
 			</Head>
 			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
