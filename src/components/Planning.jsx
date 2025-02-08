@@ -63,7 +63,7 @@ function Planning({ image }) {
 							width={"auto"}
 							height={"auto"}
 							onClick={openDialog}
-							className="lg:hidden "
+							className="md:hidden "
 						/>
 						<dialog ref={dialogRef} className=" bg-white rounded-lg p-6  ">
 							<button

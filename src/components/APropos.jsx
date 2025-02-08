@@ -10,7 +10,7 @@ const APropos = () => {
 				<span className=" text-3xl z-10">Présentation de la coach</span>
 				<div className="w-[12rem] h-3 bg-darkorange -mt-3 -z-1" />
 			</h2>
-			<div className=" flex flex-col lg:flex-row gap-10  justify-between items-center">
+			<div className=" flex flex-col md:flex-row gap-10  justify-between items-center">
 				<div className="flex flex-col gap-4 basis-4/5 ">
 					<p className="font-pinyon text-4xl">Jessica Perestrelo</p>
 					<p className="">
@@ -40,7 +40,7 @@ const APropos = () => {
 					src={Jessphoto}
 					width={"auto"}
 					height={"auto"}
-					className="basis-1/5 shadow-perso shadow-darkorange rounded-sm"
+					className="w-auto xl:w-full basis-1/5 shadow-perso shadow-darkorange rounded-sm"
 					alt="Photo d'un sportive à la montagne"
 				/>
 			</div>

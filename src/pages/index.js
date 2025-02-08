@@ -24,16 +24,17 @@ export default function Home() {
 					property="og:description"
 					content="Coaching sportif et massages bien-être pour améliorer votre santé physique et mentale."
 				/>
+				<meta property="og:url" content="https://www.henkocoachingmimizan.fr" />
 				<meta property="og:type" content="website" />
 				<meta
 					property="og:image"
-					content="https://henko-coaching.vercel.app/images/HomePagereseaux.jpg"
+					content="https://www.henkocoachingmimizan.fr/images/HomePagereseaux.jpg"
 				/>
 				<meta property="og:image:type" content="image/jpg" />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:image:height" content="630" />
 				<meta property="og:image:alt" content="Logo Henko Coaching" />
-				{/* <meta name="robots" content="index, follow" /> */}
+				<meta name="robots" content="index, follow" />
 			</Head>
 			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
 			<HomePage />

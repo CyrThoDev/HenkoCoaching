@@ -105,7 +105,7 @@ function NavBar({ logo, bgbutton }) {
 			<div
 				className={`${
 					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				} px-6 md:px-10 flex items-center justify-between py-2  lg:hidden z-20 transition-all duration-300 `}
+				} px-6 md:px-10 flex items-center justify-between py-2  min-[1150px]:hidden z-20 transition-all duration-300 `}
 			>
 				<button
 					type="button"
@@ -148,7 +148,7 @@ function NavBar({ logo, bgbutton }) {
 			<div
 				className={`hidden ${
 					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				} lg:flex justify-between  px-10 xl:px-20 py-2 z-20`}
+				} min-[1150px]:flex justify-between  px-10 xl:px-20 py-2 z-20`}
 			>
 				<Link href="/">
 					<Image
@@ -159,7 +159,7 @@ function NavBar({ logo, bgbutton }) {
 					/>
 				</Link>
 				<MenuLinks />
-				<div className="flex items-center gap-8">
+				<div className="flex items-center gap-2 xl:gap-4">
 					<Link
 						href="/cadeaux"
 						className={`${bgbutton} py-3 px-4 text-white rounded-lg`}

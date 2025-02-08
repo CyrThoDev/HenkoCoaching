@@ -42,7 +42,7 @@ const iconsTab = [
 ];
 function Icons() {
 	return (
-		<div className="grid md:grid-cols-2 lg:grid-cols-4 px-20 gap-16 md:gap-8">
+		<div className="grid md:grid-cols-2 lg:grid-cols-4 px-10 xl:px-20 gap-16 md:gap-8">
 			{iconsTab.map((icon) => (
 				<Link key={icon.link} href={icon.link}>
 					<div
