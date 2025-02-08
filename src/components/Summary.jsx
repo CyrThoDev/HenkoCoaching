@@ -10,14 +10,16 @@ function Summary() {
 		<div className="flex flex-col gap-0">
 			<div className="bg-darkorange text-white">
 				<div className=" px-10 lg:px-20 pb-10 lg:pb-0 pt-10 flex flex-col lg:flex-row gap-10 justify-around items-center">
-					<Image
-						src={summary}
-						width={"500"}
-						height={"auto"}
-						className="rounded-md  "
-						alt="photo de la salle avec des poids"
-					/>
-					<div className="flex flex-col gap-8 lg:basis-3/5 justify-between">
+					<div>
+						<Image
+							src={summary}
+							width={"500"}
+							height={"auto"}
+							className="rounded-md  "
+							alt="photo de la salle avec des poids"
+						/>
+					</div>
+					<div className="flex flex-col gap-8  lg:basis-1/2 xl:basis-3/5 justify-between">
 						<h2 className="text-2xl md:text-3xl font-semibold ">
 							Des services sur-mesure pour tous les âges!
 						</h2>

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import NavBar from "@/components/NavBar";
 import CoachingHeader from "@/components/CoachingHeader";
 import Seance from "@/components/Seance";
@@ -24,6 +25,34 @@ const tarifscoaching = [
 function Coaching() {
 	return (
 		<>
+			<Head>
+				<title>Henko Coaching - Sport, bien-être et récupération</title>
+				<meta name="description" content="Henko Coaching" />
+				<meta
+					name="keywords"
+					content="coaching sportif, entraînement personnalisé, sport, fitness, performance, objectifs"
+				/>
+				{/* Facebook */}
+				<meta
+					property="og:title"
+					content="Henko Coaching - Coaching Sportif - Atteignez vos Objectifs"
+				/>
+				<meta
+					property="og:description"
+					content="Des séances de coaching sportif adaptées à vos besoins pour améliorer votre condition physique et atteindre vos objectifs."
+				/>
+				<meta property="og:url" content="https://www.henkocoachingmimizan.fr" />
+				<meta property="og:type" content="website" />
+				<meta
+					property="og:image"
+					content="https://www.henkocoachingmimizan.fr/images/HomePagereseaux.jpg"
+				/>
+				<meta property="og:image:type" content="image/jpg" />
+				<meta property="og:image:width" content="1200" />
+				<meta property="og:image:height" content="630" />
+				<meta property="og:image:alt" content="Logo Henko Coaching" />
+				<meta name="robots" content="index, follow" />
+			</Head>
 			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
 			<div className="px-10 lg:px-20 flex flex-col gap-20">
 				<div className="flex flex-col gap-10">
@@ -51,46 +80,7 @@ function Coaching() {
 						durable.
 					</p>
 				</div>
-				{/* <div className="bg-darkorange lg:px-20">
-					<div className=" mx-auto p-6  text-white ">
-				
-						<div className="mt-6 space-y-4">
-							
-							<div className="flex justify-between border-b border-white/50 pb-2">
-								<span>La séance</span>
-								<span className="font-semibold">45€</span>
-							</div>
-
-							<div className="flex justify-between border-b border-white/50 pb-2">
-								<span>10 séances</span>
-								<span className="font-semibold">350€</span>
-							</div>
-
-							<div className="flex justify-between border-b border-white/50 pb-2">
-								<span>1 x semaine</span>
-								<span className="font-semibold">140€/mois</span>
-							</div>
-
-							<div className="flex justify-between border-b border-white/50 pb-2">
-								<span>2 x semaine</span>
-								<span className="font-semibold">240€/mois</span>
-							</div>
-
-							<div className="flex justify-between border-b border-white/50 pb-2">
-								<span>3 x semaine</span>
-								<span className="font-semibold">300€/mois</span>
-							</div>
-
-							<div className="flex justify-between">
-								<span>Séance d’essai</span>
-								<span className="font-semibold">25€</span>
-							</div>
-						</div>
-					</div>
-				</div> */}
 			</div>
-
-			{/* <Formules /> */}
 			<FAQ />
 		</>
 	);
