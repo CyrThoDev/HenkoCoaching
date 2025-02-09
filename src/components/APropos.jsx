@@ -36,13 +36,15 @@ const APropos = () => {
 						et vous rendre acteur de votre forme et surtout de votre santé.
 					</p>
 				</div>
-				<Image
-					src={Jessphoto}
-					width={"auto"}
-					height={"auto"}
-					className="w-auto xl:w-full basis-1/5 shadow-perso shadow-darkorange rounded-sm"
-					alt="Photo d'un sportive à la montagne"
-				/>
+				<div className="basis-1/5">
+					<Image
+						src={Jessphoto}
+						width={"auto"}
+						height={"auto"}
+						className="w-auto shadow-perso shadow-darkorange rounded-sm"
+						alt="Photo d'un sportive à la montagne"
+					/>
+				</div>
 			</div>
 		</div>
 	);
