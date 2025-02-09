@@ -45,7 +45,7 @@ const Actualites = ({ news, urlFor }) => {
 							Offre Saint-Valentin jusqu&#39;au 14 février
 						</h2>
 						<p className="text-xl lg:text-2xl font-poppins px-10 text-center ">
-							-10% sur le massage suédois relaxant
+							-15€ sur le massage suédois relaxant
 						</p>
 					</div>
 					<ButtonOrange
