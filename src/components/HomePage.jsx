@@ -23,7 +23,7 @@ function HomePage() {
 				labelColor="text-white"
 				borderColor="border-white"
 			/>
-			<Actualites />
+			{/* <Actualites /> */}
 		</div>
 	);
 }
