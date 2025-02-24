@@ -36,7 +36,7 @@ const APropos = () => {
 						et vous rendre acteur de votre forme et surtout de votre santé.
 					</p>
 				</div>
-				<div className="basis-1/5">
+				<div className="basis-2/5">
 					<Image
 						src={Jessphoto}
 						width={"auto"}
