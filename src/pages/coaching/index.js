@@ -1,3 +1,5 @@
+import { client } from "@/sanity/client";
+import { defineQuery } from "next-sanity";
 import Head from "next/head";
 import NavBar from "@/components/NavBar";
 import CoachingHeader from "@/components/CoachingHeader";
@@ -22,7 +24,31 @@ const tarifscoaching = [
 	{ label: "Séance d’essai", price: "25€" },
 ];
 
-function Coaching() {
+const TARIFSCOACHING_QUERY = defineQuery(`
+  *[_type=="tarifs"] {
+    _id, label, price
+  }`);
+
+export async function getServerSideProps() {
+	try {
+		const tarifs = await client.fetch(TARIFSCOACHING_QUERY);
+
+		return {
+			props: {
+				tarifs,
+			},
+		};
+	} catch (error) {
+		console.error("Erreur lors de la récupération des événements :", error);
+		return {
+			props: {
+				tarifs: [],
+			},
+		};
+	}
+}
+
+function Coaching({ tarifs }) {
 	return (
 		<>
 			<Head>
@@ -73,7 +99,7 @@ function Coaching() {
 					<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 				</h2>
 				<div className="bg-darkorange lg:px-10 mx-auto pb-10">
-					<Tarifs tarifs={tarifscoaching} />
+					<Tarifs tarifs={tarifs} />
 					<p className="px-10">
 						Pour des résultats durables en coaching sportif privé, un engagement
 						<strong> d&#39;au moins 4 mois est nécessaire</strong>. Cela permet
