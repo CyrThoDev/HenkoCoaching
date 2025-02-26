@@ -127,7 +127,7 @@ function Planning({ image }) {
 					<div className="flex flex-col gap-2 lg:w-1/2 ">
 						<ButtonOrange
 							title="RESERVER MA PREMIERE SEANCE"
-							link="https://calendly.com/henkocoaching/reservation-creneau-coaching"
+							link="https://calendly.com/henkocoaching/coaching-essai-1h"
 							target="_blank"
 							width="w-[18rem]"
 						/>
