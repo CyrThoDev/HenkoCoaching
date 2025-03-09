@@ -1,4 +1,5 @@
-const BASE_URL = "www.henkocoachingmimizan.fr" || "http://localhost:3000";
+const BASE_URL =
+	"https://www.henkocoachingmimizan.fr" || "http://localhost:3000";
 
 function generateSiteMap(pages) {
 	return `<?xml version="1.0" encoding="UTF-8"?>
