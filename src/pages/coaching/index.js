@@ -26,7 +26,7 @@ const tarifscoaching = [
 
 const TARIFSCOACHING_QUERY = defineQuery(`
   *[_type=="tarifs"] {
-    _id, label, price
+    id, label, price
   }`);
 
 export async function getServerSideProps() {
