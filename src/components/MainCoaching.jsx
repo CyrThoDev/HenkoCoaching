@@ -21,11 +21,11 @@ const coachingBenefits = [
 	"Éviter les blessures",
 ];
 
-const trainingDetails = [
-	"Planning du 1er février au 06 juillet inclus.",
-	"Accès libre : Sur réservation jusqu'à la dernière minute. *Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre *",
-	"Coaching / Massage : Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
-];
+// const trainingDetails = [
+// 	"Planning du 1er février au 06 juillet inclus.",
+// 	"Accès libre : Sur réservation jusqu'à la dernière minute. *Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre *",
+// 	"Coaching / Massage : Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
+// ];
 
 function MainCoaching() {
 	const dialogRef = useRef(null);
@@ -102,7 +102,7 @@ function MainCoaching() {
 						<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
 					</h2>
 				</div>
-				<Planning image={photocoach} />
+				<Planning image={photocoach} page="coaching" />
 				<WaveOrange />
 			</div>
 		</>
