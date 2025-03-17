@@ -99,7 +99,7 @@ function AccesLibre() {
 							<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
 						</h2>
 					</div>
-					<Planning image={espacepro} />
+					<Planning image={espacepro} page="libre" />
 				</div>
 			</div>
 

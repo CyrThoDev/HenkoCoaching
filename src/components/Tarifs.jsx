@@ -14,8 +14,8 @@ function Tarifs({ tarifs }) {
 										!isLast ? "border-b border-white/50 " : ""
 									}`}
 								>
-									<span>{item.label}</span>
-									<span className="font-semibold">{item.price}</span>
+									<p>{item.label}</p>
+									<p className="font-semibold">{item.price}</p>
 								</div>
 							);
 						})}

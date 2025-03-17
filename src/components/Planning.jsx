@@ -15,15 +15,18 @@ const trainingDetails = [
 		title: "Accès libre : ",
 		description:
 			"Sur réservation jusqu'à la dernière minute. Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre.",
+		type: "coaching",
 	},
 	{
 		title: "Coaching / Massage : ",
 		description:
 			"Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
+		type: "libre",
 	},
 ];
 
-function Planning({ image }) {
+function Planning({ image, page }) {
+	console.info(page);
 	const dialogRef = useRef(null);
 	const openDialog = () => {
 		if (dialogRef.current) {
@@ -36,6 +39,11 @@ function Planning({ image }) {
 			dialogRef.current.close();
 		}
 	};
+
+	const filteredDetails =
+		page === "coaching"
+			? trainingDetails.filter((detail) => detail.type !== "coaching")
+			: trainingDetails.filter((detail) => detail.type !== "libre");
 	return (
 		<div>
 			<div className="flex flex-col gap-20">
@@ -102,10 +110,12 @@ function Planning({ image }) {
 						</div>
 					</div>
 					<div className="flex flex-col gap-2 ">
-						{trainingDetails.map((detail, index) => (
-							<div key={index} className="flex flex-col lg:flex-row ">
-								<p className="font-semibold">{detail.title} </p>
-								<p className="pl-2">{detail.description}</p>
+						{filteredDetails.map((detail, index) => (
+							<div key={index} className="flex flex-col lg:flex-row">
+								<p className="font-semibold">{detail.title}</p>
+								{detail.description && (
+									<p className="pl-2">{detail.description}</p>
+								)}
 							</div>
 						))}
 					</div>

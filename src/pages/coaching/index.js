@@ -12,17 +12,8 @@ import WaveOrange from "@/components/WaveOrange";
 import HeadPages from "@/components/HeadPages";
 import FAQ from "@/components/FAQ";
 import Formules from "@/components/Formules";
-import Planning from "@/components/Planning";
+// import Planning from "@/components/Planning";
 import Tarifs from "@/components/Tarifs";
-
-const tarifscoaching = [
-	{ label: "La séance", price: "45€" },
-	{ label: "10 séances", price: "350€" },
-	{ label: "1 x semaine", price: "140€/mois" },
-	{ label: "2 x semaine", price: "240€/mois" },
-	{ label: "3 x semaine", price: "300€/mois" },
-	{ label: "Séance d’essai", price: "25€" },
-];
 
 const TARIFSCOACHING_QUERY = defineQuery(`
   *[_type=="tarifs"] {
