@@ -20,13 +20,27 @@ const TARIFSCOACHING_QUERY = defineQuery(`
     id, label, price
   }`);
 
+const SEO_QUERY = defineQuery(`
+		*[_type == "pageSeo" && slug == "coaching"][0]{
+  slug,
+  title,
+  description,
+  keywords,
+  "ogImageUrl": ogImage.asset->url
+}
+	`);
+
 export async function getServerSideProps() {
 	try {
-		const tarifs = await client.fetch(TARIFSCOACHING_QUERY);
+		const [tarifs, seo] = await Promise.all([
+			client.fetch(TARIFSCOACHING_QUERY),
+			client.fetch(SEO_QUERY),
+		]);
 
 		return {
 			props: {
 				tarifs,
+				seo,
 			},
 		};
 	} catch (error) {
@@ -34,30 +48,22 @@ export async function getServerSideProps() {
 		return {
 			props: {
 				tarifs: [],
+				seo: null,
 			},
 		};
 	}
 }
 
-function Coaching({ tarifs }) {
+function Coaching({ tarifs, seo }) {
 	return (
 		<>
 			<Head>
 				<title>Henko Coaching - Sport, bien-être et récupération</title>
-				<meta name="description" content="Henko Coaching" />
-				<meta
-					name="keywords"
-					content="coaching sportif, entraînement personnalisé, sport, fitness, performance, objectifs"
-				/>
+				<meta name="description" content={seo.description} />
+				<meta name="keywords" content={seo.keywords} />
 				{/* Facebook */}
-				<meta
-					property="og:title"
-					content="Henko Coaching - Coaching Sportif - Atteignez vos Objectifs"
-				/>
-				<meta
-					property="og:description"
-					content="Des séances de coaching sportif adaptées à vos besoins pour améliorer votre condition physique et atteindre vos objectifs."
-				/>
+				<meta property="og:title" content={seo.title} />
+				<meta property="og:description" content={seo.description} />
 				<meta
 					property="og:url"
 					content="https://www.henkocoachingmimizan.fr/coaching"

@@ -1,29 +1,51 @@
+import { client } from "@/sanity/client";
+import { defineQuery } from "next-sanity";
+import Head from "next/head";
 import localFont from "next/font/local";
 import NavBar from "@/components/NavBar";
-import Head from "next/head";
 import Header from "@/components/Header";
 import HomePage from "@/components/HomePage";
 import logoOrange from "../../public/images/logoHenkoOrange.svg";
 
-export default function Home() {
+const SEO_QUERY = defineQuery(`
+	*[_type == "pageSeo" && slug == "accueil"][0]{
+		slug,
+		title,
+		description,
+		keywords,
+		"ogImageUrl": ogImage.asset->url
+	}
+		`);
+
+export async function getServerSideProps() {
+	try {
+		const seoaccueil = await client.fetch(SEO_QUERY);
+
+		return {
+			props: {
+				seoaccueil,
+			},
+		};
+	} catch (error) {
+		console.error("Erreur lors de la récupération des événements :", error);
+		return {
+			props: {
+				seoaccueil: null,
+			},
+		};
+	}
+}
+
+export default function Home({ seoaccueil }) {
 	return (
 		<>
 			<Head>
 				<title>Henko Coaching - Sport, bien-être et récupération</title>
-				<meta name="description" content="Henko Coaching" />
-				<meta
-					name="keywords"
-					content="coaching sportif, massages, bien-être, relaxation, fitness, entraînement"
-				/>
+				<meta name="description" content={seoaccueil.description} />
+				<meta name="keywords" content={seoaccueil.keywords} />
 				{/* Facebook */}
-				<meta
-					property="og:title"
-					content="Henko Coaching - Sport, bien-être et récupération"
-				/>
-				<meta
-					property="og:description"
-					content="Coaching sportif et massages bien-être pour améliorer votre santé physique et mentale."
-				/>
+				<meta property="og:title" content={seoaccueil.title} />
+				<meta property="og:description" content={seoaccueil.description} />
 				<meta property="og:url" content="https://www.henkocoachingmimizan.fr" />
 				<meta property="og:type" content="website" />
 				<meta
