@@ -1,3 +1,5 @@
+import { client } from "@/sanity/client";
+import { defineQuery } from "next-sanity";
 import Head from "next/head";
 import NavBar from "@/components/NavBar";
 import HeadPages from "@/components/HeadPages";
@@ -8,25 +10,45 @@ import HeaderMassages from "@/components/HeaderMassages";
 import Image from "next/image";
 import basdepagemassage from "@images/basdepagemassage.jpg";
 
-function Massages() {
+const SEO_QUERY = defineQuery(`
+	*[_type == "pageSeo" && slug == "massages"][0]{
+		slug,
+		title,
+		description,
+		keywords,
+		"ogImageUrl": ogImage.asset->url
+	}
+		`);
+
+export async function getServerSideProps() {
+	try {
+		const seomassages = await client.fetch(SEO_QUERY);
+
+		return {
+			props: {
+				seomassages,
+			},
+		};
+	} catch (error) {
+		console.error("Erreur lors de la récupération des événements :", error);
+		return {
+			props: {
+				seomassages: null,
+			},
+		};
+	}
+}
+
+function Massages({ seomassages }) {
 	return (
 		<>
 			<Head>
 				<title>Massages Bien-être - Relaxation et Récupération</title>
-				<meta name="description" content="Henko Coaching" />
-				<meta
-					name="keywords"
-					content="massages, relaxation, bien-être, détente, récupération, stress, soin du corp"
-				/>
+				<meta name="description" content={seomassages.description} />
+				<meta name="keywords" content={seomassages.keywords} />
 				{/* Facebook */}
-				<meta
-					property="og:title"
-					content="Henko Coaching - Massages Bien-être - Relaxation et Récupération"
-				/>
-				<meta
-					property="og:description"
-					content="Profitez d'un moment de détente avec nos massages bien-être. Relaxation, récupération musculaire et anti-stress."
-				/>
+				<meta property="og:title" content={seomassages.title} />
+				<meta property="og:description" content={seomassages.description} />
 				<meta
 					property="og:url"
 					content="https://www.henkocoachingmimizan.fr/massages"
