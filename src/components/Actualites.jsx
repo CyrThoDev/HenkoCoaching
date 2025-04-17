@@ -53,9 +53,9 @@ const Actualites = ({ news, urlFor }) => {
 						/>
 						<Image
 							src={inaugurationMobile}
-							width={"auto"}
+							width={350}
 							height={"auto"}
-							className="block md:hidden w-auto p-4 shadow-perso shadow-darkorange rounded-sm"
+							className="block md:hidden max-w-screen-sm p-4 shadow-perso shadow-darkorange rounded-sm"
 							alt="inauguration Henko Coaching version mobile"
 						/>
 					</div>
