@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonOrange from "./ButtonOrange";
 import ButtonSable from "./ButtonSable";
-import inaugurationDesktop from "@images/inaugurationHenkoDesktop.png";
-import inaugurationMobile from "@images/inaugurationHenkoMobile.png";
+import inaugurationDesktop from "@images/inaugurationHenkoDesktop.webp";
+import inaugurationMobile from "@images/inaugurationHenkoMobile.webp";
 
 const Actualites = ({ news, urlFor }) => {
 	const dialogRef = useRef(null);
