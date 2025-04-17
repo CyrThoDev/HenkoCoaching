@@ -3,15 +3,25 @@ import { useRef, useState } from "react";
 import Calendly from "../components/Calendly";
 import Image from "next/image";
 import massage4 from "@images/massage4.jpg";
-import { prestations } from "@/data/data";
-import ButtonBlack from "./ButtonBlack";
 
-const Prestations = () => {
+import ButtonBlack from "./ButtonBlack";
+import { PortableText } from "@portabletext/react";
+
+const getPreviewText = (blocks, maxLength = 500) => {
+	if (!blocks || !Array.isArray(blocks)) return "";
+	const plainText = blocks
+		.map((block) => block.children?.map((child) => child.text).join("") || "")
+		.join(" ");
+	return `${plainText.slice(0, maxLength)}...`;
+};
+
+const Prestations = ({ prestations }) => {
 	const [expandedId, setExpandedId] = useState(null);
 
-	const toggleExpand = (id) => {
-		setExpandedId(expandedId === id ? null : id);
+	const toggleExpand = (order) => {
+		setExpandedId(expandedId === order ? null : order);
 	};
+
 	return (
 		<section id="prestations">
 			<div className="mx-auto">
@@ -63,17 +73,11 @@ const Prestations = () => {
 							{/* Description */}
 							<div className="flex flex-col gap-6 flex-grow order-2 lg:order-none basis-2/4">
 								<div className="flex flex-col gap-2">
-									{expandedId === prestation.id ? (
-										<div>
-											<p className="text-black">{prestation.description}</p>
-											{prestation.details && (
-												<p className="text-black mt-2">{prestation.details}</p>
-											)}
-											{prestation.details2 && (
-												<p className="text-black mt-2">{prestation.details2}</p>
-											)}
+									{expandedId === prestation.order ? (
+										<div className="prose prose-pink text-black text-base leading-relaxed min-w-full">
+											<PortableText value={prestation.description} />
 											{prestation.detailsList && (
-												<ul className="list-disc pl-5 mt-2 text-black">
+												<ul className="list-disc not-prose pl-5 mt-2 text-black">
 													{prestation.detailsList.map((item, index) => (
 														<li key={index}>
 															<strong>{item.title}: </strong>
@@ -84,7 +88,7 @@ const Prestations = () => {
 											)}
 											<button
 												type="button"
-												onClick={() => toggleExpand(prestation.id)}
+												onClick={() => toggleExpand(prestation.order)}
 												className="self-start font-semibold text-sm text-black underline mt-3"
 											>
 												Lire moins
@@ -92,12 +96,12 @@ const Prestations = () => {
 										</div>
 									) : (
 										<div>
-											<p className="text-black">
-												{prestation.description.slice(0, 500)}...
+											<p className="prose text-black text-base leading-relaxed min-w-full">
+												{getPreviewText(prestation.description)}
 											</p>
 											<button
 												type="button"
-												onClick={() => toggleExpand(prestation.id)}
+												onClick={() => toggleExpand(prestation.order)}
 												className="self-start font-semibold text-sm text-black underline"
 											>
 												Lire plus
