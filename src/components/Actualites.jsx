@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonOrange from "./ButtonOrange";
+import ButtonSable from "./ButtonSable";
+import inaugurationDesktop from "@images/inaugurationHenkoDesktop.png";
+import inaugurationMobile from "@images/inaugurationHenkoMobile.png";
 
 const Actualites = ({ news, urlFor }) => {
 	const dialogRef = useRef(null);
@@ -37,22 +40,37 @@ const Actualites = ({ news, urlFor }) => {
 		<div className="flex flex-col -mt-20 ">
 			<dialog
 				ref={dialogRef}
-				className=" rounded-lg py-20 shadow-lg max-w-screen-xs  md:max-w-screen-md w-full  text-white bg-black opacity-95 "
+				className=" rounded-lg py-20 shadow-lg max-w-screen-sm  md:max-w-screen-lg  w-full  text-white bg-black opacity-99 "
 			>
 				<div className=" flex flex-col items-center gap-10">
 					<div className="flex flex-col gap-4">
-						<h2 className="  text-2xl lg:text-3xl font-tanker px-10 text-center">
-							Offre Saint-Valentin jusqu&#39;au 14 février
-						</h2>
-						<p className="text-xl lg:text-2xl font-poppins px-10 text-center ">
-							-15€ sur le massage suédois relaxant
-						</p>
+						<Image
+							src={inaugurationDesktop}
+							width={800}
+							height={"auto"}
+							className="hidden md:block w-auto shadow-perso shadow-darkorange rounded-sm"
+							alt="inauguration Henko Coaching version desktop"
+						/>
+						<Image
+							src={inaugurationMobile}
+							width={"auto"}
+							height={"auto"}
+							className="block md:hidden w-auto p-4 shadow-perso shadow-darkorange rounded-sm"
+							alt="inauguration Henko Coaching version mobile"
+						/>
 					</div>
-					<ButtonOrange
-						title="JE PROFITE DE L'OFFRE"
-						link="https://calendly.com/henkocoaching/massage-suedois-relaxant-90min?back=1&month=2025-01"
-						width=" w-[15rem] md:w-[18rem]"
-					/>
+					<div className="flex flex-col md:flex-row gap-4">
+						<ButtonOrange
+							title="JE RESERVE UN COACHING"
+							link="https://calendly.com/henkocoaching/jpo-henkocoachingmimizan"
+							width=" w-[15rem] md:w-[18rem]"
+						/>
+						<ButtonSable
+							title="JE RESERVE UN MASSAGE"
+							link="https://calendly.com/henkocoaching/inauguration-henko-coaching-10-mai-2025-massage"
+							width=" w-[15rem] md:w-[18rem]"
+						/>
+					</div>
 				</div>
 				<button
 					type="button"

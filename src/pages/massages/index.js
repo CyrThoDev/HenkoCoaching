@@ -19,14 +19,33 @@ const SEO_QUERY = defineQuery(`
 		"ogImageUrl": ogImage.asset->url
 	}
 		`);
-
+const MASSAGES_QUERY = defineQuery(`
+	*[_type == "massages"]{
+      order,
+      title,
+      "slug": slug.current,
+      description,
+      detailsList[]{
+        title,
+        description
+      },
+      prix1,
+      prix2,
+      calendlyUrl,
+      button
+    }
+  `);
 export async function getServerSideProps() {
 	try {
-		const seomassages = await client.fetch(SEO_QUERY);
+		const [massages, seomassages] = await Promise.all([
+			client.fetch(MASSAGES_QUERY),
+			client.fetch(SEO_QUERY),
+		]);
 
 		return {
 			props: {
 				seomassages,
+				massages,
 			},
 		};
 	} catch (error) {
@@ -34,12 +53,15 @@ export async function getServerSideProps() {
 		return {
 			props: {
 				seomassages: null,
+				massage: [],
 			},
 		};
 	}
 }
 
-function Massages({ seomassages }) {
+function Massages({ seomassages, massages }) {
+	const prestations = massages.sort((a, b) => a.order - b.order);
+
 	return (
 		<>
 			<Head>
@@ -69,7 +91,7 @@ function Massages({ seomassages }) {
 				<HeadPages title="MASSAGES ET RECUPERATION" />
 				<WaveSable />
 				<HeaderMassages />
-				<Prestations />
+				<Prestations prestations={prestations} />
 				<Image
 					src={basdepagemassage}
 					width={600}
