@@ -87,9 +87,9 @@ function AccesLibre({ seolibre }) {
 					</div>
 					<div className="bg-white bg-opacity-75 -inset-10 lg:-inset-20 flex flex-col gap-20 bg-center bg-cover bg-[url('/images/acceslibre.webp')] min-h-[30rem]" />
 					<div className=" flex flex-col gap-10 px-10 lg:px-40">
-						<h3 className="font-tanker text-center text-2xl">
+						{/* <h3 className="font-tanker text-center text-2xl">
 							DISPO A PARTIR DE FEVRIER 2025
-						</h3>
+						</h3> */}
 						<p>
 							Vous avez besoin d’accéder à une salle de sport à Mimizan plage
 							pendant vos vacances ou même toute l’année et vous n’avez pas
