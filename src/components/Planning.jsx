@@ -1,15 +1,15 @@
 import { useRef } from "react";
 import PlanningHenkoDesktopv2 from "@images/PlanningHenkoDesktopv2.png";
-import PlanningHenkoMobile from "@images/PlanningHenkoMobile.png";
+import PlanningHenkoMobile from "@images/PlanningHenkoMobile.webp";
 import ButtonOrange from "@/components/ButtonOrange";
 import ButtonBlack from "./ButtonBlack";
 import Image from "next/image";
 import salle from "../../public/images/salle3.jpg";
-import Heure from "@images/Heure.png";
+import Heure from "@images/Heure.webp";
 
 const trainingDetails = [
 	{
-		title: "Planning du 1er février au 06 juillet inclus.",
+		title: "Planning du 15 juillet au 15 septembre inclus.",
 	},
 	{
 		title: "Accès libre : ",
