@@ -5,7 +5,7 @@ import vector from "../../public/images/vector.svg";
 import CalendlyModal from "@/components/Calendly";
 import { FaCheck } from "react-icons/fa6";
 import PlanningHenkoDesktopv2 from "@images/PlanningHenkoDesktopv2.png";
-import PlanningHenkoMobile from "@images/PlanningHenkoMobile.png";
+import PlanningHenkoMobile from "@images/PlanningHenkoMobile.webp";
 import ButtonOrange from "./ButtonOrange";
 import ButtonBlack from "./ButtonBlack";
 import Planning from "./Planning";
