@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import PlanningHenkoDesktopv2 from "@images/PlanningHenkoDesktopv2.png";
+
 import PlanningHenkoMobile from "@images/PlanningHenkoMobile.webp";
 import ButtonOrange from "@/components/ButtonOrange";
 import ButtonBlack from "./ButtonBlack";
@@ -83,7 +83,7 @@ function Planning({ image, page }) {
 							</button>
 							<div className="self-center lg:w-[70vw]">
 								<Image
-									src={PlanningHenkoDesktopv2}
+									src={Heure}
 									alt="Planning Henko"
 									width={"auto"}
 									height={"auto"}
