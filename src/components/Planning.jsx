@@ -26,7 +26,7 @@ const trainingDetails = [
 ];
 
 function Planning({ image, page }) {
-	console.info(page);
+
 	const dialogRef = useRef(null);
 	const openDialog = () => {
 		if (dialogRef.current) {

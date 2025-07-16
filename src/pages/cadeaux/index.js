@@ -59,7 +59,7 @@ function Cadeaux({ seocadeaux }) {
 	};
 
 	const handleAddToCart = () => {
-		console.info("add to cart", customizations);
+	
 		if (
 			!customizations.prestation ||
 			!customizations.from ||

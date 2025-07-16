@@ -9,15 +9,15 @@ import Header from "./Header";
 import Formulaire from "./Formulaire";
 import Actualites from "./Actualites";
 
-function HomePage() {
+function HomePage({iconaccueil, resumeaccueil, presentationaccueil}) {
 	return (
 		<div className="flex flex-col gap-20">
 			<Header />
-			<Icons />
-			<Summary />
+			<Icons iconaccueil={iconaccueil}/>
+			<Summary resumeaccueil={resumeaccueil}/>
 			<GoogleReviews />
 			<WaveOrange />
-			<APropos />
+			<APropos presentationaccueil={presentationaccueil}/>
 			<Formulaire
 				bgColor="bg-darkorange"
 				labelColor="text-white"
