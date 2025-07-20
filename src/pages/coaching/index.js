@@ -55,7 +55,7 @@ client.fetch(TEXTETARIFS_QUERY)
 }
 
 function Coaching({ tarifs, seo , coachingpresentation, coachingpourquoi, planning, faq, seancesteps, textetarifs}) {
-	console.info(textetarifs)
+
 	
 
 	return (

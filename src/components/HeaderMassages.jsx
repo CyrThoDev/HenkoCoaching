@@ -4,7 +4,7 @@ import ButtonSable from "./ButtonSable";
 import { PortableText } from "next-sanity";
 
 const HeaderMassages = ({ photosmassages, textemassages }) => {
-	console.info(textemassages)
+	
 	if (!photosmassages || !photosmassages.photos?.length || !textemassages) return null;
 
 
@@ -31,7 +31,7 @@ const HeaderMassages = ({ photosmassages, textemassages }) => {
 			{/* Texte descriptif */}
 			<div className="flex flex-col gap-10 lg:px-40">
     
-      <div className="prose max-w-none text-justify text-black">
+      <div className="prose max-w-none  text-black">
         <PortableText value={textemassages.contenu} />
       </div>
 

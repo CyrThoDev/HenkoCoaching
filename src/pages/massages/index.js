@@ -10,16 +10,18 @@ import HeaderMassages from "@/components/HeaderMassages";
 import Image from "next/image";
 import basdepagemassage from "@images/basdepagemassage.jpg";
 
-import { SEO_QUERY, MASSAGES_QUERY, PHOTOS_MASSAGES_QUERY, TEXTE_MASSAGES_QUERY} from "@/queries/massagequeries";
+import { SEO_QUERY, MASSAGES_QUERY, PHOTOS_MASSAGES_QUERY, TEXTE_MASSAGES_QUERY, PHOTO_MASSAGEBAS_QUERY} from "@/queries/massagequeries";
 
 
 export async function getServerSideProps() {
 	try {
-		const [massages, seomassages,photosmassages, textemassages] = await Promise.all([
+		const [massages, seomassages,photosmassages, textemassages, photomassagebas] = await Promise.all([
 			client.fetch(MASSAGES_QUERY),
 			client.fetch(SEO_QUERY),
 			client.fetch(PHOTOS_MASSAGES_QUERY),
-			client.fetch(TEXTE_MASSAGES_QUERY)
+			client.fetch(TEXTE_MASSAGES_QUERY),
+			client.fetch(PHOTO_MASSAGEBAS_QUERY)
+			
 		]);
 
 		return {
@@ -27,7 +29,8 @@ export async function getServerSideProps() {
 				seomassages,
 				massages,
 				photosmassages, 
-				textemassages
+				textemassages, 
+				photomassagebas
 			},
 		};
 	} catch (error) {
@@ -37,14 +40,15 @@ export async function getServerSideProps() {
 				seomassages: null,
 				massage: [],
 				photosmassages : {}, 
-				textemassages : {}
+				textemassages : {}, 
+				photomassagebas : {}
 			},
 		};
 	}
 }
 
-function Massages({ seomassages, massages , photosmassages, textemassages}) {
-	
+function Massages({ seomassages, massages , photosmassages, textemassages, photomassagebas}) {
+
 
 
 	const prestations = massages.sort((a, b) => a.order - b.order);
@@ -79,13 +83,19 @@ function Massages({ seomassages, massages , photosmassages, textemassages}) {
 				<WaveSable />
 				<HeaderMassages photosmassages={photosmassages} textemassages={textemassages} />
 				<Prestations prestations={prestations}  />
-				<Image
-					src={basdepagemassage}
-					width={600}
-					height={"auto"}
-					className="-mt-10 lg:m-auto"
-					alt="Photo d'un massage"
-				/>
+			{photomassagebas?.image?.asset?.url && (
+  <div className="w-full flex justify-center px-6 md:px-12 lg:px-0 py-6 md:py-10">
+    <Image
+      src={photomassagebas.image.asset.url}
+      alt={photomassagebas.image.alt || "Photo massage"}
+      width={800}
+      height={500}
+      className="rounded-md object-cover"
+    />
+  </div>
+)}
+
+
 				<WaveSable />
 			</div>
 		</>

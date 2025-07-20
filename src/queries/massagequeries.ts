@@ -38,6 +38,16 @@ export const PHOTOS_MASSAGES_QUERY = defineQuery(`
   }
 `);
 
+export const PHOTO_MASSAGEBAS_QUERY = defineQuery(`
+  *[_type == "photoMassages"][0] {
+    titreSection,
+    image {
+      asset->{url},
+      alt
+    }
+  }
+`);
+
 export const TEXTE_MASSAGES_QUERY = defineQuery(`
   *[_type == "textemassages"][0] {
     titreSection,
