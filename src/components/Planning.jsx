@@ -7,25 +7,26 @@ import Image from "next/image";
 import salle from "../../public/images/salle3.jpg";
 import Heure from "@images/Heure.webp";
 
-const trainingDetails = [
-	{
-		title: "Planning du 15 juillet au 15 septembre inclus.",
-	},
-	{
-		title: "Accès libre : ",
-		description:
-			"Sur réservation jusqu'à la dernière minute. Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre.",
-		type: "coaching",
-	},
-	{
-		title: "Coaching / Massage : ",
-		description:
-			"Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
-		type: "libre",
-	},
-];
+// const trainingDetails = [
+// 	{
+// 		title: "Planning du 15 juillet au 15 septembre inclus.",
+// 	},
+// 	{
+// 		title: "Accès libre : ",
+// 		description:
+// 			"Sur réservation jusqu'à la dernière minute. Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre.",
+// 		type: "coaching",
+// 	},
+// 	{
+// 		title: "Coaching / Massage : ",
+// 		description:
+// 			"Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
+// 		type: "libre",
+// 	},
+// ];
 
-function Planning({ image, page }) {
+function Planning({ planning, page }) {
+
 
 	const dialogRef = useRef(null);
 	const openDialog = () => {
@@ -40,24 +41,43 @@ function Planning({ image, page }) {
 		}
 	};
 
-	const filteredDetails =
+	const {
+		details = [],
+		imageDesktop,
+		imageMobile,
+		imageCoaching,
+		imageLibreAcces,
+		ctaButtons = [],
+	} = planning;
+
+	if (!planning) return null;
+	
+
+	const imagePage = page === "coaching" ? imageCoaching : imageLibreAcces;
+
+
+const filteredDetails =
 		page === "coaching"
-			? trainingDetails.filter((detail) => detail.type !== "coaching")
-			: trainingDetails.filter((detail) => detail.type !== "libre");
+			? details.filter((item) => item.type !== "libre")
+			: details.filter((item) => item.type !== "coaching");
+
+
 	return (
 		<div>
 			<div className="flex flex-col gap-20">
 				<div className="flex flex-col gap-4 ">
 					<div className="lg:flex lg:flex-row lg:gap-20  lg:pt-10 ">
 						<div className="hidden md:flex md:flex-col basis-1/2">
-							<Image
-								src={Heure}
-								alt="Planning Henko"
-								width={"auto"}
-								height={"auto"}
-								onClick={openDialog}
-								className=""
-							/>
+							{imageDesktop && (
+					<Image
+						src={imageDesktop}
+						alt={`Illustration page ${page}`}
+						width={600}
+						height={400}
+							onClick={openDialog}
+						className="rounded-md shadow-md z-10"
+					/>
+				)}
 							<div className="flex flex-row  gap-8 justify-center  pt-4 text-white ">
 								<p className="bg-sand p-2 rounded-sm">Accès libre</p>
 								<p className="bg-darkorange p-2 rounded-sm">
@@ -66,10 +86,10 @@ function Planning({ image, page }) {
 							</div>
 						</div>
 						<Image
-							src={PlanningHenkoMobile}
+							src={imageMobile}
 							alt="Planning Henko"
-							width={"auto"}
-							height={"auto"}
+							width={500}
+							height={500}
 							onClick={openDialog}
 							className="md:hidden "
 						/>
@@ -81,19 +101,19 @@ function Planning({ image, page }) {
 							>
 								&times;
 							</button>
-							<div className="self-center lg:w-[70vw]">
+							<div className="flex justify-center items-center ">
 								<Image
-									src={Heure}
+									src={imageDesktop}
 									alt="Planning Henko"
-									width={"auto"}
-									height={"auto"}
-									className="hidden lg:block"
+									width={400}
+							height={400}
+									className="hidden lg:block lg:w-[60vw] h-auto"
 								/>
 								<Image
-									src={PlanningHenkoMobile}
+									src={imageMobile}
 									alt="Planning Henko"
-									width={"auto"}
-									height={"auto"}
+									width={500}
+							height={500}
 									onClick={openDialog}
 									className="lg:hidden w-[80svw]"
 								/>
@@ -101,9 +121,9 @@ function Planning({ image, page }) {
 						</dialog>
 						<div className="basis-1/2 flex justify-center">
 							<Image
-								src={image}
-								width={"500"}
-								height={"auto"}
+								src={imagePage}
+								width={500}
+							height={500}
 								className=" hidden lg:flex  shadow-perso max-h-[24rem] w-auto shadow-darkorange rounded-sm"
 								alt="Salle de sport"
 							/>

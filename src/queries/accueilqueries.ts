@@ -1,4 +1,4 @@
-import { client } from "@/sanity/client";
+
 import { defineQuery } from "next-sanity";
 
 export const QUERY_ICONS = defineQuery(`

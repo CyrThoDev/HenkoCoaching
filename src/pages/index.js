@@ -41,6 +41,7 @@ export async function getServerSideProps() {
 
 export default function Home({ seoaccueil, iconaccueil , resumeaccueil, presentationaccueil}) {
 
+
 	return (
 		<>
 			<Head>

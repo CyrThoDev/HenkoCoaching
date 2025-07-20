@@ -14,33 +14,28 @@ import FAQ from "@/components/FAQ";
 import Formules from "@/components/Formules";
 // import Planning from "@/components/Planning";
 import Tarifs from "@/components/Tarifs";
-
-const TARIFSCOACHING_QUERY = defineQuery(`
-  *[_type=="tarifs"] {
-    id, label, price
-  }`);
-
-const SEO_QUERY = defineQuery(`
-		*[_type == "pageSeo" && slug == "coaching"][0]{
-  slug,
-  title,
-  description,
-  keywords,
-  "ogImageUrl": ogImage.asset->url
-}
-	`);
+import { TEXTETARIFS_QUERY, TARIFSCOACHING_QUERY, SEO_QUERY , COACHINGPRESENTATION_QUERY, COACHING_MAIN_QUERY, PLANNING_QUERY, FAQ_QUERY, SEANCE_QUERY} from "@/queries/coachingqueries";
+import { PortableText } from "next-sanity";
 
 export async function getServerSideProps() {
 	try {
-		const [tarifs, seo] = await Promise.all([
+		const [tarifs, seo, coachingpresentation, coachingpourquoi, planning, faq, seancesteps,textetarifs] = await Promise.all([
 			client.fetch(TARIFSCOACHING_QUERY),
 			client.fetch(SEO_QUERY),
+			client.fetch(COACHINGPRESENTATION_QUERY),
+			client.fetch(COACHING_MAIN_QUERY),
+			client.fetch(PLANNING_QUERY), 
+			client.fetch(FAQ_QUERY), 
+client.fetch(SEANCE_QUERY),
+client.fetch(TEXTETARIFS_QUERY)
 		]);
 
 		return {
 			props: {
 				tarifs,
 				seo,
+				coachingpresentation, 
+				coachingpourquoi, planning, faq, seancesteps, textetarifs
 			},
 		};
 	} catch (error) {
@@ -49,21 +44,28 @@ export async function getServerSideProps() {
 			props: {
 				tarifs: [],
 				seo: null,
+				coachingpresentation:null, 
+				coachingpourquoi:null, 
+				planning:null, 
+				faq:{}, seancesteps : [], 
+				textetarifs : []
 			},
 		};
 	}
 }
 
-function Coaching({ tarifs, seo }) {
+function Coaching({ tarifs, seo , coachingpresentation, coachingpourquoi, planning, faq, seancesteps, textetarifs}) {
+	console.info(textetarifs)
+	
+
 	return (
 		<>
 			<Head>
 				<title>Henko Coaching - Sport, bien-être et récupération</title>
-				<meta name="description" content={seo.description} />
-				<meta name="keywords" content={seo.keywords} />
-				{/* Facebook */}
-				<meta property="og:title" content={seo.title} />
-				<meta property="og:description" content={seo.description} />
+				<meta name="keywords" content={seo?.keywords || "coaching sportif, Mimizan, sport bien-être"} />
+<meta property="og:title" content={seo?.title || "Henko Coaching - Coaching personnalisé"} />
+<meta property="og:description" content={seo?.description || "Coaching sur mesure à Mimizan"} />
+
 				<meta
 					property="og:url"
 					content="https://www.henkocoachingmimizan.fr/coaching"
@@ -85,9 +87,9 @@ function Coaching({ tarifs, seo }) {
 					<HeadPages title="COACHING EN SOLO OU EN DUO" />
 					<WaveOrange />
 				</div>
-				<CoachingHeader />
-				<MainCoaching />
-				<Seance />
+				<CoachingHeader coachingpresentation={coachingpresentation}/>
+				<MainCoaching coachingpourquoi={coachingpourquoi} planning={planning}/>
+				<Seance seancesteps={seancesteps} />
 				<WaveOrange />
 			</div>
 			<div>
@@ -97,17 +99,13 @@ function Coaching({ tarifs, seo }) {
 				</h2>
 				<div className="bg-darkorange lg:px-10 mx-auto pb-10">
 					<Tarifs tarifs={tarifs} />
-					<p className="px-10">
-						Pour des résultats durables en coaching sportif privé, un engagement
-						<strong> d&#39;au moins 4 mois est nécessaire</strong>. Cela permet
-						au corps de s&#39;adapter, d&#39;installer de nouvelles habitudes et
-						de progresser efficacement. Cette période permet également au coach
-						d&#39;ajuster les séances à vos objectifs pour un changement
-						durable.
-					</p>
+					  <div className="prose max-w-none px-10 text-black">
+     
+      <PortableText value={textetarifs?.contenu} />
+    </div>
 				</div>
 			</div>
-			<FAQ />
+			<FAQ faq={faq}/>
 		</>
 	);
 }
