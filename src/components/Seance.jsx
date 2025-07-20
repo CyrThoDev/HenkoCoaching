@@ -23,7 +23,7 @@ const icons = [
 ];
 
 function Seance({seancesteps}) {
-	console.info(seancesteps)
+
 	return (
 		<div className="flex flex-col gap-10">
 			<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">

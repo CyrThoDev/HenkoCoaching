@@ -10,42 +10,24 @@ import HeaderMassages from "@/components/HeaderMassages";
 import Image from "next/image";
 import basdepagemassage from "@images/basdepagemassage.jpg";
 
-const SEO_QUERY = defineQuery(`
-	*[_type == "pageSeo" && slug == "massages"][0]{
-		slug,
-		title,
-		description,
-		keywords,
-		"ogImageUrl": ogImage.asset->url
-	}
-		`);
-const MASSAGES_QUERY = defineQuery(`
-	*[_type == "massages"]{
-      order,
-      title,
-      "slug": slug.current,
-      description,
-      detailsList[]{
-        title,
-        description
-      },
-      prix1,
-      prix2,
-      calendlyUrl,
-      button
-    }
-  `);
+import { SEO_QUERY, MASSAGES_QUERY, PHOTOS_MASSAGES_QUERY, TEXTE_MASSAGES_QUERY} from "@/queries/massagequeries";
+
+
 export async function getServerSideProps() {
 	try {
-		const [massages, seomassages] = await Promise.all([
+		const [massages, seomassages,photosmassages, textemassages] = await Promise.all([
 			client.fetch(MASSAGES_QUERY),
 			client.fetch(SEO_QUERY),
+			client.fetch(PHOTOS_MASSAGES_QUERY),
+			client.fetch(TEXTE_MASSAGES_QUERY)
 		]);
 
 		return {
 			props: {
 				seomassages,
 				massages,
+				photosmassages, 
+				textemassages
 			},
 		};
 	} catch (error) {
@@ -54,12 +36,17 @@ export async function getServerSideProps() {
 			props: {
 				seomassages: null,
 				massage: [],
+				photosmassages : {}, 
+				textemassages : {}
 			},
 		};
 	}
 }
 
-function Massages({ seomassages, massages }) {
+function Massages({ seomassages, massages , photosmassages, textemassages}) {
+	
+
+
 	const prestations = massages.sort((a, b) => a.order - b.order);
 
 	return (
@@ -90,8 +77,8 @@ function Massages({ seomassages, massages }) {
 			<div className="flex flex-col gap-10 mb-10">
 				<HeadPages title="MASSAGES ET RECUPERATION" />
 				<WaveSable />
-				<HeaderMassages />
-				<Prestations prestations={prestations} />
+				<HeaderMassages photosmassages={photosmassages} textemassages={textemassages} />
+				<Prestations prestations={prestations}  />
 				<Image
 					src={basdepagemassage}
 					width={600}
