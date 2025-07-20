@@ -11,13 +11,17 @@ const coachingFeatures = [
 	"Cadre discret et intimiste",
 ];
 
-function CoachingHeader() {
+function CoachingHeader({coachingpresentation}) {
+
+if (!coachingpresentation) return null;
+
+const { titre, imageUrl, features, cta } = coachingpresentation;
 	return (
 		<div className="flex flex-col gap-10">
 			<div className="flex flex-col-reverse items-center md:flex-row gap-10">
 				<div className="md:basis-1/2 flex justify-center">
 					<Image
-						src={coachingsolo}
+						src={imageUrl}
 						width={400}
 						height={400}
 						className="w-auto h-auto max-h-[500px] rounded-sm shadow-persoreverse shadow-darkorange"
@@ -27,12 +31,12 @@ function CoachingHeader() {
 				<div className="md:basis-1/2 flex flex-col gap-12 items-left">
 					<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">
 						<span className="text-3xl z-10">
-							Boostez votre forme en solo ou en duo
+							{titre}
 						</span>
 						<div className="w-[12rem] h-3 bg-darkorange -mt-3 -z-1" />
 					</h2>
 					<div className="flex flex-col gap-4">
-						{coachingFeatures.map((feature, index) => (
+						{features?.map((feature, index) => (
 							<div key={index} className="flex items-center gap-2">
 								<Image
 									src={Dumbbell}
@@ -44,14 +48,17 @@ function CoachingHeader() {
 							</div>
 						))}
 					</div>
+					{cta?.text && (
 					<div className="flex items-center lg:items-start flex-col gap-2 z-10 w-fit">
 						<ButtonOrange
-							title="RESERVEZ VOTRE SEANCE D'ESSAI A 25€*"
-							link="https://calendly.com/henkocoaching/coaching-essai-1h"
+							title={cta.text}
+							link={cta.url}
 							width="w-fit lg:w-[25rem]"
 						/>
-						<p>* Remboursée pour toute souscription à un abonnement</p>
+						
+						{cta.note && <p>{cta.note}</p>}
 					</div>
+					)}
 				</div>
 			</div>
 		</div>

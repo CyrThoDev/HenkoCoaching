@@ -14,7 +14,16 @@ import {
 } from "react-icons/pi";
 import WaveOrange from "./WaveOrange";
 
-function Seance() {
+const images = [Strength, lift, workout, curls];
+const icons = [
+	PiNumberCircleOneLight,
+	PiNumberCircleTwoLight,
+	PiNumberCircleThreeLight,
+	PiNumberCircleFourLight,
+];
+
+function Seance({seancesteps}) {
+
 	return (
 		<div className="flex flex-col gap-10">
 			<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">
@@ -26,82 +35,58 @@ function Seance() {
 				<div className="absolute inset-y-0 left-1/2 w-[2px] rounded-sm bg-darkorange -translate-x-1/2" />
 
 				{/* Contenu */}
-				<div className="grid grid-cols-12 gap-2 items-center">
-					<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
-						<PiNumberCircleOneLight className=" text-3xl md:text-4xl lg:text-3xl text-darkorange" />
-						<p>Briefing et explication du déroulé de la séance à venir</p>
-					</div>
-					<div className="col-span-2 flex justify-center">
-						<Image
-							src={Strength}
-							alt="Briefing"
-							width={50}
-							height={50}
-							className="relative "
-						/>
-					</div>
-					<span className="col-span-5" />
-				</div>
-				<div className="grid grid-cols-12 gap-2 items-center">
-					<span className="col-span-5" />
-					<div className="col-span-2 flex justify-center">
-						<Image
-							src={lift}
-							alt="Échauffement"
-							width={50}
-							height={50}
-							className="relative "
-						/>
-					</div>
-					<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
-						<PiNumberCircleTwoLight className="text-3xl md:text-5xl lg:text-4xl text-darkorange" />
-						<p>
-							Échauffement : mobilité, activation cardiovasculaire & musculaire
-						</p>
-					</div>
-				</div>
-				<div className="grid grid-cols-12 gap-2 items-center">
-					<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
-						<PiNumberCircleThreeLight className=" text-3xl md:text-5xl lg:text-4xl text-darkorange" />
-						<p>
-							Corps de séance en fonction de l’objectif et de la planification
-						</p>
-					</div>
-					<div className="col-span-2 flex justify-center">
-						<Image
-							src={workout}
-							alt="Corps de séance"
-							width={50}
-							height={50}
-							className="relative "
-						/>
-					</div>
-					<span className="col-span-5" />
-				</div>
-				<div className="grid grid-cols-12 gap-2 items-center">
-					<span className="col-span-5" />
-					<div className="col-span-2 flex justify-center">
-						<Image
-							src={curls}
-							alt="Retour au calme"
-							width={50}
-							height={50}
-							className="relative "
-						/>
-					</div>
-					<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
-						<PiNumberCircleFourLight className="text-3xl  md:text-2xl text-darkorange" />
-						<p>Retour au calme et échange</p>
-					</div>
-				</div>
+		{seancesteps?.map((step, index) => {
+					const Icon = icons[index] || PiNumberCircleOneLight;
+					const image = images[index] || null;
+					const isLeft = step.cote === "left";
+
+					return (
+						<div key={step._id} className="grid grid-cols-12 gap-2 items-center">
+							{isLeft ? (
+								<>
+									<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
+										<Icon className="text-3xl md:text-4xl lg:text-4xl text-darkorange" />
+										<p>{step.contenu}</p>
+									</div>
+									<div className="col-span-2 flex justify-center">
+										{image && (
+											<Image
+												src={image}
+												alt={`Étape ${index + 1}`}
+												width={50}
+												height={50}
+												className="relative"
+											/>
+										)}
+									</div>
+									<span className="col-span-5" />
+								</>
+							) : (
+								<>
+									<span className="col-span-5" />
+									<div className="col-span-2 flex justify-center">
+										{image && (
+											<Image
+												src={image}
+												alt={`Étape ${index + 1}`}
+												width={50}
+												height={50}
+												className="relative"
+											/>
+										)}
+									</div>
+									<div className="col-span-5 flex flex-col md:flex-row gap-4 items-center">
+										<Icon className="text-3xl md:text-4xl lg:text-4xl text-darkorange" />
+										<p>{step.contenu}</p>
+									</div>
+								</>
+							)}
+						</div>
+					);
+				})}
 			</div>
 			<div className="flex justify-center">
-				{/* <CalendlyModal
-					url="https://calendly.com/henkocoaching/coaching-essai-1h"
-					title="RESERVER MA PREMIERE SEANCE"
-					color="bg-darkorange"
-					width="w-[18rem] lg:w-[20rem]"
-				/> */}
+			
 				<ButtonOrange
 					title="RESERVEZ VOTRE SEANCE D'ESSAI"
 					link="https://calendly.com/henkocoaching/coaching-essai-1h"

@@ -14,33 +14,35 @@ import espacepro from "@images/espacepro-salle.webp";
 
 import Planning from "@/components/Planning";
 import Tarifs from "@/components/Tarifs";
+import { PortableText } from "next-sanity";
 
-const tarifsacceslibre = [
-	{ label: "Sans engagement", price: "49,99€" },
-	{ label: "3 mois", price: "45€/mois" },
-	{ label: "6 mois", price: "42,5€/mois" },
-	{ label: "12 mois", price: "39,99€/mois" },
-	{ label: "1,2 ou 3 semaines", price: "à partir de 70€" },
-	{ label: "1 jour", price: "10€" },
-];
+import { PLANNING_QUERY} from "@/queries/coachingqueries";
+import { ACCESLIBRE_SEO_QUERY, TARIFSACCESLIBRE_QUERY, TEXTETARIFSACCESLIBRE_QUERY, TEXTE_ACCES_LIBRE_QUERY, PHOTO_BANDEAU_ACCES_LIBRE_QUERY } from "@/queries/acceslibrequeries";
 
-const SEO_QUERY = defineQuery(`
-*[_type == "pageSeo" && slug == "acceslibre"][0]{
-  slug,
-  title,
-  description,
-  keywords,
-  "ogImageUrl": ogImage.asset->url
-}
-	`);
+
+
+
 
 export async function getServerSideProps() {
 	try {
-		const seolibre = await client.fetch(SEO_QUERY);
 
+const [seolibre, planninglibre, acceslibretarifs, textetarifacceslibre, contenutexteacceslibre, photobandeauacceslibre] = await Promise.all([
+			client.fetch(ACCESLIBRE_SEO_QUERY),
+		client.fetch(PLANNING_QUERY),
+		client.fetch(TARIFSACCESLIBRE_QUERY), 
+		client.fetch(TEXTETARIFSACCESLIBRE_QUERY), 
+		client.fetch(TEXTE_ACCES_LIBRE_QUERY), 
+		client.fetch(PHOTO_BANDEAU_ACCES_LIBRE_QUERY)
+		]);
+	
 		return {
 			props: {
 				seolibre,
+				planninglibre, 
+				acceslibretarifs, 
+				textetarifacceslibre, 
+				contenutexteacceslibre, 
+				photobandeauacceslibre
 			},
 		};
 	} catch (error) {
@@ -48,19 +50,25 @@ export async function getServerSideProps() {
 		return {
 			props: {
 				seolibre: null,
+				planninglibre : {},
+				acceslibretarifs : [], 
+				textetarifacceslibre : {}, 
+				contenutexteacceslibre : [], 
+				photobandeauacceslibre: {}
 			},
 		};
 	}
 }
 
-function AccesLibre({ seolibre }) {
+function AccesLibre({ seolibre, planninglibre, acceslibretarifs,textetarifacceslibre,  contenutexteacceslibre, photobandeauacceslibre }) {
+
+
 	return (
 		<>
 			<Head>
 				<title>Henko Coaching - Sport, bien-être et récupération</title>
 				<meta name="description" content={seolibre.description} />
 				<meta name="keywords" content={seolibre.keywords} />
-				{/* Facebook */}
 				<meta property="og:title" content={seolibre.title} />
 				<meta property="og:description" content={seolibre.description} />
 				<meta
@@ -85,57 +93,28 @@ function AccesLibre({ seolibre }) {
 						<HeadPages title="ACCES LIBRE" />
 						<WaveOrange />
 					</div>
-					<div className="bg-white bg-opacity-75 -inset-10 lg:-inset-20 flex flex-col gap-20 bg-center bg-cover bg-[url('/images/acceslibre.webp')] min-h-[30rem]" />
+					<div
+  className="bg-white bg-opacity-75 -inset-10 lg:-inset-20 flex flex-col gap-20 bg-center bg-cover min-h-[30rem]"
+  style={{
+    backgroundImage: `url(${photobandeauacceslibre?.imageUrl})`,
+  }}
+  aria-label={photobandeauacceslibre?.alt}
+/>
 					<div className=" flex flex-col gap-10 px-10 lg:px-40">
 						{/* <h3 className="font-tanker text-center text-2xl">
 							DISPO A PARTIR DE FEVRIER 2025
 						</h3> */}
-						<p>
-							Vous avez besoin d’accéder à une salle de sport à Mimizan plage
-							pendant vos vacances ou même toute l’année et vous n’avez pas
-							besoin de coach parce que vous avez déjà assez d’expérience pour
-							pratiquer en autonomie et surtout en sécurité avec des poids
-							libres, vous avez déjà votre programmation ou en souhaitez une en
-							supplément de votre accès.
-						</p>
-						<p>
-							Pour un bon déroulement des séances, cet espace d’environ 40 m2
-							avec du matériel limité ne peut pas accueillir un nombre important
-							de personnes en même temps. C’est pour cela que l’accès libre est
-							limité à 3 personnes en même temps par créneau d’environ 1h30.{" "}
-						</p>
-						<p>
-							<strong>10 personnes au total</strong> bénéficieront d’un pass
-							permettant d’accéder librement à la salle en dehors des heures de
-							coaching et massages. Une réservation de créneau sera nécessaire
-							pour filtrer les entrées/sorties et avoir une bonne gestion de
-							l’espace et du matériel autant pour vous que pour moi.
-						</p>
-						<p>
-							Pour bénéficier du pass & en fonction de vos objectifs il faudra
-							justifier de votre niveau d’autonomie dans ce type de lieu. Ex :
-							savoir utiliser une barre de 10/15/20 kgs à charger/décharger avec
-							des plates, utilisation des dumbells et kettlebell & rangement du
-							rameur. Il n’y a aucune machine guidée.
-						</p>
-						<p>
-							Je vous demande de laisser l’endroit comme vous l’avez trouvé,
-							dans son état de propreté et de rangement initial.{" "}
-							<strong>Cet espace est sous vidéo surveillance</strong> pour
-							vérifier que les accès soient bien respectés et éviter tout
-							débordement ou risque d’insécurité.
-						</p>
+						<PortableText value={contenutexteacceslibre.contenu} />
 					</div>
 					<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker px-10 lg:px-20 -mb-10">
 						<span className="text-3xl z-10">LES TARIFS</span>
 						<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 					</h2>
 					<div className="bg-darkorange lg:px-10  pb-10">
-						<Tarifs tarifs={tarifsacceslibre} />
-						<p className="px-10">
-							<strong>-50% </strong> pour les clients en coaching privé
-							engagement 4 mois minimum
-						</p>
+						<Tarifs tarifs={acceslibretarifs} />
+						<div className="px-10">
+						 <PortableText value={textetarifacceslibre.text} />
+						</div>
 					</div>
 					{/* <FormulesLibres /> */}
 					<div className="self-center -mt-10">
@@ -154,7 +133,7 @@ function AccesLibre({ seolibre }) {
 								<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
 							</h2>
 						</div>
-						<Planning image={espacepro} page="libre" />
+						<Planning planning={planninglibre} page="libre" />
 					</div>
 				</div>
 

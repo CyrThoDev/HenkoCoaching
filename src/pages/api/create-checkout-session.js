@@ -6,14 +6,14 @@ export default async function handler(req, res) {
 	if (req.method === "POST") {
 		try {
 			const { cart } = req.body;
-			console.log("panier : ", cart);
+		
 
 			if (!cart || cart.length === 0) {
 				return res.status(400).json({ error: "Le panier est vide." });
 			}
 
 			const customizationsDetails = cart.map((item) => item.customizations);
-			console.log(customizationsDetails);
+	
 
 			const lineItems = cart.map((item) => ({
 				price_data: {

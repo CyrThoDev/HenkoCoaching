@@ -42,7 +42,7 @@ const FormCarteCadeau = ({
 
 		if (name === "prestation") {
 			const selectedPrestation = prestations.find((p) => p.name === value);
-			console.info(selectedPrestation);
+		
 			updatedFormData.price = selectedPrestation
 				? selectedPrestation.price
 				: null;
@@ -55,7 +55,7 @@ const FormCarteCadeau = ({
 		}
 
 		setFormData(updatedFormData);
-		console.info("updated", updatedFormData);
+	
 		SaveCustomization(updatedFormData);
 	};
 

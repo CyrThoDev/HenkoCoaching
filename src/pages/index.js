@@ -6,24 +6,23 @@ import NavBar from "@/components/NavBar";
 import Header from "@/components/Header";
 import HomePage from "@/components/HomePage";
 import logoOrange from "../../public/images/logoHenkoOrange.svg";
-
-const SEO_QUERY = defineQuery(`
-	*[_type == "pageSeo" && slug == "accueil"][0]{
-		slug,
-		title,
-		description,
-		keywords,
-		"ogImageUrl": ogImage.asset->url
-	}
-		`);
+import { QUERY_ICONS, SEO_QUERY, presentationQuery, resumeQuery } from "@/queries/accueilqueries";
 
 export async function getServerSideProps() {
 	try {
-		const seoaccueil = await client.fetch(SEO_QUERY);
+		const [seoaccueil, iconaccueil,resumeaccueil, presentationaccueil] = await Promise.all([
+    client.fetch(SEO_QUERY),
+    client.fetch(QUERY_ICONS),
+		client.fetch(resumeQuery),
+		client.fetch(presentationQuery),
+  ]);
 
 		return {
 			props: {
 				seoaccueil,
+				iconaccueil,
+				resumeaccueil,
+				presentationaccueil
 			},
 		};
 	} catch (error) {
@@ -31,12 +30,18 @@ export async function getServerSideProps() {
 		return {
 			props: {
 				seoaccueil: null,
+				iconaccueil: null,
+				resumeaccueil :null,
+				presentationaccueil :null,
+
 			},
 		};
 	}
 }
 
-export default function Home({ seoaccueil }) {
+export default function Home({ seoaccueil, iconaccueil , resumeaccueil, presentationaccueil}) {
+
+
 	return (
 		<>
 			<Head>
@@ -59,7 +64,7 @@ export default function Home({ seoaccueil }) {
 				<meta name="robots" content="index, follow" />
 			</Head>
 			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
-			<HomePage />
+			<HomePage iconaccueil={iconaccueil} resumeaccueil={resumeaccueil} presentationaccueil={presentationaccueil}/>
 		</>
 	);
 }

@@ -11,23 +11,10 @@ import ButtonBlack from "./ButtonBlack";
 import Planning from "./Planning";
 import WaveOrange from "./WaveOrange";
 import photocoach from "@images/photocoach.webp";
-import sallecoaching from "@images/sallecoaching.webp";
 
-const coachingBenefits = [
-	"Se remettre en forme et/ou perdre du poids, reprendre confiance en soi",
-	"Réduire le stress, améliorer la qualité du sommeil ou combattre la dépression pour vous aider à retrouver énergie, équilibre et sérénité au quotidien. ",
-	"Réduire les risques pouvant entraîner une maladie cardiovasculaire (tabagisme, diabète, cholestérol, sédentarité, obésité, etc.)",
-	"Développer ses capacités physiques (renforcement, tonification, prise de masse musculaire, gain de force)",
-	"Éviter les blessures",
-];
 
-// const trainingDetails = [
-// 	"Planning du 1er février au 06 juillet inclus.",
-// 	"Accès libre : Sur réservation jusqu'à la dernière minute. *Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre *",
-// 	"Coaching / Massage : Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
-// ];
+function MainCoaching({coachingpourquoi, planning}) {
 
-function MainCoaching() {
 	const dialogRef = useRef(null);
 	const openDialog = () => {
 		if (dialogRef.current) {
@@ -41,6 +28,9 @@ function MainCoaching() {
 		}
 	};
 
+	if (!coachingpourquoi) return null;
+	const { titre, intro, benefits, imageUrl } = coachingpourquoi;
+
 	return (
 		<>
 			<div className="relative">
@@ -49,17 +39,16 @@ function MainCoaching() {
 					<div className="basis-1/2 flex flex-col gap-8">
 						<h2 className="relative flex flex-col text-lg md:text-xl font-tanker">
 							<span className=" text-3xl z-10">
-								A QUI S’ADRESSE LE COACHING PRIVE ?
+								{titre}
 							</span>
 							<div className="w-[12rem] h-3 bg-darkorange -mt-3 -z-1" />
 						</h2>
 						<div className="space-y-4 flex flex-col">
 							<p>
-								La séance de coaching sportif privé s’adresse aux sportifs et
-								non sportifs souhaitant :
+								{intro}
 							</p>
 							<ul className="flex flex-col gap-4 list-disc list-inside">
-								{coachingBenefits.map((benefit, index) => (
+								{benefits?.map((benefit, index) => (
 									<li key={index}>{benefit}</li>
 								))}
 							</ul>
@@ -67,9 +56,9 @@ function MainCoaching() {
 					</div>
 					<div className="basis-1/2 flex justify-center">
 						<Image
-							src={sallecoaching}
-							width={"500"}
-							height={"auto"}
+							src={imageUrl}
+							width={500}
+							height={500}
 							className="shadow-perso shadow-darkorange rounded-sm"
 							alt="Salle de sport"
 						/>
@@ -102,7 +91,7 @@ function MainCoaching() {
 						<div className="w-[12rem] h-3  bg-darkorange -mt-3 -z-1" />
 					</h2>
 				</div>
-				<Planning image={photocoach} page="coaching" />
+				<Planning planning={planning} page="coaching" />
 				<WaveOrange />
 			</div>
 		</>
