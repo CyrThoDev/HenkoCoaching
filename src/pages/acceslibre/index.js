@@ -61,7 +61,7 @@ const [seolibre, planninglibre, acceslibretarifs, textetarifacceslibre, contenut
 }
 
 function AccesLibre({ seolibre, planninglibre, acceslibretarifs,textetarifacceslibre,  contenutexteacceslibre, photobandeauacceslibre }) {
-
+console.info(textetarifacceslibre)
 
 	return (
 		<>
@@ -113,7 +113,7 @@ function AccesLibre({ seolibre, planninglibre, acceslibretarifs,textetarifaccesl
 					<div className="bg-darkorange lg:px-10  pb-10">
 						<Tarifs tarifs={acceslibretarifs} />
 						<div className="px-10">
-						 <PortableText value={textetarifacceslibre.text} />
+						 <PortableText value={textetarifacceslibre.contenu} />
 						</div>
 					</div>
 					{/* <FormulesLibres /> */}
