@@ -1,4 +1,5 @@
 function Tarifs({ tarifs }) {
+	
 	return (
 		<div>
 			<div className=" text-black p-10">
@@ -14,7 +15,7 @@ function Tarifs({ tarifs }) {
 										!isLast ? "border-b border-white/50 " : ""
 									}`}
 								>
-									<p>{item.label}</p>
+									<p className="font-semibold">{item.label}</p>
 									<p className="font-semibold">{item.price}</p>
 								</div>
 							);
