@@ -27,7 +27,7 @@ function Header() {
 					<div className="flex flex-col md:flex-row gap-4 font-poppins">
 						<ButtonOrange
 							title="RESERVER MA PREMIERE SEANCE"
-							link="https://calendly.com/henkocoaching/coaching-essai-1h"
+							link="https://calendly.com/henkocoaching/"
 							target="_blank"
 							width="w-[18rem]"
 						/>

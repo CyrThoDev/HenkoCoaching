@@ -89,7 +89,7 @@ function Seance({seancesteps}) {
 			
 				<ButtonOrange
 					title="RESERVEZ VOTRE SEANCE D'ESSAI"
-					link="https://calendly.com/henkocoaching/coaching-essai-1h"
+					link="https://calendly.com/henkocoaching/seance-d-essai-coaching-clone"
 					width=" w-fit lg:w-[18rem]"
 				/>
 			</div>

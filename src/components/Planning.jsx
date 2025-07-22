@@ -25,7 +25,18 @@ import Heure from "@images/Heure.webp";
 // 	},
 // ];
 
+
+
+
 function Planning({ planning, page }) {
+	console.info(page)
+
+	const links = {
+  coaching: "https://calendly.com/henkocoaching/coaching-individuel-1h-clone",
+ libre: "https://calendly.com/henkocoaching/acces-libre-clone",
+};
+
+const lienCreneau = links[page];
 
 
 	const dialogRef = useRef(null);
@@ -142,22 +153,22 @@ const filteredDetails =
 				</div>
 				<div className="flex flex-col lg:flex-row  lg:px-40 gap-8 lg:gap-20">
 					<div className="flex flex-col gap-2 lg:w-1/2 ">
-						<ButtonBlack
-							title="RESERVER MON CRENEAU"
-							link="https://calendly.com/henkocoaching/reservation-creneau-coaching"
-							target="_blank"
-							width="w-[18rem]"
-						/>
-						<p className="italic ">
-							*Vous payez déjà votre abonnement. Vous êtes ici pour réserver
-							votre/vos créneaux de coaching pour les prochains jours ou
-							semaines.
-						</p>
+					<ButtonBlack
+  title="RESERVER MON CRENEAU"
+  link={lienCreneau}
+  target="_blank"
+  width="w-[18rem]"
+/>
+<p className="italic ">
+  {page === "coaching"
+    ? "*Vous payez déjà votre abonnement. Vous êtes ici pour réserver votre/vos créneaux de coaching pour les prochains jours ou semaines."
+    : "*Vous réservez un créneau d’accès libre pour vous entraîner. L’annulation est possible jusqu’au dernier moment."}
+</p>
 					</div>
 					<div className="flex flex-col gap-2 lg:w-1/2 ">
 						<ButtonOrange
 							title="RESERVER MA PREMIERE SEANCE"
-							link="https://calendly.com/henkocoaching/coaching-essai-1h"
+							link="https://calendly.com/henkocoaching/seance-d-essai-coaching-clone"
 							target="_blank"
 							width="w-[18rem]"
 						/>

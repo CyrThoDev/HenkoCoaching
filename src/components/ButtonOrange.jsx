@@ -1,15 +1,13 @@
-import Link from "next/link";
-
 function ButtonOrange({ title, link, width }) {
 	return (
-		<Link
+		<a
 			href={link}
-			className={`bg-darkorange text-white text-center rounded-md py-3 px-4 ${width} block focus:outline-none `}
 			target="_blank"
 			rel="noopener noreferrer"
+			className={`bg-darkorange text-white text-center rounded-md py-3 px-4 ${width} block focus:outline-none`}
 		>
 			{title}
-		</Link>
+		</a>
 	);
 }
 
