@@ -46,22 +46,52 @@ export const COACHINGPRESENTATION_QUERY = defineQuery(`
   }
 `);
 
-export const PLANNING_QUERY = `
-  *[_type == "planning"][0] {
-    titre,
-    details,
-    "imageMobile": imageMobile.asset->url,
-    "imageDesktop": imageDesktop.asset->url,
-    "imageCoaching": imageCoaching.asset->url,
-    "imageLibreAcces": imageLibreAcces.asset->url,
-    ctaButtons[] {
-      title,
+export const PLANNING_QUERY = `*[_type == "planning"][0]{
+  titre,
+  details[] {
+    title,
+    description,
+    type
+  },
+  imageMobile {
+    asset->{
       url,
-      note,
-      style
-    }
+      metadata { lqip }
+    },
+    alt
+  },
+  imageDesktop {
+    asset->{
+      url,
+      metadata { lqip }
+    },
+    alt
+  },
+  imageCoaching {
+    asset->{
+      url,
+      metadata { lqip }
+    },
+    alt
+  },
+  imageLibreAcces {
+    asset->{
+      url,
+      metadata { lqip }
+    },
+    alt
+  },
+  ctaButtons[] {
+    title,
+    url,
+    note,
+    style,
+    page
   }
-`;
+}`;
+
+
+
 
 export   const FAQ_QUERY = defineQuery(`*[_type == "faq"][0]{
     title,
