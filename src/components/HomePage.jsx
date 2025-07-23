@@ -9,10 +9,10 @@ import Header from "./Header";
 import Formulaire from "./Formulaire";
 import Actualites from "./Actualites";
 
-function HomePage({iconaccueil, resumeaccueil, presentationaccueil}) {
+function HomePage({iconaccueil, resumeaccueil, presentationaccueil, accueilheader}) {
 	return (
 		<div className="flex flex-col gap-20">
-			<Header />
+			<Header accueilheader={accueilheader}/>
 			<Icons iconaccueil={iconaccueil}/>
 			<Summary resumeaccueil={resumeaccueil}/>
 			<GoogleReviews />

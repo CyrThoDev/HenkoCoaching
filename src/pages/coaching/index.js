@@ -89,7 +89,7 @@ function Coaching({ tarifs, seo , coachingpresentation, coachingpourquoi, planni
 				</div>
 				<CoachingHeader coachingpresentation={coachingpresentation}/>
 				<MainCoaching coachingpourquoi={coachingpourquoi} planning={planning}/>
-				<Seance seancesteps={seancesteps} />
+				<Seance seancesteps={seancesteps}  coachingpresentation={coachingpresentation}/>
 				<WaveOrange />
 			</div>
 			<div>

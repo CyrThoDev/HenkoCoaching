@@ -1,6 +1,22 @@
 
 import { defineQuery } from "next-sanity";
 
+
+export const ACCUEIL_HEADER_QUERY = defineQuery(`
+  *[_type == "accueilHeader"][0] {
+    titre,
+    sousTitre,
+    bouton1 {
+      label,
+      url
+    },
+    bouton2 {
+      label,
+      url
+    }
+  }
+`);
+
 export const QUERY_ICONS = defineQuery(`
  *[_type == "Accueil-Icones"] | order(orderRank asc) {
   slug,

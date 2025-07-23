@@ -6,15 +6,16 @@ import NavBar from "@/components/NavBar";
 import Header from "@/components/Header";
 import HomePage from "@/components/HomePage";
 import logoOrange from "../../public/images/logoHenkoOrange.svg";
-import { QUERY_ICONS, SEO_QUERY, presentationQuery, resumeQuery } from "@/queries/accueilqueries";
+import { QUERY_ICONS, SEO_QUERY, presentationQuery, resumeQuery, ACCUEIL_HEADER_QUERY } from "@/queries/accueilqueries";
 
 export async function getServerSideProps() {
 	try {
-		const [seoaccueil, iconaccueil,resumeaccueil, presentationaccueil] = await Promise.all([
+		const [seoaccueil, iconaccueil,resumeaccueil, presentationaccueil, accueilheader] = await Promise.all([
     client.fetch(SEO_QUERY),
     client.fetch(QUERY_ICONS),
 		client.fetch(resumeQuery),
 		client.fetch(presentationQuery),
+		client.fetch(ACCUEIL_HEADER_QUERY)
   ]);
 
 		return {
@@ -22,7 +23,8 @@ export async function getServerSideProps() {
 				seoaccueil,
 				iconaccueil,
 				resumeaccueil,
-				presentationaccueil
+				presentationaccueil, 
+				accueilheader
 			},
 		};
 	} catch (error) {
@@ -33,13 +35,14 @@ export async function getServerSideProps() {
 				iconaccueil: null,
 				resumeaccueil :null,
 				presentationaccueil :null,
+				accueilheader : null
 
 			},
 		};
 	}
 }
 
-export default function Home({ seoaccueil, iconaccueil , resumeaccueil, presentationaccueil}) {
+export default function Home({ seoaccueil, iconaccueil , resumeaccueil, presentationaccueil, accueilheader}) {
 
 
 	return (
@@ -64,7 +67,7 @@ export default function Home({ seoaccueil, iconaccueil , resumeaccueil, presenta
 				<meta name="robots" content="index, follow" />
 			</Head>
 			<NavBar logo={logoOrange} bgbutton="bg-darkorange" />
-			<HomePage iconaccueil={iconaccueil} resumeaccueil={resumeaccueil} presentationaccueil={presentationaccueil}/>
+			<HomePage iconaccueil={iconaccueil} resumeaccueil={resumeaccueil} presentationaccueil={presentationaccueil} accueilheader={accueilheader}/>
 		</>
 	);
 }

@@ -7,36 +7,20 @@ import Image from "next/image";
 import salle from "../../public/images/salle3.jpg";
 import Heure from "@images/Heure.webp";
 
-// const trainingDetails = [
-// 	{
-// 		title: "Planning du 15 juillet au 15 septembre inclus.",
-// 	},
-// 	{
-// 		title: "Accès libre : ",
-// 		description:
-// 			"Sur réservation jusqu'à la dernière minute. Si un créneau destiné au Coaching/massage n'est pas réservé il sera disponible pour l'accès libre.",
-// 		type: "coaching",
-// 	},
-// 	{
-// 		title: "Coaching / Massage : ",
-// 		description:
-// 			"Sur réservation minimum 24h avant pour le coaching & 6h avant pour le massage.",
-// 		type: "libre",
-// 	},
-// ];
 
 
 
 
 function Planning({ planning, page }) {
-	console.info(page)
+	console.info("PAGE", page)
+	console.info("PLANNING", planning)
 
-	const links = {
-  coaching: "https://calendly.com/henkocoaching/coaching-individuel-1h-clone",
- libre: "https://calendly.com/henkocoaching/acces-libre-clone",
-};
+// 	const links = {
+//   coaching: "https://calendly.com/henkocoaching/coaching-individuel-1h-clone",
+//  libre: "https://calendly.com/henkocoaching/acces-libre-clone",
+// };
 
-const lienCreneau = links[page];
+// const lienCreneau = links[page];
 
 
 	const dialogRef = useRef(null);
@@ -81,13 +65,14 @@ const filteredDetails =
 						<div className="hidden md:flex md:flex-col basis-1/2">
 							{imageDesktop && (
 					<Image
-						src={imageDesktop}
-						alt={`Illustration page ${page}`}
-						width={600}
-						height={400}
-							onClick={openDialog}
-						className="rounded-md shadow-md z-10"
-					/>
+  src={imageDesktop?.asset?.url}
+  alt={`Illustration page ${page}`}
+  width={600}
+  height={400}
+  onClick={openDialog}
+  className="rounded-md shadow-md z-10"
+/>
+
 				)}
 							<div className="flex flex-row  gap-8 justify-center  pt-4 text-white ">
 								<p className="bg-sand p-2 rounded-sm">Accès libre</p>
@@ -96,14 +81,15 @@ const filteredDetails =
 								</p>
 							</div>
 						</div>
-						<Image
-							src={imageMobile}
-							alt="Planning Henko"
-							width={500}
-							height={500}
-							onClick={openDialog}
-							className="md:hidden "
-						/>
+					<Image
+  src={imageMobile?.asset?.url}
+  alt="Planning Henko"
+  width={500}
+  height={500}
+  onClick={openDialog}
+  className="md:hidden "
+/>
+
 						<dialog ref={dialogRef} className=" bg-white rounded-lg p-6  ">
 							<button
 								type="button"
@@ -113,31 +99,35 @@ const filteredDetails =
 								&times;
 							</button>
 							<div className="flex justify-center items-center ">
-								<Image
-									src={imageDesktop}
-									alt="Planning Henko"
-									width={400}
-							height={400}
-									className="hidden lg:block lg:w-[60vw] h-auto"
-								/>
-								<Image
-									src={imageMobile}
-									alt="Planning Henko"
-									width={500}
-							height={500}
-									onClick={openDialog}
-									className="lg:hidden w-[80svw]"
-								/>
+							<Image
+  src={imageDesktop?.asset?.url}
+  alt={`Illustration page ${page}`}
+  width={600}
+  height={400}
+  onClick={openDialog}
+  className="rounded-md shadow-md z-10"
+/>
+
+							<Image
+  src={imageMobile?.asset?.url}
+  alt="Planning Henko"
+  width={500}
+  height={500}
+  onClick={openDialog}
+  className="md:hidden "
+/>
+
 							</div>
 						</dialog>
 						<div className="basis-1/2 flex justify-center">
 							<Image
-								src={imagePage}
-								width={500}
-							height={500}
-								className=" hidden lg:flex  shadow-perso max-h-[24rem] w-auto shadow-darkorange rounded-sm"
-								alt="Salle de sport"
-							/>
+  src={imagePage?.asset?.url}
+  width={500}
+  height={500}
+  className=" hidden lg:flex  shadow-perso max-h-[24rem] w-auto shadow-darkorange rounded-sm"
+  alt="Salle de sport"
+/>
+
 						</div>
 					</div>
 					<div className="flex flex-col gap-2 ">
@@ -151,33 +141,29 @@ const filteredDetails =
 						))}
 					</div>
 				</div>
-				<div className="flex flex-col lg:flex-row  lg:px-40 gap-8 lg:gap-20">
-					<div className="flex flex-col gap-2 lg:w-1/2 ">
-					<ButtonBlack
-  title="RESERVER MON CRENEAU"
-  link={lienCreneau}
-  target="_blank"
-  width="w-[18rem]"
-/>
-<p className="italic ">
-  {page === "coaching"
-    ? "*Vous payez déjà votre abonnement. Vous êtes ici pour réserver votre/vos créneaux de coaching pour les prochains jours ou semaines."
-    : "*Vous réservez un créneau d’accès libre pour vous entraîner. L’annulation est possible jusqu’au dernier moment."}
-</p>
-					</div>
-					<div className="flex flex-col gap-2 lg:w-1/2 ">
-						<ButtonOrange
-							title="RESERVER MA PREMIERE SEANCE"
-							link="https://calendly.com/henkocoaching/seance-d-essai-coaching-clone"
-							target="_blank"
-							width="w-[18rem]"
-						/>
-						<p className="italic ">
-							*Vous souhaitez découvrir le coaching avec moi avant de faire
-							votre choix. Réservez et payez votre séance ici.
-						</p>
-					</div>
-				</div>
+				{ctaButtons?.length > 0 && (
+  <div className="flex flex-col lg:flex-row lg:px-40 gap-8 lg:gap-20">
+  {ctaButtons
+    .filter((btn) => btn.page === "both" || btn.page === page)
+    .map((btn, index) => {
+      const ButtonComponent = btn.style === "black" ? ButtonBlack : ButtonOrange;
+
+      return (
+        <div key={index} className="flex flex-col gap-2 lg:w-1/2">
+          <ButtonComponent
+            title={btn.title}
+            link={btn.url}
+            target="_blank"
+            width="w-[18rem]"
+          />
+          {btn.note && <p className="italic">{btn.note}</p>}
+        </div>
+      );
+    })}
+</div>
+
+)}
+
 			</div>
 		</div>
 	);
