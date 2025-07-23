@@ -22,7 +22,8 @@ const icons = [
 	PiNumberCircleFourLight,
 ];
 
-function Seance({seancesteps}) {
+function Seance({seancesteps, coachingpresentation}) {
+	console.info("COACHING PRES", coachingpresentation)
 
 	return (
 		<div className="flex flex-col gap-10">
@@ -88,10 +89,11 @@ function Seance({seancesteps}) {
 			<div className="flex justify-center">
 			
 				<ButtonOrange
-					title="RESERVEZ VOTRE SEANCE D'ESSAI"
-					link="https://calendly.com/henkocoaching/seance-d-essai-coaching-clone"
-					width=" w-fit lg:w-[18rem]"
-				/>
+  title="RESERVEZ VOTRE SEANCE D'ESSAI"
+  link={coachingpresentation?.cta?.url || "#"}
+  width="w-fit lg:w-[18rem]"
+/>
+
 			</div>
 		</div>
 	);
