@@ -4,7 +4,7 @@ import HeadPages from "@/components/HeadPages";
 import WaveOrange from "@/components/WaveOrange";
 
 import { client } from "@/sanity/client";
-import { MENTIONS_LEGALES_QUERY } from "@/queries/mentionsLegales";
+import { MENTIONS_LEGALES_QUERY } from "@/queries/mentionslegales";
 import { PortableText } from "@portabletext/react";
 
 export async function getStaticProps() {
