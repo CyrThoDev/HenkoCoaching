@@ -16,20 +16,20 @@ const FormCarteCadeau = ({
 	});
 
 	const prestations = [
-		{ id: 1, name: "Massage relaxant 30 min", price: 40 },
-		{ id: 2, name: "Massage relaxant 1h", price: 65 },
-		{ id: 3, name: "Massage relaxant 1h30", price: 95 },
-		{ id: 4, name: "Massage sportif 30 min", price: 45 },
-		{ id: 5, name: "Massage sportif 1h", price: 70 },
-		{ id: 6, name: "Massage sportif 1h30", price: 100 },
-		{ id: 7, name: "Séance d'essai coaching 1h", price: 25 },
-		{ id: 8, name: "Séance de coaching 1h + massage 1h", price: 95 },
-		{ id: 9, name: "Forfait 10 séances de coaching", price: 350 },
-		{ id: 10, name: "Accès libre 1 mois", price: 50 },
-		{ id: 11, name: "Accès libre 3 mois", price: 135 },
-		{ id: 12, name: "Accès libre 6 mois", price: 255 },
-		{ id: 13, name: "Accès libre 12 mois", price: 480 },
-		{ id: 14, name: "Montant libre", price: null },
+		{ id: 1, name: "KDO-Massage relaxant 30 min", price: 40 },
+		{ id: 2, name: "KDO-Massage relaxant 1h", price: 65 },
+		{ id: 3, name: "KDO-Massage relaxant 1h30", price: 95 },
+		{ id: 4, name: "KDO-Massage sportif 30 min", price: 45 },
+		{ id: 5, name: "KDO-Massage sportif 1h", price: 70 },
+		{ id: 6, name: "KDO-Massage sportif 1h30", price: 100 },
+		{ id: 7, name: "KDO-Séance d'essai coaching 1h", price: 25 },
+		{ id: 8, name: "KDO-Séance de coaching 1h + massage 1h", price: 95 },
+		{ id: 9, name: "KDO-Forfait 10 séances de coaching", price: 350 },
+		{ id: 10, name: "KDO-Accès libre 1 mois", price: 50 },
+		{ id: 11, name: "KDO-Accès libre 3 mois", price: 135 },
+		{ id: 12, name: "KDO-Accès libre 6 mois", price: 255 },
+		{ id: 13, name: "KDO-Accès libre 12 mois", price: 480 },
+		{ id: 14, name: "KDO-Montant libre", price: null },
 	];
 
 	const handleChange = (e) => {

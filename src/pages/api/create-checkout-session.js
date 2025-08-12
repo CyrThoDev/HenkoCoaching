@@ -19,10 +19,10 @@ export default async function handler(req, res) {
 				price_data: {
 					currency: "eur",
 					product_data: {
-						name: item.customizations.prestation || "Accès libre",
+						name: item.customizations.prestation || "KDO",
 						metadata: {
 							Prestation:
-								item.customizations.prestation || "Default Prestation",
+								item.customizations.prestation || "KDO",
 							De: item.customizations.from || "Default Sender",
 							Pour: item.customizations.to || "Default Recipient",
 							email: item.customizations.email || "default@example.com",
