@@ -124,7 +124,7 @@ console.info(textetarifacceslibre)
 							width="w-[15rem] md:w-[20rem]"
 						/>
 					</div>
-					<div className=" px-10 lg:px-20">
+					{/* <div className=" px-10 lg:px-20">
 						<div className="flex flex-col gap-2">
 							<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">
 								<span className="text-3xl z-10 ">
@@ -134,7 +134,7 @@ console.info(textetarifacceslibre)
 							</h2>
 						</div>
 						<Planning planning={planninglibre} page="libre" />
-					</div>
+					</div> */}
 				</div>
 
 				<WaveOrange />

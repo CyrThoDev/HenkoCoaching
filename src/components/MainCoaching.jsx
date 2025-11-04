@@ -82,7 +82,7 @@ function MainCoaching({coachingpourquoi, planning}) {
 					/>
 				</div>
 			</div>
-			<div className="-mt-32 flex flex-col ">
+			{/* <div className="-mt-32 flex flex-col ">
 				<div className="flex flex-col gap-2 pb-10 lg:pb-0">
 					<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">
 						<span className="text-3xl z-10 ">
@@ -93,7 +93,7 @@ function MainCoaching({coachingpourquoi, planning}) {
 				</div>
 				<Planning planning={planning} page="coaching" />
 				<WaveOrange />
-			</div>
+			</div> */}
 		</>
 	);
 }
