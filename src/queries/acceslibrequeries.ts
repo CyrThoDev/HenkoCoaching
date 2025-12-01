@@ -36,3 +36,10 @@ export const PHOTO_BANDEAU_ACCES_LIBRE_QUERY = defineQuery(`
     "alt": image.alt
   }
 `);
+
+export const ACCESLIBRE_LIENS_QUERY = defineQuery(`
+  *[_type == "AccesLibreLien"][0]{
+      _id,
+      label,
+      url
+    }`);  

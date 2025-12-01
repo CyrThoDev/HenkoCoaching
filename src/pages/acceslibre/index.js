@@ -17,7 +17,7 @@ import Tarifs from "@/components/Tarifs";
 import { PortableText } from "next-sanity";
 
 import { PLANNING_QUERY} from "@/queries/coachingqueries";
-import { ACCESLIBRE_SEO_QUERY, TARIFSACCESLIBRE_QUERY, TEXTETARIFSACCESLIBRE_QUERY, TEXTE_ACCES_LIBRE_QUERY, PHOTO_BANDEAU_ACCES_LIBRE_QUERY } from "@/queries/acceslibrequeries";
+import { ACCESLIBRE_SEO_QUERY, TARIFSACCESLIBRE_QUERY, TEXTETARIFSACCESLIBRE_QUERY, TEXTE_ACCES_LIBRE_QUERY, PHOTO_BANDEAU_ACCES_LIBRE_QUERY, ACCESLIBRE_LIENS_QUERY } from "@/queries/acceslibrequeries";
 
 
 
@@ -26,13 +26,14 @@ import { ACCESLIBRE_SEO_QUERY, TARIFSACCESLIBRE_QUERY, TEXTETARIFSACCESLIBRE_QUE
 export async function getServerSideProps() {
 	try {
 
-const [seolibre, planninglibre, acceslibretarifs, textetarifacceslibre, contenutexteacceslibre, photobandeauacceslibre] = await Promise.all([
+const [seolibre, planninglibre, acceslibretarifs, textetarifacceslibre, contenutexteacceslibre, photobandeauacceslibre, acceslibrelien] = await Promise.all([
 			client.fetch(ACCESLIBRE_SEO_QUERY),
 		client.fetch(PLANNING_QUERY),
 		client.fetch(TARIFSACCESLIBRE_QUERY), 
 		client.fetch(TEXTETARIFSACCESLIBRE_QUERY), 
 		client.fetch(TEXTE_ACCES_LIBRE_QUERY), 
-		client.fetch(PHOTO_BANDEAU_ACCES_LIBRE_QUERY)
+		client.fetch(PHOTO_BANDEAU_ACCES_LIBRE_QUERY), 
+		client.fetch(ACCESLIBRE_LIENS_QUERY),
 		]);
 	
 		return {
@@ -42,7 +43,7 @@ const [seolibre, planninglibre, acceslibretarifs, textetarifacceslibre, contenut
 				acceslibretarifs, 
 				textetarifacceslibre, 
 				contenutexteacceslibre, 
-				photobandeauacceslibre
+				photobandeauacceslibre, acceslibrelien
 			},
 		};
 	} catch (error) {
@@ -54,14 +55,14 @@ const [seolibre, planninglibre, acceslibretarifs, textetarifacceslibre, contenut
 				acceslibretarifs : [], 
 				textetarifacceslibre : {}, 
 				contenutexteacceslibre : [], 
-				photobandeauacceslibre: {}
+				photobandeauacceslibre: {}, acceslibrelien: []
 			},
 		};
 	}
 }
 
-function AccesLibre({ seolibre, planninglibre, acceslibretarifs,textetarifacceslibre,  contenutexteacceslibre, photobandeauacceslibre }) {
-console.info(textetarifacceslibre)
+function AccesLibre({ seolibre, planninglibre, acceslibretarifs,textetarifacceslibre,  contenutexteacceslibre, photobandeauacceslibre , acceslibrelien}) {
+console.info(acceslibrelien)
 
 	return (
 		<>
@@ -118,12 +119,13 @@ console.info(textetarifacceslibre)
 					</div>
 					{/* <FormulesLibres /> */}
 					<div className="self-center -mt-10">
-						<ButtonBlack
-							title="JE SOUHAITE AVOIR PLUS D'INFOS"
-							link="/#contact"
-							width="w-[15rem] md:w-[20rem]"
-						/>
-					</div>
+  <ButtonBlack
+    title={acceslibrelien?.label ?? "Lien indisponible"}
+    link={acceslibrelien?.url ?? "#"}
+    width="w-[15rem] md:w-[20rem]"
+  />
+</div>
+
 					{/* <div className=" px-10 lg:px-20">
 						<div className="flex flex-col gap-2">
 							<h2 className="relative flex flex-col text-lg md:text-2xl font-tanker">
