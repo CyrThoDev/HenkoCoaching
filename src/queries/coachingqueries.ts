@@ -1,9 +1,16 @@
 import { defineQuery } from "next-sanity";
 
 export const TARIFSCOACHING_QUERY = defineQuery(`
-  *[_type=="tarifs"] {
-    id, label, price
-  }`);
+*[_type == "tarifs"] | order(_createdAt asc) {
+  sectionTitle,
+  items[] {
+    label,
+    price,
+    mention,
+    isPromoted
+  },
+  footerText
+}`);
 
   export const TEXTETARIFS_QUERY = defineQuery(`
   *[_type == "texteTarifCoaching"][0] {
