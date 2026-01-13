@@ -112,11 +112,11 @@ function AccesLibre({ seolibre, planninglibre, acceslibretarifs,textetarifaccesl
 						<span className="text-3xl z-10">LES TARIFS</span>
 						<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 					</h2>
-					<div className="bg-darkorange lg:px-10  pb-10">
+					<div className="bg-darkorange lg:px-10  ">
 						<AcceslibreTarifs tarifs={acceslibretarifs} />
-						<div className="px-10">
+						{/* <div className="px-10">
 						 <PortableText value={textetarifacceslibre.contenu} />
-						</div>
+						</div> */}
 					</div>
 					{/* <FormulesLibres /> */}
 					<div className="self-center -mt-10">

@@ -12,10 +12,10 @@ function AcceslibreTarifs({ tarifs }) {
 								<div
 									key={item.id}
 									className={`flex justify-between py-4 ${
-										!isLast ? "border-b border-white/50 " : ""
+										!isLast ? "border-b border-black/10 " : ""
 									}`}
 								>
-									<p className="font-semibold">{item.label}</p>
+									<p className="">{item.label}</p>
 									<p className="font-semibold">{item.price}</p>
 								</div>
 							);
