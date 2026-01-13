@@ -13,7 +13,8 @@ import ButtonBlack from "@/components/ButtonBlack";
 import espacepro from "@images/espacepro-salle.webp";
 
 import Planning from "@/components/Planning";
-import Tarifs from "@/components/Tarifs";
+// import Tarifs from "@/components/Tarifs";
+import AcceslibreTarifs from "@/components/AcceslibreTarifs";
 import { PortableText } from "next-sanity";
 
 import { PLANNING_QUERY} from "@/queries/coachingqueries";
@@ -62,7 +63,7 @@ const [seolibre, planninglibre, acceslibretarifs, textetarifacceslibre, contenut
 }
 
 function AccesLibre({ seolibre, planninglibre, acceslibretarifs,textetarifacceslibre,  contenutexteacceslibre, photobandeauacceslibre , acceslibrelien}) {
-console.info(acceslibrelien)
+
 
 	return (
 		<>
@@ -112,7 +113,7 @@ console.info(acceslibrelien)
 						<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 					</h2>
 					<div className="bg-darkorange lg:px-10  pb-10">
-						<Tarifs tarifs={acceslibretarifs} />
+						<AcceslibreTarifs tarifs={acceslibretarifs} />
 						<div className="px-10">
 						 <PortableText value={textetarifacceslibre.contenu} />
 						</div>

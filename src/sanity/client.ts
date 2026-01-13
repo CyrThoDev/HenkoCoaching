@@ -1,10 +1,37 @@
 import { createClient } from "next-sanity";
-import createImageUrlBuilder from '@sanity/image-url'
+import imageUrlBuilder from "@sanity/image-url";
+
+/**
+ * Variables d'environnement
+ */
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2024-01-01";
+
+
+
+if (!projectId) throw new Error("Missing NEXT_PUBLIC_SANITY_PROJECT_ID");
+if (!dataset) throw new Error("Missing NEXT_PUBLIC_SANITY_DATASET");
+
+/**
+ * Client Sanity (lecture)
+ */
 export const client = createClient({
-	projectId: "3d97sryo",
-	dataset: "production",
-	apiVersion: "2024-01-01",
-	useCdn: false,
+  projectId,
+  dataset,
+  apiVersion,
+  useCdn: process.env.NODE_ENV === "production",
 });
 
-export const urlFor = (source) => createImageUrlBuilder(client).image(source)
+/**
+ * Image builder Sanity (instancié une seule fois)
+ */
+const builder = imageUrlBuilder({
+  projectId,
+  dataset,
+});
+
+/**
+ * Helper image
+ */
+export const urlFor = (source: any) => builder.image(source);

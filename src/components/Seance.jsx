@@ -23,7 +23,7 @@ const icons = [
 ];
 
 function Seance({seancesteps, coachingpresentation}) {
-	console.info("COACHING PRES", coachingpresentation)
+
 
 	return (
 		<div className="flex flex-col gap-10">

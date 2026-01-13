@@ -18,6 +18,7 @@ import { TEXTETARIFS_QUERY, TARIFSCOACHING_QUERY, SEO_QUERY , COACHINGPRESENTATI
 import { PortableText } from "next-sanity";
 
 export async function getServerSideProps() {
+
 	try {
 		const [tarifs, seo, coachingpresentation, coachingpourquoi, planning, faq, seancesteps,textetarifs] = await Promise.all([
 			client.fetch(TARIFSCOACHING_QUERY),
@@ -97,11 +98,13 @@ function Coaching({ tarifs, seo , coachingpresentation, coachingpourquoi, planni
 					<span className="text-3xl z-10">LES TARIFS</span>
 					<div className="w-[8rem] h-3 bg-darkorange -mt-3 -z-1" />
 				</h2>
-				<div className="bg-darkorange lg:px-10 mx-auto pb-10">
+				<div className="bg-darkorange lg:px-10 mx-auto py-10">
 					<Tarifs tarifs={tarifs} />
 					  <div className="prose max-w-none px-10 text-black">
      
-      <PortableText value={textetarifs?.contenu} />
+      <div className="max-w-7xl mx-auto">
+			<PortableText value={textetarifs?.contenu} />
+			</div>
     </div>
 				</div>
 			</div>
