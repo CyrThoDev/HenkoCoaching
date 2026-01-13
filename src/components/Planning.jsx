@@ -12,8 +12,8 @@ import Heure from "@images/Heure.webp";
 
 
 function Planning({ planning, page }) {
-	console.info("PAGE", page)
-	console.info("PLANNING", planning)
+
+
 
 // 	const links = {
 //   coaching: "https://calendly.com/henkocoaching/coaching-individuel-1h-clone",
