@@ -41,7 +41,7 @@ export const COACHINGPRESENTATION_QUERY = defineQuery(`
     note
   }
 }
-  	`);
+    `);
 
 
     export const COACHING_MAIN_QUERY =defineQuery( `
@@ -55,37 +55,26 @@ export const COACHINGPRESENTATION_QUERY = defineQuery(`
 
 export const PLANNING_QUERY = `*[_type == "planning"][0]{
   titre,
+  isOnline,
   details[] {
     title,
     description,
     type
   },
   imageMobile {
-    asset->{
-      url,
-      metadata { lqip }
-    },
+    asset->{ url, metadata { lqip } },
     alt
   },
   imageDesktop {
-    asset->{
-      url,
-      metadata { lqip }
-    },
+    asset->{ url, metadata { lqip } },
     alt
   },
   imageCoaching {
-    asset->{
-      url,
-      metadata { lqip }
-    },
+    asset->{ url, metadata { lqip } },
     alt
   },
   imageLibreAcces {
-    asset->{
-      url,
-      metadata { lqip }
-    },
+    asset->{ url, metadata { lqip } },
     alt
   },
   ctaButtons[] {
@@ -96,6 +85,7 @@ export const PLANNING_QUERY = `*[_type == "planning"][0]{
     page
   }
 }`;
+
 
 
 
