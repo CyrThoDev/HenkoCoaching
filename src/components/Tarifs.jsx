@@ -2,7 +2,7 @@ function Tarifs({ tarifs }) {
   const footerNote = tarifs[0]?.footerText;
 
   return (
-    <div className="text-black p-10 md:p-10 max-w-7xl mx-auto">
+    <div className="text-black p-10 md:py-10 md:px-0 max-w-7xl mx-auto">
       {/* Grille principale : 1 colonne sur mobile, 3 sur grand écran */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-start">
         {tarifs.map((section, index) => (
@@ -20,7 +20,7 @@ function Tarifs({ tarifs }) {
                     key={idx}
                     className={`flex justify-between items-center py-4 ${
                       !isLast ? "border-b border-black/10" : ""
-                    } ${item.isPromoted ? "bg-black/5 -mx-2 px-2 " : ""}`}
+                    } ${item.isPromoted ? "bg-black/5  " : ""}`}
                   >
                     <div className="flex flex-col pr-4">
                       <p className={` text-base leading-tight ${item.isPromoted ? "text-black font-bold" : ""}`}>
