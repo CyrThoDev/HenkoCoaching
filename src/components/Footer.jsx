@@ -38,7 +38,7 @@ function Footer() {
 					<p>Retrouvez-moi sur les réseaux</p>
 					<div className="flex flex-row gap-2 items-center ">
 						<Link
-							href="https://www.instagram.com/henkocoaching_mimizan/"
+							href="https://www.instagram.com/henko_mmz/"
 							alt="lien instagram Henko Coaching"
 							target="_blanck"
 							aria-label="cliquer pour aller sur la page instagram de Henko coaching"

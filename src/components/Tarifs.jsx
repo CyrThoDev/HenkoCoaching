@@ -20,10 +20,10 @@ function Tarifs({ tarifs }) {
                     key={idx}
                     className={`flex justify-between items-center py-4 ${
                       !isLast ? "border-b border-black/10" : ""
-                    } ${item.isPromoted ? "bg-black/5 -mx-2 px-2 rounded" : ""}`}
+                    } ${item.isPromoted ? "bg-black/5 -mx-2 px-2 " : ""}`}
                   >
                     <div className="flex flex-col pr-4">
-                      <p className={` text-base leading-tight ${item.isPromoted ? "text-[#B35638]" : ""}`}>
+                      <p className={` text-base leading-tight ${item.isPromoted ? "text-black font-bold" : ""}`}>
                         {item.label}
                       </p>
                       {item.mention && (
